@@ -1,0 +1,151 @@
+Sector,Industry,Average Last EPS,Average 3 years EPS,Average Last Growth,Average EPS Growth,Average EPS median Growth,Average Debt to Equity,Average NWC per share,Average ROE,Average Free Cash Flow,Number of companies
+Utilities,Water Supply,1.5,1.4,-0.0,0.3,0.1,1.0,0.2,0.1,-6638887.8,13
+Utilities,Power Generation,2.4,2.2,0.0,0.5,0.1,1.3,-0.9,0.0,-5398661.9,23
+Utilities,Natural Gas Distribution,0.9,0.3,1.5,1.7,0.3,1.7,-0.4,0.1,376827045.5,22
+Utilities,Environmental Services,1.7,1.2,-0.5,-1.9,0.1,1.2,-0.5,0.0,139461372.8,12
+Utilities,Electric Utilities: Central,2.4,2.2,0.2,0.1,0.1,1.4,0.5,0.0,-96719939.4,35
+Utilities,Oil & Gas Production,4.9,-2.0,2.6,-0.2,0.8,0.6,0.4,1.5,51385777.2,96
+Utilities,Oil/Gas Transmission,2.9,2.4,0.4,0.5,0.3,1.6,-4.3,-0.0,-10421636.4,11
+Utilities,Telecommunications Equipment,-1.3,-2.3,-0.6,0.2,0.1,1.1,3.8,-0.2,56712788.9,75
+Telecommunications,Cable & Other Pay Television Services,5.3,4.1,-0.6,1.5,0.1,1.7,3.1,0.0,203400200.9,17
+Telecommunications,Computer Communications Equipment,1.2,0.9,0.2,0.2,0.2,-0.0,4.3,0.6,646342200.0,7
+Telecommunications,Metal Fabrications,2.7,1.1,0.4,0.3,0.0,0.6,10.9,0.1,49231988.9,50
+Technology,Computer Software: Prepackaged Software,-1.4,-1.0,-0.5,-0.7,-0.2,0.7,2.0,-0.5,50558208.9,193
+Technology,EDP Services,-1.0,-1.6,-1.7,-1.5,-0.5,0.6,1.8,-0.4,43422929.3,193
+Technology,Computer Software: Programming Data Processing,-0.7,-0.1,-0.7,-3.7,-0.3,0.6,2.5,-0.5,489294383.1,36
+Technology,Computer peripheral equipment,-0.1,-0.1,-0.4,-3.2,-0.3,0.4,2.7,-0.3,74229266.7,16
+Technology,Electronic Components,2.8,2.5,-0.1,0.4,0.1,0.1,7.6,0.2,305052.2,23
+Technology,Semiconductors,1.4,1.5,-0.1,0.8,0.6,0.7,6.6,-0.2,58640362.6,93
+Technology,Industrial Machinery/Components,1.5,1.5,-0.1,-1.1,-0.7,0.6,7.4,-0.5,91322277.2,179
+Technology,Retail: Computer Software & Peripheral Equipment,-1.2,-2.0,-0.3,-0.4,-0.1,0.2,2.6,-1.0,27906031.4,41
+Technology,Radio And Television Broadcasting And Communications Equipment,-0.2,0.6,-1.4,-1.4,-1.0,-0.2,4.1,0.1,29091542.4,24
+Technology,Electrical Products,1.3,1.3,-0.1,0.9,0.8,0.4,11.5,0.1,24650464.2,30
+Technology,Consumer Electronics/Appliances,-1.3,0.3,-2.1,-0.5,-0.8,0.5,2.1,-0.1,-33366195.2,16
+Technology,Computer Manufacturing,2.8,2.9,-0.5,10.3,0.1,-1.3,3.3,-0.2,2863986292.1,10
+Real Estate,Real Estate Investment Trusts,0.6,0.5,0.1,0.3,-0.0,1.6,1.6,0.0,82731129.3,186
+Real Estate,Real Estate,0.3,-2.3,-1.1,-0.0,-0.1,1.1,3.9,-0.2,32491088.8,44
+Real Estate,Building operators,-0.6,-3.6,16.7,5.4,0.1,-34.4,1.4,-0.1,90870013.7,7
+Real Estate,Homebuilding,8.3,7.5,0.4,0.8,0.6,0.6,44.6,0.2,111898003.9,30
+Miscellaneous,Multi-Sector Companies,-1.9,1.7,-0.9,0.8,-0.0,0.4,4.2,-0.4,15027417.8,9
+Miscellaneous,Diversified Commercial Services,-0.0,0.5,-0.8,5.7,6.3,0.5,3.8,0.5,5278817.7,36
+Miscellaneous,Office Equipment/Supplies/Services,3.4,2.9,1.0,1.1,0.2,0.9,6.3,0.1,80783600.0,18
+Miscellaneous,Miscellaneous,6.4,5.3,0.2,1.0,0.4,0.7,9.8,0.3,422613500.0,2
+Industrials,Fluid Controls,2.4,2.1,0.1,0.2,0.2,0.5,7.2,0.1,115938333.3,9
+Industrials,Industrial Specialties,0.3,0.0,-0.1,0.7,0.0,0.3,5.7,0.1,22592652.8,43
+Industrials,Steel/Iron Ore,4.5,2.5,0.9,0.9,0.6,0.3,11.9,0.2,153642986.2,21
+Industrials,Ordnance And Accessories,1.1,2.1,0.1,-1.0,-0.2,0.2,10.9,-0.0,6384466.5,8
+Industrials,Construction/Ag Equipment/Trucks,-0.0,-0.1,6.0,2.2,-0.1,0.8,9.0,-0.1,-2067379.6,17
+Industrials,Major Chemicals,2.5,2.2,0.6,0.5,0.1,1.0,8.2,-0.1,58534780.3,61
+Industrials,Trucking Freight/Courier Services,6.6,4.6,0.3,0.6,0.4,0.4,4.2,0.3,142297000.0,16
+Industrials,Biotechnology: Laboratory Analytical Instruments,-0.8,-0.5,-0.4,-0.5,-0.1,0.4,4.1,0.1,28032111.1,20
+Industrials,Railroads,3.3,2.6,-0.2,-0.2,-0.4,0.9,4.5,0.3,290806500.6,9
+Industrials,Mining & Quarrying of Nonmetallic Minerals (No Fuels),3.5,2.7,-2.0,-0.0,0.5,0.5,9.3,0.0,50547179.7,15
+Industrials,Wholesale Distributors,2.9,-0.7,-0.4,-0.5,-1.0,0.4,2.2,-0.4,9011366.4,8
+Industrials,Marine Transportation,4.1,1.6,0.8,0.6,0.6,1.0,2.3,0.1,53018584.9,61
+Industrials,Farming/Seeds/Milling,0.1,-0.5,0.5,1.8,-0.0,0.4,10.2,-0.1,38579256.9,14
+Industrials,Aerospace,1.1,-0.1,-0.7,-2.6,-0.4,0.2,5.9,-0.2,3173658.3,20
+Industrials,Agricultural Chemicals,-0.3,-6.0,0.9,0.4,0.6,0.3,5.5,-0.2,118872352.9,13
+Industrials,Plastic Products,1.0,1.3,-0.4,-0.1,-0.1,0.6,4.6,0.0,162897650.0,12
+Industrials,Auto Parts:O.E.M.,1.3,1.2,-0.2,0.1,-0.0,0.8,8.7,-0.1,74724544.9,41
+Industrials,Medical Specialities,-3.0,-3.0,-0.3,-0.9,-0.1,0.7,4.3,-1.0,106537523.4,58
+Industrials,Broadcasting,1.9,-0.0,1.1,0.2,0.2,0.4,3.2,0.2,40289009.7,23
+Industrials,Precious Metals,-0.1,-0.0,-0.4,0.4,-0.2,0.4,0.9,-0.1,-1888026.8,42
+Industrials,Military/Government/Technical,0.3,-0.1,0.8,-0.1,0.2,0.9,6.7,0.1,29648424.2,30
+Industrials,Building Materials,3.2,2.5,-0.0,0.1,0.6,0.4,3.5,0.2,61005722.0,6
+Industrials,Containers/Packaging,3.6,2.6,1.2,0.4,0.5,2.2,4.4,0.2,220717542.7,15
+Industrials,Specialty Chemicals,4.2,4.4,-0.2,0.6,0.4,4.4,10.0,0.4,229298600.0,6
+Industrials,Engineering & Construction,3.2,2.2,0.0,0.2,-0.0,0.6,7.9,0.1,42884615.4,15
+Industrials,Water Sewer Pipeline Comm & Power Line Construction,3.9,3.4,0.9,0.3,0.4,0.9,19.3,0.1,56717557.5,6
+Industrials,Pollution Control Equipment,1.0,0.7,-4.2,-1.5,0.0,0.5,2.9,0.1,34934250.0,4
+Industrials,Building Products,0.5,0.7,-0.2,-0.1,0.0,0.8,5.4,0.3,86827075.5,15
+Industrials,Home Furnishings,1.8,1.4,-0.3,0.3,-0.1,0.9,8.2,-0.2,40633717.8,21
+Industrials,Aluminum,-0.4,-0.5,-0.2,0.5,0.3,0.8,5.2,-0.0,-30300000.0,2
+Industrials,Other Specialty Stores,2.0,3.1,-0.4,0.5,0.2,0.5,6.8,-0.0,-16237894.6,27
+Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus,-4.4,-7.7,-0.3,-0.7,0.0,0.5,4.8,-0.3,-1216126.7,37
+Health Care,Biotechnology: Pharmaceutical Preparations,-5.4,-7.4,-0.3,-0.7,-0.4,0.2,2.8,-0.8,-6419084.3,561
+Health Care, Medicinal Chemicals and Botanical Products ,-3.2,-3.4,-0.3,-2.0,-0.3,-0.3,2.4,-1.5,3199978.5,56
+Health Care,Biotechnology: Biological Products (No Diagnostic Substances),-2.2,-2.9,-0.1,-0.1,-0.0,-0.2,2.8,-0.3,-23574416.5,104
+Health Care,Medical/Dental Instruments,-5.3,-6.9,-0.3,-0.2,-0.1,0.3,4.0,-0.5,17204331.3,114
+Health Care,Pharmaceuticals and Biotechnology,-11.1,-33.4,-720.8,-360.7,-360.6,-0.3,2.8,3.0,-8179558.6,8
+Health Care,Ophthalmic Goods,1.1,3.2,-0.4,1.1,0.4,0.5,4.4,-0.2,12663031.9,7
+Health Care,Biotechnology: In Vitro & In Vivo Diagnostic Substances,-44.8,-30.4,-0.7,-1.0,-0.2,-0.0,1.7,-0.4,-8297631.4,22
+Health Care,Misc Health and Biotechnology Services,-30.2,-347.5,0.1,0.4,0.3,0.7,2.7,0.3,98408000.0,6
+Health Care,Medical/Nursing Services,-10.4,-1.5,-4.3,-1.4,-1.0,0.8,1.2,-0.2,4124882.4,17
+Health Care,Hospital/Nursing Management,1.8,0.3,-0.4,0.0,-0.2,-1.6,3.3,-5.8,38957000.0,16
+Health Care,Biotechnology: Commercial Physical & Biological Resarch,3.3,2.7,-1.6,-0.8,-1.3,0.6,1.8,0.0,123915259.0,9
+Health Care,Precision Instruments,-1.2,-1.4,-3.0,-1.9,-0.7,-6.9,1.2,-0.9,-17141803.4,5
+Health Care,Other Pharmaceuticals,2.8,-4.5,0.8,-0.8,0.4,-1.4,-1.9,-2.8,224502731.3,6
+Health Care,Medical Electronics,-2.1,-2.7,-0.8,-0.3,-0.1,0.2,4.5,-0.4,34565600.0,5
+Health Care,Managed Health Care,-1.6,-3.9,0.4,-0.4,-0.2,-128.6,0.9,-1.2,-4894562.5,6
+Health Care,Assisted Living Services,5.2,3.4,0.1,0.6,0.1,0.6,3.9,0.3,86629000.0,2
+Finance,Major Banks,3.5,3.0,0.0,0.3,0.1,0.7,17.1,0.1,109404154.8,265
+Finance,Specialty Insurers,2.9,3.4,0.4,0.0,0.0,0.8,5.6,0.1,301786504.5,24
+Finance,Property-Casualty Insurers,-0.6,2.6,-0.5,-0.7,-0.2,0.4,8.1,0.0,235112593.7,59
+Finance,Investment Bankers/Brokers/Service,-5.4,3.4,-1.0,-0.6,-0.1,0.7,18.0,-0.0,132794090.1,56
+Finance,Savings Institutions,1.7,1.6,0.1,0.2,0.1,1.0,7.8,0.1,7553473.7,41
+Finance,Finance: Consumer Services,1.3,1.8,-0.9,-0.0,-0.1,1.4,6.6,-0.2,220017799.7,76
+Finance,Finance Companies,-1.1,0.3,-2.0,0.4,0.1,0.5,0.6,-0.1,43293148.1,59
+Finance,Trusts Except Educational Religious and Charitable,-1.8,0.2,-2.8,0.5,0.1,0.2,0.1,-0.1,,76
+Finance,Investment Managers,-0.7,0.8,-1.7,0.7,0.4,0.3,1.4,-0.1,114113030.5,122
+Finance,Life Insurance,4.8,7.4,-0.1,1.2,0.1,0.6,20.3,0.2,919635166.7,19
+Finance,Finance/Investors Services,-1.4,0.4,-2.0,0.4,0.1,0.4,0.4,-0.1,28016238.3,83
+Finance,Accident &Health Insurance,5.6,3.1,0.5,0.5,0.1,0.7,3.6,0.1,134026833.3,6
+Finance,Blank Checks,-0.6,-0.9,-0.4,-6.8,-0.5,-0.4,-0.1,0.2,-4844368.9,18
+Finance,Banks,1.7,1.5,0.2,0.2,0.0,0.9,9.2,0.1,9635108.3,19
+Finance,Diversified Financial Services,-19.3,-9.4,-0.5,-4.0,-4.9,0.7,1.3,-0.2,-662982500.0,4
+Finance,Commercial Banks,2.6,2.0,0.3,0.2,0.2,1.0,17.6,0.1,55114700.0,10
+Energy,Oilfield Services/Equipment,0.3,-1.4,0.8,0.3,0.3,0.4,2.9,0.0,47851282.3,18
+Energy,Integrated oil Companies,12.1,3.5,4.6,1.1,0.9,1.0,5.8,0.4,1495129571.4,15
+Energy,Oil Refining/Marketing,3.1,1.8,0.9,-0.5,0.7,0.9,4.4,0.2,48882720.6,16
+Energy,Coal Mining,18.0,5.3,2.4,1.3,1.6,0.2,9.6,0.5,37307119.6,11
+Consumer Staples,Beverages (Production/Distribution),-0.4,-0.0,-0.2,-1.7,0.1,0.7,2.6,-0.0,286174780.5,24
+Consumer Staples,Packaged Foods,0.8,1.3,-0.7,-1.1,-0.1,1.1,3.7,-0.2,111428134.7,47
+Consumer Staples,Food Chains,3.3,3.2,0.2,0.3,0.2,1.7,4.1,0.2,-5654954.9,10
+Consumer Staples,Apparel,2.8,2.2,-0.2,-0.3,0.1,0.9,8.3,0.1,16687432.7,25
+Consumer Staples,Retail-Drug Stores and Proprietary Stores,-9.7,-19.0,-0.3,-0.2,0.4,0.3,-7.8,-0.4,446912400.0,6
+Consumer Staples,Paper,4.0,3.0,-3.5,4.6,0.6,1.3,14.8,0.1,59752750.0,8
+Consumer Staples,Meat/Poultry/Fish,-0.7,0.5,4.9,1.5,-0.0,0.6,4.3,0.1,487014340.0,5
+Consumer Staples,Specialty Foods,2.4,2.0,-131.8,-65.7,-65.3,0.5,6.0,0.1,45398852.8,8
+Consumer Staples,Diversified Electronic Products,-1.6,0.0,-12.8,-4.0,-0.9,0.4,2.1,-0.4,1348573.0,1
+Consumer Discretionary,Clothing/Shoe/Accessory Stores,4.9,0.6,-0.3,1.2,-0.2,2.4,4.2,0.3,35955141.0,29
+Consumer Discretionary,Business Services,-0.9,-0.6,-1.6,-0.7,0.1,0.8,3.5,0.1,116623585.3,76
+Consumer Discretionary,Educational Services,0.9,2.5,3.3,4.1,0.6,0.3,2.8,-0.3,32240225.4,23
+Consumer Discretionary,Restaurants,0.9,0.7,-0.1,0.4,0.1,0.6,-1.2,-0.2,73924459.2,46
+Consumer Discretionary,Transportation Services,-1.2,1.6,0.0,-0.4,-0.1,0.9,-2.6,-0.0,4059543.9,17
+Consumer Discretionary,Recreational Games/Products/Toys,-11.6,-4.5,-0.1,-0.8,-0.5,1.0,3.4,0.0,45786752.6,19
+Consumer Discretionary,Other Consumer Services,1.0,-0.5,-0.6,1.1,0.2,0.7,3.4,0.1,49857461.2,34
+Consumer Discretionary,Services-Misc. Amusement & Recreation,0.1,-2.1,-0.1,-1.3,0.3,1.0,1.1,-0.2,-19544752.6,27
+Consumer Discretionary,Hotels/Resorts,1.5,-0.4,0.7,-0.7,0.4,-0.5,4.3,0.5,103682275.9,32
+Consumer Discretionary,Catalog/Specialty Distribution,-1.4,0.1,-1.5,-0.3,-0.0,0.3,3.0,-0.8,40358852.6,23
+Consumer Discretionary,Department/Specialty Retail Stores,4.1,4.7,-0.1,0.3,-0.1,1.2,3.7,0.2,212015461.5,14
+Consumer Discretionary,Books,1.0,1.7,-0.6,1.5,0.2,0.8,-0.4,0.0,-88822666.7,3
+Consumer Discretionary,Auto Manufacturing,-7.5,-5.7,-0.3,-1.5,-0.4,0.3,2.7,-0.2,-41256782.6,26
+Consumer Discretionary,Durable Goods,-33.9,-50.8,1.0,-0.6,1.4,0.7,5.1,-0.5,144378600.0,5
+Consumer Discretionary,Professional Services,0.4,-2.2,-0.0,0.6,0.1,0.6,4.9,-0.1,10573748.0,35
+Consumer Discretionary,Miscellaneous manufacturing industries,-1.3,0.5,0.6,1.7,0.5,1.5,2.8,-0.1,-14261080.3,11
+Consumer Discretionary,Air Freight/Delivery Services,-0.4,-2.3,0.0,-0.1,-0.4,2.3,-1.5,-0.1,-90561277.8,19
+Consumer Discretionary,Food Distributors,3.1,4.4,0.6,1.2,0.8,1.4,8.3,0.2,53118107.7,11
+Consumer Discretionary,Rental/Leasing Companies,17.0,5.1,2.8,-0.3,0.8,2.4,0.7,-0.7,-50455200.0,6
+Consumer Discretionary,Package Goods/Cosmetics,1.7,1.8,0.1,0.5,0.2,1.5,3.9,0.3,111365787.6,14
+Consumer Discretionary,Textiles,-0.1,1.0,-2.8,-0.7,-0.6,0.5,7.1,-0.0,-2659000.0,5
+Consumer Discretionary,Advertising,-1.3,-1.1,-0.1,-0.3,-0.1,0.8,0.1,-1.2,26057121.9,26
+Consumer Discretionary,Tools/Hardware,4.2,3.7,0.1,0.2,0.2,0.8,7.9,0.3,57403000.0,1
+Consumer Discretionary,RETAIL: Building Materials,6.8,5.0,0.0,0.6,0.4,0.8,9.2,0.1,198488551.3,15
+Consumer Discretionary,General Bldg Contractors - Nonresidential Bldgs,-4.1,-0.1,-3.3,-0.7,-0.2,0.7,29.4,-0.2,88194000.0,1
+Consumer Discretionary,Tobacco,0.6,1.6,-0.8,0.4,0.5,2.7,8.0,0.1,11259000.0,1
+Consumer Discretionary,Movies/Entertainment,-0.4,-3.0,0.2,-0.1,0.1,1.9,-1.4,-0.4,30295566.8,17
+Consumer Discretionary,Consumer Electronics/Video Chains,2.5,2.4,-1.7,2.1,0.1,0.9,4.2,0.1,350572200.0,6
+Consumer Discretionary,Newspapers/Magazines,-7.2,0.8,-2.5,1.3,2.1,5.6,26.2,-0.3,-17360597.3,9
+Consumer Discretionary,Electronics Distribution,-0.6,-0.7,0.5,0.1,0.2,0.6,3.0,-0.1,-41606000.0,2
+Consumer Discretionary,Shoe Manufacturing,6.3,4.9,-0.0,0.6,0.3,0.9,17.0,0.3,36182714.3,7
+Consumer Discretionary,Professional and commerical equipment,1.2,0.8,-0.1,-0.2,-0.6,-0.4,7.1,1.5,29260500.0,3
+Consumer Discretionary,Consumer Specialties,1.1,0.9,-1.2,0.1,-0.1,0.4,8.4,0.3,32484936.3,11
+Consumer Discretionary,Retail-Auto Dealers and Gas Stations,9.1,6.6,-0.3,0.5,0.3,1.9,8.1,0.1,72715611.1,21
+Consumer Discretionary,Paints/Coatings,3.0,3.2,-0.2,0.1,-0.1,1.4,9.6,0.2,412903000.0,3
+Consumer Discretionary,Publishing,-1.3,-0.7,-1.2,-0.2,-0.4,0.8,-0.4,0.1,34578000.0,5
+Consumer Discretionary,Auto & Home Supply Stores,35.8,27.6,0.1,0.2,0.4,0.1,-14.0,-0.4,245977500.0,6
+Consumer Discretionary,Automotive Aftermarket,2.6,1.4,0.6,2.9,0.6,2.1,2.9,0.1,98337500.0,4
+Consumer Discretionary,Motor Vehicles,-3.0,-2.5,-0.1,25.8,-2.0,0.8,6.6,-0.3,175975949.2,5
+Basic Materials,Metal Mining,0.9,1.0,0.1,0.6,0.2,0.3,1.9,-0.2,29139213.7,21
+Basic Materials,Forest Products,8.5,7.4,-0.2,7.0,0.8,0.4,15.5,0.3,168642333.3,6
+Basic Materials,Other Metals and Minerals,-0.1,-0.1,-0.9,-0.8,-0.1,0.1,0.1,-0.0,16351819.0,2

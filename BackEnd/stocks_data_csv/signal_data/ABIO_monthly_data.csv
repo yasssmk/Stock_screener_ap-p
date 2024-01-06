@@ -1,0 +1,10 @@
+Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest Price,Lowest MACD,Divergence spotted,Signal
+2015-02-01,2015-02-01,2017-09-01,,Neutral,105.84,,81.9,,,
+2017-09-01,2017-09-01,2017-11-01,,MACD Bearish,30.6,-28.11,19.8,-28.88,,
+2017-11-01,2017-11-01,2017-12-01,Bearish,MACD Bearish,36.0,-26.02,20.7,-26.02,,
+2017-12-01,2017-12-01,2018-01-01,Bearish,MACD Bearish breath,27.0,-23.7,22.5,-23.7,,
+2018-01-01,2018-01-01,2018-02-01,Bearish breath,MACD Bearish breath,35.1,-19.45,24.3,-19.45,,
+2018-02-01,2018-02-01,2018-03-01,Bearish,MACD Bearish breath,32.4,-23.21,8.1,-23.21,,Waiting for confirmation : Buy
+2018-03-01,2018-03-01,2018-06-01,Bearish,MACD Bearish,16.38,-25.71,8.28,-26.83,,
+2018-06-01,2018-06-01,2018-07-01,Bearish,MACD Bearish breath,12.6,-24.23,9.18,-24.23,,
+2018-07-01,2018-07-01,2023-12-01,Bearish breath,MACD Bearish breath,23.04,-0.72,1.71,-20.58,,

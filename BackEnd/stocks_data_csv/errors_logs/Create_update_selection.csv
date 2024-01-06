@@ -1,0 +1,662 @@
+Time,Function,Symbol,Error
+2023-12-05 12:34:42,create_stock_data_db,VIASP,'NoneType' object is not subscriptable
+2023-12-05 12:34:49,create_stock_data_db,UGIC,'NoneType' object is not subscriptable
+2023-12-05 12:34:51,create_stock_data_db,TVE,'NoneType' object is not subscriptable
+2023-12-05 12:34:52,create_stock_data_db,TVC,'NoneType' object is not subscriptable
+2023-12-05 12:35:24,create_stock_data_db,PCTTU,'NoneType' object is not subscriptable
+2023-12-05 12:35:26,create_stock_data_db,PCGU,'NoneType' object is not subscriptable
+2023-12-05 12:35:33,create_stock_data_db,OPAL,'NoneType' object is not subscriptable
+2023-12-05 12:35:50,create_stock_data_db,NIMC,'NoneType' object is not subscriptable
+2023-12-05 12:36:50,create_stock_data_db,EE,'NoneType' object is not subscriptable
+2023-12-05 12:37:20,create_stock_data_db,CLINR,'NoneType' object is not subscriptable
+2023-12-05 12:37:20,create_stock_data_db,CLIN,'Growth'
+2023-12-05 12:37:30,create_stock_data_db,CDZIP,'NoneType' object is not subscriptable
+2023-12-05 12:37:55,create_stock_data_db,AQNU,'NoneType' object is not subscriptable
+2023-12-05 12:38:07,create_stock_data_db,AESC,'NoneType' object is not subscriptable
+2023-12-05 12:39:12,create_stock_data_db,LBRDP,'NoneType' object is not subscriptable
+2023-12-05 12:39:53,create_stock_data_db,CCZ,'NoneType' object is not subscriptable
+2023-12-05 12:40:29,create_stock_data_db,ZI,'NoneType' object is not subscriptable
+2023-12-05 12:40:51,create_stock_data_db,WULF,'Growth'
+2023-12-05 12:41:14,create_stock_data_db,WAVSW,'NoneType' object is not subscriptable
+2023-12-05 12:41:14,create_stock_data_db,WAVSU,'NoneType' object is not subscriptable
+2023-12-05 12:41:15,create_stock_data_db,WAVS,'Growth'
+2023-12-05 12:42:03,create_stock_data_db,VCSA,'NoneType' object is not subscriptable
+2023-12-05 12:44:41,create_stock_data_db,SLNHP,'NoneType' object is not subscriptable
+2023-12-05 12:45:15,create_stock_data_db,SBIGW,'NoneType' object is not subscriptable
+2023-12-05 12:45:31,create_stock_data_db,SABRP,'NoneType' object is not subscriptable
+2023-12-05 12:46:03,create_stock_data_db,RBT,'NoneType' object is not subscriptable
+2023-12-05 12:47:07,create_stock_data_db,PETWW,'NoneType' object is not subscriptable
+2023-12-05 12:47:36,create_stock_data_db,OTRKP,'NoneType' object is not subscriptable
+2023-12-05 12:47:38,create_stock_data_db,OTMOW,'NoneType' object is not subscriptable
+2023-12-05 12:48:11,create_stock_data_db,OIG,'NoneType' object is not subscriptable
+2023-12-05 12:48:14,create_stock_data_db,NXT,'NoneType' object is not subscriptable
+2023-12-05 12:48:38,create_stock_data_db,NRDY,'NoneType' object is not subscriptable
+2023-12-05 12:48:45,create_stock_data_db,NOGN,'NoneType' object is not subscriptable
+2023-12-05 12:48:56,create_stock_data_db,NFTG,'Growth'
+2023-12-05 12:50:56,create_stock_data_db,MGRX,'Growth'
+2023-12-05 12:51:28,create_stock_data_db,LTCHW,'NoneType' object is not subscriptable
+2023-12-05 12:54:23,create_stock_data_db,GSMGW,'NoneType' object is not subscriptable
+2023-12-05 12:55:11,create_stock_data_db,GBTG,'NoneType' object is not subscriptable
+2023-12-05 12:55:34,create_stock_data_db,FORG,'NoneType' object is not subscriptable
+2023-12-05 12:55:44,create_stock_data_db,FGMC,'NoneType' object is not subscriptable
+2023-12-05 12:55:53,create_stock_data_db,EXFY,'NoneType' object is not subscriptable
+2023-12-05 12:55:56,create_stock_data_db,EVLVW,'NoneType' object is not subscriptable
+2023-12-05 12:57:09,create_stock_data_db,DWACW,'NoneType' object is not subscriptable
+2023-12-05 12:57:09,create_stock_data_db,DWACU,'NoneType' object is not subscriptable
+2023-12-05 12:57:23,create_stock_data_db,DSP,'NoneType' object is not subscriptable
+2023-12-05 12:57:43,create_stock_data_db,DH,'NoneType' object is not subscriptable
+2023-12-05 12:58:01,create_stock_data_db,DAVE,'NoneType' object is not subscriptable
+2023-12-05 12:58:11,create_stock_data_db,CWAN,'NoneType' object is not subscriptable
+2023-12-05 12:58:46,create_stock_data_db,CRDO,'NoneType' object is not subscriptable
+2023-12-05 12:59:20,create_stock_data_db,CETXP,'NoneType' object is not subscriptable
+2023-12-05 12:59:34,create_stock_data_db,CCLDP,'NoneType' object is not subscriptable
+2023-12-05 12:59:34,create_stock_data_db,CCLDO,'NoneType' object is not subscriptable
+2023-12-05 13:00:29,create_stock_data_db,BKI,'NoneType' object is not subscriptable
+2023-12-05 13:01:35,create_stock_data_db,ARBEW,'NoneType' object is not subscriptable
+2023-12-05 13:02:02,create_stock_data_db,AOGO,'Growth'
+2023-12-05 13:03:47,create_stock_data_db,WHLRP,'NoneType' object is not subscriptable
+2023-12-05 13:03:48,create_stock_data_db,WHLRL,'NoneType' object is not subscriptable
+2023-12-05 13:03:48,create_stock_data_db,WHLRD,'NoneType' object is not subscriptable
+2023-12-05 13:04:10,create_stock_data_db,UBP,'NoneType' object is not subscriptable
+2023-12-05 13:04:10,create_stock_data_db,UBA,'NoneType' object is not subscriptable
+2023-12-05 13:04:25,create_stock_data_db,STRW,'NoneType' object is not subscriptable
+2023-12-05 13:04:27,create_stock_data_db,STHO,'NoneType' object is not subscriptable
+2023-12-05 13:04:31,create_stock_data_db,SQFTP,'NoneType' object is not subscriptable
+2023-12-05 13:04:35,create_stock_data_db,SOHOO,'NoneType' object is not subscriptable
+2023-12-05 13:04:36,create_stock_data_db,SOHON,'NoneType' object is not subscriptable
+2023-12-05 13:04:36,create_stock_data_db,SOHOB,'NoneType' object is not subscriptable
+2023-12-05 13:05:01,create_stock_data_db,RTLPP,'NoneType' object is not subscriptable
+2023-12-05 13:05:01,create_stock_data_db,RTLPO,'NoneType' object is not subscriptable
+2023-12-05 13:05:01,create_stock_data_db,RTL,'NoneType' object is not subscriptable
+2023-12-05 13:05:15,create_stock_data_db,REFI,'Growth'
+2023-12-05 13:05:15,create_stock_data_db,RCB,'NoneType' object is not subscriptable
+2023-12-05 13:05:51,create_stock_data_db,OFC,'NoneType' object is not subscriptable
+2023-12-05 13:05:54,create_stock_data_db,NYMTZ,'NoneType' object is not subscriptable
+2023-12-05 13:05:55,create_stock_data_db,NYMTN,'NoneType' object is not subscriptable
+2023-12-05 13:05:56,create_stock_data_db,NYMTM,'NoneType' object is not subscriptable
+2023-12-05 13:05:56,create_stock_data_db,NYMTL,'NoneType' object is not subscriptable
+2023-12-05 13:06:03,create_stock_data_db,NREF,'NoneType' object is not subscriptable
+2023-12-05 13:06:12,create_stock_data_db,MDRRP,'NoneType' object is not subscriptable
+2023-12-05 13:06:26,create_stock_data_db,LANDP,'NoneType' object is not subscriptable
+2023-12-05 13:06:27,create_stock_data_db,LANDO,'NoneType' object is not subscriptable
+2023-12-05 13:06:57,create_stock_data_db,HTIBP,'NoneType' object is not subscriptable
+2023-12-05 13:06:57,create_stock_data_db,HTIA,'NoneType' object is not subscriptable
+2023-12-05 13:07:06,create_stock_data_db,HHC,'NoneType' object is not subscriptable
+2023-12-05 13:07:09,create_stock_data_db,GYRO,'NoneType' object is not subscriptable
+2023-12-05 13:07:11,create_stock_data_db,GOODO,'NoneType' object is not subscriptable
+2023-12-05 13:07:11,create_stock_data_db,GOODN,'NoneType' object is not subscriptable
+2023-12-05 13:07:58,create_stock_data_db,DHCNL,'NoneType' object is not subscriptable
+2023-12-05 13:09:18,create_stock_data_db,AGNCP,'NoneType' object is not subscriptable
+2023-12-05 13:09:19,create_stock_data_db,AGNCO,'NoneType' object is not subscriptable
+2023-12-05 13:09:19,create_stock_data_db,AGNCN,'NoneType' object is not subscriptable
+2023-12-05 13:09:20,create_stock_data_db,AGNCM,'NoneType' object is not subscriptable
+2023-12-05 13:09:20,create_stock_data_db,AGNCL,'NoneType' object is not subscriptable
+2023-12-05 13:09:36,create_stock_data_db,WTMAR,'NoneType' object is not subscriptable
+2023-12-05 13:09:36,create_stock_data_db,WTMA,'Growth'
+2023-12-05 13:10:01,create_stock_data_db,LFMDP,'NoneType' object is not subscriptable
+2023-12-05 13:10:12,create_stock_data_db,FRGAP,'NoneType' object is not subscriptable
+2023-12-05 13:10:12,create_stock_data_db,FRG,'NoneType' object is not subscriptable
+2023-12-05 13:10:15,create_stock_data_db,FLNC,'NoneType' object is not subscriptable
+2023-12-05 13:10:40,create_stock_data_db,AMAOU,'NoneType' object is not subscriptable
+2023-12-05 13:10:49,create_stock_data_db,YELL,'NoneType' object is not subscriptable
+2023-12-05 13:12:56,create_stock_data_db,SYM,'NoneType' object is not subscriptable
+2023-12-05 13:13:10,create_stock_data_db,STRCW,'NoneType' object is not subscriptable
+2023-12-05 13:13:58,create_stock_data_db,SEAT,'NoneType' object is not subscriptable
+2023-12-05 13:14:35,create_stock_data_db,RBCP,'NoneType' object is not subscriptable
+2023-12-05 13:14:54,create_stock_data_db,POWWP,'NoneType' object is not subscriptable
+2023-12-05 13:15:23,create_stock_data_db,PBAX,'Growth'
+2023-12-05 13:16:24,create_stock_data_db,NETC,'Growth'
+2023-12-05 13:16:58,create_stock_data_db,MINDP,'NoneType' object is not subscriptable
+2023-12-05 13:17:11,create_stock_data_db,MAX,'NoneType' object is not subscriptable
+2023-12-05 13:20:01,create_stock_data_db,GLLIU,'NoneType' object is not subscriptable
+2023-12-05 13:20:46,create_stock_data_db,FRZA,'NoneType' object is not subscriptable
+2023-12-05 13:22:26,create_stock_data_db,CTIB,'NoneType' object is not subscriptable
+2023-12-05 13:23:02,create_stock_data_db,CHSCP,'NoneType' object is not subscriptable
+2023-12-05 13:23:02,create_stock_data_db,CHSCO,'NoneType' object is not subscriptable
+2023-12-05 13:23:03,create_stock_data_db,CHSCN,'NoneType' object is not subscriptable
+2023-12-05 13:23:03,create_stock_data_db,CHSCM,'NoneType' object is not subscriptable
+2023-12-05 13:23:03,create_stock_data_db,CHSCL,'NoneType' object is not subscriptable
+2023-12-05 13:24:31,create_stock_data_db,ASPI,'Growth'
+2023-12-05 13:24:35,create_stock_data_db,ARNC,'NoneType' object is not subscriptable
+2023-12-05 13:24:55,create_stock_data_db,AMRS,'NoneType' object is not subscriptable
+2023-12-05 13:24:57,create_stock_data_db,AMOT,'NoneType' object is not subscriptable
+2023-12-05 13:25:49,create_stock_data_db,ZURA,'Growth'
+2023-12-05 13:26:13,create_stock_data_db,XOMAP,'NoneType' object is not subscriptable
+2023-12-05 13:26:14,create_stock_data_db,XOMAO,'NoneType' object is not subscriptable
+2023-12-05 13:27:57,create_stock_data_db,UPTD,'NoneType' object is not subscriptable
+2023-12-05 13:29:46,create_stock_data_db,SYNH,'NoneType' object is not subscriptable
+2023-12-05 13:29:57,create_stock_data_db,SURF,'NoneType' object is not subscriptable
+2023-12-05 13:30:06,create_stock_data_db,STRRP,'NoneType' object is not subscriptable
+2023-12-05 13:30:20,create_stock_data_db,SSIC,'Growth'
+2023-12-05 13:31:07,create_stock_data_db,SLGCW,'NoneType' object is not subscriptable
+2023-12-05 13:31:50,create_stock_data_db,SBFMW,'NoneType' object is not subscriptable
+2023-12-05 13:31:57,create_stock_data_db,SABSW,'NoneType' object is not subscriptable
+2023-12-05 13:32:35,create_stock_data_db,RMED,'NoneType' object is not subscriptable
+2023-12-05 13:32:52,create_stock_data_db,RETA,'NoneType' object is not subscriptable
+2023-12-05 13:33:00,create_stock_data_db,RCLFU,'NoneType' object is not subscriptable
+2023-12-05 13:33:01,create_stock_data_db,RCLF,'NoneType' object is not subscriptable
+2023-12-05 13:33:09,create_stock_data_db,RANI,'NoneType' object is not subscriptable
+2023-12-05 13:33:45,create_stock_data_db,PRTK,'NoneType' object is not subscriptable
+2023-12-05 13:34:01,create_stock_data_db,PRDS,'NoneType' object is not subscriptable
+2023-12-05 13:34:18,create_stock_data_db,PMGMW,'NoneType' object is not subscriptable
+2023-12-05 13:34:18,create_stock_data_db,PMGMU,'NoneType' object is not subscriptable
+2023-12-05 13:36:35,create_stock_data_db,NVACR,'NoneType' object is not subscriptable
+2023-12-05 13:36:40,create_stock_data_db,NUVA,'NoneType' object is not subscriptable
+2023-12-05 13:36:52,create_stock_data_db,NRXPW,'NoneType' object is not subscriptable
+2023-12-05 13:37:54,create_stock_data_db,MURFU,'NoneType' object is not subscriptable
+2023-12-05 13:38:32,create_stock_data_db,MNK,'NoneType' object is not subscriptable
+2023-12-05 13:38:37,create_stock_data_db,MLTX,'Growth'
+2023-12-05 13:41:00,create_stock_data_db,JUPW,'NoneType' object is not subscriptable
+2023-12-05 13:42:03,create_stock_data_db,INFI,'NoneType' object is not subscriptable
+2023-12-05 13:43:29,create_stock_data_db,HILS,'NoneType' object is not subscriptable
+2023-12-05 13:44:00,create_stock_data_db,GMVD,'NoneType' object is not subscriptable
+2023-12-05 13:44:50,create_stock_data_db,FLAG,'NoneType' object is not subscriptable
+2023-12-05 13:45:02,create_stock_data_db,FBIOP,'NoneType' object is not subscriptable
+2023-12-05 13:46:31,create_stock_data_db,DTOC,'NoneType' object is not subscriptable
+2023-12-05 13:46:48,create_stock_data_db,DKDCA,'Growth'
+2023-12-05 13:46:49,create_stock_data_db,DHAC,'Growth'
+2023-12-05 13:46:50,create_stock_data_db,DFFN,'NoneType' object is not subscriptable
+2023-12-05 13:46:59,create_stock_data_db,DBTX,'NoneType' object is not subscriptable
+2023-12-05 13:47:11,create_stock_data_db,CYCCP,'NoneType' object is not subscriptable
+2023-12-05 13:47:19,create_stock_data_db,CVKD,'NoneType' object is not subscriptable
+2023-12-05 13:47:29,create_stock_data_db,CTKB,'NoneType' object is not subscriptable
+2023-12-05 13:48:30,create_stock_data_db,CLVRW,'NoneType' object is not subscriptable
+2023-12-05 13:49:20,create_stock_data_db,CFMS,'NoneType' object is not subscriptable
+2023-12-05 13:49:24,create_stock_data_db,CELUW,'NoneType' object is not subscriptable
+2023-12-05 13:49:26,create_stock_data_db,CELL,'NoneType' object is not subscriptable
+2023-12-05 13:50:10,create_stock_data_db,BVXV,'NoneType' object is not subscriptable
+2023-12-05 13:51:48,create_stock_data_db,AZYO,'NoneType' object is not subscriptable
+2023-12-05 13:53:27,create_stock_data_db,APGN,'NoneType' object is not subscriptable
+2023-12-05 13:53:27,create_stock_data_db,APGE,'NoneType' object is not subscriptable
+2023-12-05 13:55:13,create_stock_data_db,ADOCR,'NoneType' object is not subscriptable
+2023-12-05 13:55:15,create_stock_data_db,ADMP,'NoneType' object is not subscriptable
+2023-12-05 13:55:42,create_stock_data_db,ACGN,'NoneType' object is not subscriptable
+2023-12-05 13:55:46,create_stock_data_db,ACAXR,'NoneType' object is not subscriptable
+2023-12-05 13:55:46,create_stock_data_db,ACAX,'Growth'
+2023-12-05 13:56:02,create_stock_data_db,ABC,'NoneType' object is not subscriptable
+2023-12-05 13:56:05,create_stock_data_db,ZTR,'NoneType' object is not subscriptable
+2023-12-05 13:56:06,create_stock_data_db,ZIONP,'NoneType' object is not subscriptable
+2023-12-05 13:56:06,create_stock_data_db,ZIONO,'NoneType' object is not subscriptable
+2023-12-05 13:56:08,create_stock_data_db,ZING,'NoneType' object is not subscriptable
+2023-12-05 13:56:09,create_stock_data_db,XPDB,'Growth'
+2023-12-05 13:56:09,create_stock_data_db,XFINU,'NoneType' object is not subscriptable
+2023-12-05 13:56:09,create_stock_data_db,XFIN,'Growth'
+2023-12-05 13:56:10,create_stock_data_db,WWACU,'NoneType' object is not subscriptable
+2023-12-05 13:56:10,create_stock_data_db,WWAC,'Growth'
+2023-12-05 13:56:14,create_stock_data_db,WTFCP,'NoneType' object is not subscriptable
+2023-12-05 13:56:14,create_stock_data_db,WTFCM,'NoneType' object is not subscriptable
+2023-12-05 13:56:24,create_stock_data_db,WSBCP,'NoneType' object is not subscriptable
+2023-12-05 13:56:29,create_stock_data_db,WRAC,'Growth'
+2023-12-05 13:56:36,create_stock_data_db,WINV,'Growth'
+2023-12-05 13:56:48,create_stock_data_db,WAVC,'NoneType' object is not subscriptable
+2023-12-05 13:56:53,create_stock_data_db,WAFDP,'NoneType' object is not subscriptable
+2023-12-05 13:57:05,create_stock_data_db,VMCA,'Growth'
+2023-12-05 13:57:05,create_stock_data_db,VLYPP,'NoneType' object is not subscriptable
+2023-12-05 13:57:05,create_stock_data_db,VLYPO,'NoneType' object is not subscriptable
+2023-12-05 13:57:15,create_stock_data_db,VIIAU,'NoneType' object is not subscriptable
+2023-12-05 13:57:16,create_stock_data_db,VHNA,'NoneType' object is not subscriptable
+2023-12-05 13:57:24,create_stock_data_db,VCXAU,'NoneType' object is not subscriptable
+2023-12-05 13:57:25,create_stock_data_db,VCXA,'Growth'
+2023-12-05 13:57:25,create_stock_data_db,VCV,'NoneType' object is not subscriptable
+2023-12-05 13:57:44,create_stock_data_db,UTAAU,'NoneType' object is not subscriptable
+2023-12-05 13:57:45,create_stock_data_db,UTAA,'NoneType' object is not subscriptable
+2023-12-05 13:57:45,create_stock_data_db,USCT,'Growth'
+2023-12-05 13:57:53,create_stock_data_db,UPST,'NoneType' object is not subscriptable
+2023-12-05 13:57:59,create_stock_data_db,UIHC,'NoneType' object is not subscriptable
+2023-12-05 13:58:01,create_stock_data_db,UCBIO,'NoneType' object is not subscriptable
+2023-12-05 13:58:14,create_stock_data_db,TWLVU,'NoneType' object is not subscriptable
+2023-12-05 13:58:31,create_stock_data_db,TRTL,'Growth'
+2023-12-05 13:58:35,create_stock_data_db,TRONU,'NoneType' object is not subscriptable
+2023-12-05 13:58:35,create_stock_data_db,TRON,'Growth'
+2023-12-05 13:58:37,create_stock_data_db,TRIS,'Growth'
+2023-12-05 13:58:48,create_stock_data_db,TMTCU,'NoneType' object is not subscriptable
+2023-12-05 13:58:50,create_stock_data_db,TMKRU,'NoneType' object is not subscriptable
+2023-12-05 13:58:50,create_stock_data_db,TMKR,'NoneType' object is not subscriptable
+2023-12-05 13:58:50,create_stock_data_db,TLGYU,'NoneType' object is not subscriptable
+2023-12-05 13:58:51,create_stock_data_db,TLGY,'Growth'
+2023-12-05 13:59:00,create_stock_data_db,TGVC,'Growth'
+2023-12-05 13:59:00,create_stock_data_db,TGAA,'Growth'
+2023-12-05 13:59:03,create_stock_data_db,TFINP,'NoneType' object is not subscriptable
+2023-12-05 13:59:06,create_stock_data_db,TETE,'Growth'
+2023-12-05 13:59:07,create_stock_data_db,TENKU,'NoneType' object is not subscriptable
+2023-12-05 13:59:07,create_stock_data_db,TENK,'Growth'
+2023-12-05 13:59:09,create_stock_data_db,TECTP,'NoneType' object is not subscriptable
+2023-12-05 13:59:12,create_stock_data_db,TCOA,'Growth'
+2023-12-05 13:59:20,create_stock_data_db,TCBIO,'NoneType' object is not subscriptable
+2023-12-05 13:59:26,create_stock_data_db,TBMC,'Growth'
+2023-12-05 13:59:26,create_stock_data_db,TBCPU,'NoneType' object is not subscriptable
+2023-12-05 13:59:40,create_stock_data_db,SVIIU,'NoneType' object is not subscriptable
+2023-12-05 13:59:48,create_stock_data_db,STEP,'NoneType' object is not subscriptable
+2023-12-05 14:00:25,create_stock_data_db,SMXWW,'NoneType' object is not subscriptable
+2023-12-05 14:00:30,create_stock_data_db,SMAP,'Growth'
+2023-12-05 14:00:30,create_stock_data_db,SLVR,'NoneType' object is not subscriptable
+2023-12-05 14:00:36,create_stock_data_db,SLMBP,'NoneType' object is not subscriptable
+2023-12-05 14:00:39,create_stock_data_db,SLACU,'NoneType' object is not subscriptable
+2023-12-05 14:00:42,create_stock_data_db,SKGR,'Growth'
+2023-12-05 14:00:43,create_stock_data_db,SIGIP,'NoneType' object is not subscriptable
+2023-12-05 14:00:47,create_stock_data_db,SHUA,'Growth'
+2023-12-05 14:00:50,create_stock_data_db,SGII,'Growth'
+2023-12-05 14:00:52,create_stock_data_db,SFR,'Growth'
+2023-12-05 14:01:02,create_stock_data_db,SEPA,'Growth'
+2023-12-05 14:01:04,create_stock_data_db,SEDA,'Growth'
+2023-12-05 14:01:09,create_stock_data_db,SCRMU,'NoneType' object is not subscriptable
+2023-12-05 14:01:09,create_stock_data_db,SCRM,'Growth'
+2023-12-05 14:01:14,create_stock_data_db,SBXC,'Growth'
+2023-12-05 14:01:31,create_stock_data_db,SAL,'NoneType' object is not subscriptable
+2023-12-05 14:01:32,create_stock_data_db,SAGAR,'NoneType' object is not subscriptable
+2023-12-05 14:01:32,create_stock_data_db,SAGA,'Growth'
+2023-12-05 14:01:34,create_stock_data_db,RZB,'NoneType' object is not subscriptable
+2023-12-05 14:01:36,create_stock_data_db,RWODR,'NoneType' object is not subscriptable
+2023-12-05 14:01:36,create_stock_data_db,RWOD,'Growth'
+2023-12-05 14:01:39,create_stock_data_db,RRAC,'Growth'
+2023-12-05 14:01:43,create_stock_data_db,ROSEU,'NoneType' object is not subscriptable
+2023-12-05 14:01:44,create_stock_data_db,ROSE,'Growth'
+2023-12-05 14:01:56,create_stock_data_db,RMGCU,'NoneType' object is not subscriptable
+2023-12-05 14:02:02,create_stock_data_db,RKT,'NoneType' object is not subscriptable
+2023-12-05 14:02:06,create_stock_data_db,RILYP,'NoneType' object is not subscriptable
+2023-12-05 14:02:07,create_stock_data_db,RILYL,'NoneType' object is not subscriptable
+2023-12-05 14:02:14,create_stock_data_db,RFACU,'NoneType' object is not subscriptable
+2023-12-05 14:02:18,create_stock_data_db,RENE,'Growth'
+2023-12-05 14:02:27,create_stock_data_db,RCFA,'Growth'
+2023-12-05 14:02:28,create_stock_data_db,RCACU,'NoneType' object is not subscriptable
+2023-12-05 14:02:29,create_stock_data_db,RCAC,'Growth'
+2023-12-05 14:02:37,create_stock_data_db,QOMO,'Growth'
+2023-12-05 14:02:47,create_stock_data_db,PWUPU,'NoneType' object is not subscriptable
+2023-12-05 14:02:47,create_stock_data_db,PWUP,'Growth'
+2023-12-05 14:02:58,create_stock_data_db,PTWO,'NoneType' object is not subscriptable
+2023-12-05 14:03:01,create_stock_data_db,PTHR,'NoneType' object is not subscriptable
+2023-12-05 14:03:05,create_stock_data_db,PRSRU,'NoneType' object is not subscriptable
+2023-12-05 14:03:10,create_stock_data_db,PRLHU,'NoneType' object is not subscriptable
+2023-12-05 14:03:10,create_stock_data_db,PRLH,'Growth'
+2023-12-05 14:03:17,create_stock_data_db,PPYA,'Growth'
+2023-12-05 14:03:19,create_stock_data_db,PPHPR,'NoneType' object is not subscriptable
+2023-12-05 14:03:20,create_stock_data_db,PPHP,'Growth'
+2023-12-05 14:03:22,create_stock_data_db,PORT,'Growth'
+2023-12-05 14:03:25,create_stock_data_db,PNFPP,'NoneType' object is not subscriptable
+2023-12-05 14:03:32,create_stock_data_db,PNACU,'NoneType' object is not subscriptable
+2023-12-05 14:03:32,create_stock_data_db,PNAC,'NoneType' object is not subscriptable
+2023-12-05 14:03:43,create_stock_data_db,PLTN,'Growth'
+2023-12-05 14:03:48,create_stock_data_db,PLAOU,'NoneType' object is not subscriptable
+2023-12-05 14:03:48,create_stock_data_db,PLAO,'Growth'
+2023-12-05 14:03:55,create_stock_data_db,PIAI,'NoneType' object is not subscriptable
+2023-12-05 14:04:08,create_stock_data_db,PFTAU,'NoneType' object is not subscriptable
+2023-12-05 14:04:09,create_stock_data_db,PFTA,'Growth'
+2023-12-05 14:04:27,create_stock_data_db,PEPLU,'NoneType' object is not subscriptable
+2023-12-05 14:04:28,create_stock_data_db,PEPL,'Growth'
+2023-12-05 14:04:30,create_stock_data_db,PEGR,'Growth'
+2023-12-05 14:04:57,create_stock_data_db,PACWP,'NoneType' object is not subscriptable
+2023-12-05 14:04:59,create_stock_data_db,OZKAP,'NoneType' object is not subscriptable
+2023-12-05 14:05:01,create_stock_data_db,OXUS,'NoneType' object is not subscriptable
+2023-12-05 14:05:01,create_stock_data_db,OXSQ,'NoneType' object is not subscriptable
+2023-12-05 14:05:02,create_stock_data_db,OXLCP,'NoneType' object is not subscriptable
+2023-12-05 14:05:02,create_stock_data_db,OXLCO,'NoneType' object is not subscriptable
+2023-12-05 14:05:02,create_stock_data_db,OXLCN,'NoneType' object is not subscriptable
+2023-12-05 14:05:03,create_stock_data_db,OXLCM,'NoneType' object is not subscriptable
+2023-12-05 14:05:05,create_stock_data_db,OXBRW,'NoneType' object is not subscriptable
+2023-12-05 14:05:13,create_stock_data_db,OTEC,'Growth'
+2023-12-05 14:05:17,create_stock_data_db,OSBC,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:05:27,create_stock_data_db,OPINL,'NoneType' object is not subscriptable
+2023-12-05 14:05:35,create_stock_data_db,ONYX,'Growth'
+2023-12-05 14:05:36,create_stock_data_db,ONBPP,'NoneType' object is not subscriptable
+2023-12-05 14:05:36,create_stock_data_db,ONBPO,'NoneType' object is not subscriptable
+2023-12-05 14:05:40,create_stock_data_db,OLO,'NoneType' object is not subscriptable
+2023-12-05 14:05:40,create_stock_data_db,OLIT,'Growth'
+2023-12-05 14:05:53,create_stock_data_db,OCFCP,'NoneType' object is not subscriptable
+2023-12-05 14:05:56,create_stock_data_db,OCCIO,'NoneType' object is not subscriptable
+2023-12-05 14:05:57,create_stock_data_db,OCCIN,'NoneType' object is not subscriptable
+2023-12-05 14:06:00,create_stock_data_db,OCAXU,'NoneType' object is not subscriptable
+2023-12-05 14:06:07,create_stock_data_db,OAKUU,'NoneType' object is not subscriptable
+2023-12-05 14:06:07,create_stock_data_db,OAKU,'NoneType' object is not subscriptable
+2023-12-05 14:06:29,create_stock_data_db,NUBIU,'NoneType' object is not subscriptable
+2023-12-05 14:06:30,create_stock_data_db,NUBI,'Growth'
+2023-12-05 14:06:32,create_stock_data_db,NTRSO,'NoneType' object is not subscriptable
+2023-12-05 14:06:42,create_stock_data_db,NSTC,'Growth'
+2023-12-05 14:06:44,create_stock_data_db,NSL,'NoneType' object is not subscriptable
+2023-12-05 14:06:54,create_stock_data_db,NPFD,'Growth'
+2023-12-05 14:06:56,create_stock_data_db,NOVVR,'NoneType' object is not subscriptable
+2023-12-05 14:06:56,create_stock_data_db,NOVV,'Growth'
+2023-12-05 14:07:26,create_stock_data_db,NFYS,'Growth'
+2023-12-05 14:07:26,create_stock_data_db,NFNT,'Growth'
+2023-12-05 14:07:29,create_stock_data_db,NEWTL,'NoneType' object is not subscriptable
+2023-12-05 14:07:43,create_stock_data_db,NCAC,'Growth'
+2023-12-05 14:07:47,create_stock_data_db,NBSTU,'NoneType' object is not subscriptable
+2023-12-05 14:08:31,create_stock_data_db,MTAL,'Growth'
+2023-12-05 14:08:33,create_stock_data_db,MSSAU,'NoneType' object is not subscriptable
+2023-12-05 14:08:34,create_stock_data_db,MSSA,'Growth'
+2023-12-05 14:08:35,create_stock_data_db,MSBIP,'NoneType' object is not subscriptable
+2023-12-05 14:08:49,create_stock_data_db,MPRAW,'NoneType' object is not subscriptable
+2023-12-05 14:08:49,create_stock_data_db,MPRAU,'NoneType' object is not subscriptable
+2023-12-05 14:08:50,create_stock_data_db,MPRA,'NoneType' object is not subscriptable
+2023-12-05 14:08:57,create_stock_data_db,MOBV,'Growth'
+2023-12-05 14:08:57,create_stock_data_db,MNSBP,'NoneType' object is not subscriptable
+2023-12-05 14:09:19,create_stock_data_db,MITA,'Growth'
+2023-12-05 14:09:28,create_stock_data_db,MHLA,'NoneType' object is not subscriptable
+2023-12-05 14:09:45,create_stock_data_db,MFH,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:09:50,create_stock_data_db,MDJH,'NoneType' object is not subscriptable
+2023-12-05 14:10:03,create_stock_data_db,MCAG,'Growth'
+2023-12-05 14:10:04,create_stock_data_db,MCAF,'Growth'
+2023-12-05 14:10:04,create_stock_data_db,MCAC,'Growth'
+2023-12-05 14:10:05,create_stock_data_db,MCAAU,'NoneType' object is not subscriptable
+2023-12-05 14:10:05,create_stock_data_db,MCAA,'Growth'
+2023-12-05 14:10:12,create_stock_data_db,MBSC,'NoneType' object is not subscriptable
+2023-12-05 14:10:12,create_stock_data_db,MBNKP,'NoneType' object is not subscriptable
+2023-12-05 14:10:12,create_stock_data_db,MBINP,'NoneType' object is not subscriptable
+2023-12-05 14:10:13,create_stock_data_db,MBINO,'NoneType' object is not subscriptable
+2023-12-05 14:10:13,create_stock_data_db,MBINN,'NoneType' object is not subscriptable
+2023-12-05 14:10:14,create_stock_data_db,MBINM,'NoneType' object is not subscriptable
+2023-12-05 14:10:22,create_stock_data_db,MARXU,'NoneType' object is not subscriptable
+2023-12-05 14:10:23,create_stock_data_db,MARX,'Growth'
+2023-12-05 14:10:23,create_stock_data_db,MAQCU,'NoneType' object is not subscriptable
+2023-12-05 14:10:40,create_stock_data_db,LOCC,'Growth'
+2023-12-05 14:10:46,create_stock_data_db,LMND,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:10:52,create_stock_data_db,LIBYU,'NoneType' object is not subscriptable
+2023-12-05 14:10:52,create_stock_data_db,LIBY,'Growth'
+2023-12-05 14:10:53,create_stock_data_db,LGSTU,'NoneType' object is not subscriptable
+2023-12-05 14:10:53,create_stock_data_db,LGST,'Growth'
+2023-12-05 14:10:55,create_stock_data_db,LFAC,'NoneType' object is not subscriptable
+2023-12-05 14:10:59,create_stock_data_db,LDI,'NoneType' object is not subscriptable
+2023-12-05 14:10:59,create_stock_data_db,LCW,'Growth'
+2023-12-05 14:11:08,create_stock_data_db,LBBBU,'NoneType' object is not subscriptable
+2023-12-05 14:11:08,create_stock_data_db,LBBB,'Growth'
+2023-12-05 14:11:12,create_stock_data_db,LATG,'Growth'
+2023-12-05 14:11:17,create_stock_data_db,KYCHR,'NoneType' object is not subscriptable
+2023-12-05 14:11:17,create_stock_data_db,KYCH,'Growth'
+2023-12-05 14:11:25,create_stock_data_db,KRNLU,'NoneType' object is not subscriptable
+2023-12-05 14:11:27,create_stock_data_db,KNSW,'Growth'
+2023-12-05 14:11:39,create_stock_data_db,KCGI,'Growth'
+2023-12-05 14:11:40,create_stock_data_db,KACLR,'NoneType' object is not subscriptable
+2023-12-05 14:11:49,create_stock_data_db,JRO,'NoneType' object is not subscriptable
+2023-12-05 14:12:06,create_stock_data_db,JGGCU,'NoneType' object is not subscriptable
+2023-12-05 14:12:06,create_stock_data_db,JGGC,'Growth'
+2023-12-05 14:12:11,create_stock_data_db,IXAQ,'Growth'
+2023-12-05 14:12:14,create_stock_data_db,IVCB,'Growth'
+2023-12-05 14:12:14,create_stock_data_db,IVCAU,'NoneType' object is not subscriptable
+2023-12-05 14:12:15,create_stock_data_db,IVCA,'Growth'
+2023-12-05 14:12:18,create_stock_data_db,ISRLU,'NoneType' object is not subscriptable
+2023-12-05 14:12:19,create_stock_data_db,ISRL,'Growth'
+2023-12-05 14:12:21,create_stock_data_db,IRRX,'Growth'
+2023-12-05 14:12:23,create_stock_data_db,IRAAW,'NoneType' object is not subscriptable
+2023-12-05 14:12:24,create_stock_data_db,IRAAU,'NoneType' object is not subscriptable
+2023-12-05 14:12:27,create_stock_data_db,IPXXU,'NoneType' object is not subscriptable
+2023-12-05 14:12:30,create_stock_data_db,IOAC,'Growth'
+2023-12-05 14:12:32,create_stock_data_db,INTEU,'NoneType' object is not subscriptable
+2023-12-05 14:12:32,create_stock_data_db,INTE,'Growth'
+2023-12-05 14:12:37,create_stock_data_db,INAQW,'NoneType' object is not subscriptable
+2023-12-05 14:12:38,create_stock_data_db,INAQ,'Growth'
+2023-12-05 14:12:46,create_stock_data_db,IGTAR,'NoneType' object is not subscriptable
+2023-12-05 14:12:46,create_stock_data_db,IGTA,'Growth'
+2023-12-05 14:12:56,create_stock_data_db,ICNC,'NoneType' object is not subscriptable
+2023-12-05 14:13:13,create_stock_data_db,HWEL,'Growth'
+2023-12-05 14:13:18,create_stock_data_db,HTLFP,'NoneType' object is not subscriptable
+2023-12-05 14:13:24,create_stock_data_db,HTFB,'NoneType' object is not subscriptable
+2023-12-05 14:13:29,create_stock_data_db,HSPO,'NoneType' object is not subscriptable
+2023-12-05 14:13:42,create_stock_data_db,HPLT,'Growth'
+2023-12-05 14:14:00,create_stock_data_db,HMAC,'NoneType' object is not subscriptable
+2023-12-05 14:14:18,create_stock_data_db,HHGCU,'NoneType' object is not subscriptable
+2023-12-05 14:14:18,create_stock_data_db,HHGCR,'NoneType' object is not subscriptable
+2023-12-05 14:14:26,create_stock_data_db,HCXY,'NoneType' object is not subscriptable
+2023-12-05 14:14:26,create_stock_data_db,HCVI,'Growth'
+2023-12-05 14:14:27,create_stock_data_db,HCMA,'NoneType' object is not subscriptable
+2023-12-05 14:14:33,create_stock_data_db,HBANP,'NoneType' object is not subscriptable
+2023-12-05 14:14:33,create_stock_data_db,HBANM,'NoneType' object is not subscriptable
+2023-12-05 14:14:34,create_stock_data_db,HBANL,'NoneType' object is not subscriptable
+2023-12-05 14:14:37,create_stock_data_db,HALL,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:14:37,create_stock_data_db,HAIAW,'NoneType' object is not subscriptable
+2023-12-05 14:14:38,create_stock_data_db,HAIAU,'NoneType' object is not subscriptable
+2023-12-05 14:14:38,create_stock_data_db,HAIA,'Growth'
+2023-12-05 14:14:40,create_stock_data_db,GUT,'NoneType' object is not subscriptable
+2023-12-05 14:14:43,create_stock_data_db,GTAC,'Growth'
+2023-12-05 14:14:56,create_stock_data_db,GPACU,'NoneType' object is not subscriptable
+2023-12-05 14:14:58,create_stock_data_db,GODNU,'NoneType' object is not subscriptable
+2023-12-05 14:14:58,create_stock_data_db,GODNR,'NoneType' object is not subscriptable
+2023-12-05 14:14:59,create_stock_data_db,GODN,'Growth'
+2023-12-05 14:14:59,create_stock_data_db,GOCO,'NoneType' object is not subscriptable
+2023-12-05 14:15:00,create_stock_data_db,GNW,'NoneType' object is not subscriptable
+2023-12-05 14:15:02,create_stock_data_db,GMFI,'NoneType' object is not subscriptable
+2023-12-05 14:15:29,create_stock_data_db,GFX,'NoneType' object is not subscriptable
+2023-12-05 14:15:30,create_stock_data_db,GFOR,'NoneType' object is not subscriptable
+2023-12-05 14:15:30,create_stock_data_db,GFGDR,'NoneType' object is not subscriptable
+2023-12-05 14:15:30,create_stock_data_db,GFGD,'NoneType' object is not subscriptable
+2023-12-05 14:15:39,create_stock_data_db,GDSTU,'NoneType' object is not subscriptable
+2023-12-05 14:15:42,create_stock_data_db,GDNR,'Growth'
+2023-12-05 14:15:44,create_stock_data_db,GCMG,'NoneType' object is not subscriptable
+2023-12-05 14:15:52,create_stock_data_db,GBBKR,'NoneType' object is not subscriptable
+2023-12-05 14:15:53,create_stock_data_db,GBBK,'Growth'
+2023-12-05 14:15:54,create_stock_data_db,GATEW,'NoneType' object is not subscriptable
+2023-12-05 14:15:57,create_stock_data_db,GAQ,'Growth'
+2023-12-05 14:15:57,create_stock_data_db,GAMCU,'NoneType' object is not subscriptable
+2023-12-05 14:16:08,create_stock_data_db,FXCOW,'NoneType' object is not subscriptable
+2023-12-05 14:16:09,create_stock_data_db,FXCOR,'NoneType' object is not subscriptable
+2023-12-05 14:16:09,create_stock_data_db,FXCO,'Growth'
+2023-12-05 14:16:09,create_stock_data_db,FWAC,'NoneType' object is not subscriptable
+2023-12-05 14:16:15,create_stock_data_db,FULTP,'NoneType' object is not subscriptable
+2023-12-05 14:16:17,create_stock_data_db,FTII,'Growth'
+2023-12-05 14:16:42,create_stock_data_db,FRMEP,'NoneType' object is not subscriptable
+2023-12-05 14:16:44,create_stock_data_db,FRLA,'Growth'
+2023-12-05 14:16:46,create_stock_data_db,FRBNU,'NoneType' object is not subscriptable
+2023-12-05 14:16:46,create_stock_data_db,FRBN,'Growth'
+2023-12-05 14:16:56,create_stock_data_db,FORLU,'NoneType' object is not subscriptable
+2023-12-05 14:16:56,create_stock_data_db,FORL,'NoneType' object is not subscriptable
+2023-12-05 14:16:58,create_stock_data_db,FOCS,'NoneType' object is not subscriptable
+2023-12-05 14:17:03,create_stock_data_db,FNVT,'Growth'
+2023-12-05 14:17:20,create_stock_data_db,FLFV,'Growth'
+2023-12-05 14:17:22,create_stock_data_db,FITBP,'NoneType' object is not subscriptable
+2023-12-05 14:17:23,create_stock_data_db,FITBO,'NoneType' object is not subscriptable
+2023-12-05 14:17:23,create_stock_data_db,FITBI,'NoneType' object is not subscriptable
+2023-12-05 14:17:33,create_stock_data_db,FICV,'Growth'
+2023-12-05 14:17:35,create_stock_data_db,FIAC,'Growth'
+2023-12-05 14:17:40,create_stock_data_db,FGFPP,'NoneType' object is not subscriptable
+2023-12-05 14:17:42,create_stock_data_db,FGBIP,'NoneType' object is not subscriptable
+2023-12-05 14:17:57,create_stock_data_db,FEXD,'Growth'
+2023-12-05 14:18:03,create_stock_data_db,FCRX,'NoneType' object is not subscriptable
+2023-12-05 14:18:05,create_stock_data_db,FCNCP,'NoneType' object is not subscriptable
+2023-12-05 14:18:05,create_stock_data_db,FCNCO,'NoneType' object is not subscriptable
+2023-12-05 14:18:38,create_stock_data_db,EVGRU,'NoneType' object is not subscriptable
+2023-12-05 14:18:39,create_stock_data_db,EVGR,'Growth'
+2023-12-05 14:18:43,create_stock_data_db,EVE,'Growth'
+2023-12-05 14:19:03,create_stock_data_db,ESGRP,'NoneType' object is not subscriptable
+2023-12-05 14:19:03,create_stock_data_db,ESGRO,'NoneType' object is not subscriptable
+2023-12-05 14:19:06,create_stock_data_db,ESAC,'Growth'
+2023-12-05 14:19:10,create_stock_data_db,ERC,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:19:23,create_stock_data_db,ENERR,'NoneType' object is not subscriptable
+2023-12-05 14:19:24,create_stock_data_db,ENER,'Growth'
+2023-12-05 14:19:24,create_stock_data_db,EMLD,'Growth'
+2023-12-05 14:19:27,create_stock_data_db,EMCGU,'NoneType' object is not subscriptable
+2023-12-05 14:19:28,create_stock_data_db,EMCG,'Growth'
+2023-12-05 14:19:31,create_stock_data_db,EICA,'NoneType' object is not subscriptable
+2023-12-05 14:19:31,create_stock_data_db,EIC,'NoneType' object is not subscriptable
+2023-12-05 14:19:35,create_stock_data_db,EGGF,'Growth'
+2023-12-05 14:19:43,create_stock_data_db,EFSCP,'NoneType' object is not subscriptable
+2023-12-05 14:19:54,create_stock_data_db,ECCC,'NoneType' object is not subscriptable
+2023-12-05 14:20:03,create_stock_data_db,EACPU,'NoneType' object is not subscriptable
+2023-12-05 14:20:05,create_stock_data_db,DUNEU,'NoneType' object is not subscriptable
+2023-12-05 14:20:12,create_stock_data_db,DSAQ,'Growth'
+2023-12-05 14:20:12,create_stock_data_db,DPCS,'Growth'
+2023-12-05 14:20:17,create_stock_data_db,DMYY,'NoneType' object is not subscriptable
+2023-12-05 14:20:23,create_stock_data_db,DIST,'NoneType' object is not subscriptable
+2023-12-05 14:20:29,create_stock_data_db,DHF,'NoneType' object is not subscriptable
+2023-12-05 14:20:40,create_stock_data_db,DECAU,'NoneType' object is not subscriptable
+2023-12-05 14:20:40,create_stock_data_db,DECA,'Growth'
+2023-12-05 14:20:40,create_stock_data_db,DCOMP,'NoneType' object is not subscriptable
+2023-12-05 14:20:51,create_stock_data_db,CXAC,'Growth'
+2023-12-05 14:21:17,create_stock_data_db,CSLMU,'NoneType' object is not subscriptable
+2023-12-05 14:21:18,create_stock_data_db,CSLMR,'NoneType' object is not subscriptable
+2023-12-05 14:21:18,create_stock_data_db,CSLM,'Growth'
+2023-12-05 14:21:32,create_stock_data_db,COOLU,'NoneType' object is not subscriptable
+2023-12-05 14:21:46,create_stock_data_db,CNOBP,'NoneType' object is not subscriptable
+2023-12-05 14:21:49,create_stock_data_db,CNGLW,'NoneType' object is not subscriptable
+2023-12-05 14:21:51,create_stock_data_db,CNGL,'Growth'
+2023-12-05 14:21:53,create_stock_data_db,CNDB,'Growth'
+2023-12-05 14:21:54,create_stock_data_db,CNDA,'Growth'
+2023-12-05 14:22:08,create_stock_data_db,CLRCU,'NoneType' object is not subscriptable
+2023-12-05 14:22:09,create_stock_data_db,CLOER,'NoneType' object is not subscriptable
+2023-12-05 14:22:10,create_stock_data_db,CLOE,'Growth'
+2023-12-05 14:22:13,create_stock_data_db,CLAYU,'NoneType' object is not subscriptable
+2023-12-05 14:22:13,create_stock_data_db,CLAY,'Growth'
+2023-12-05 14:22:17,create_stock_data_db,CITE,'Growth'
+2023-12-05 14:22:24,create_stock_data_db,CIFR,'Growth'
+2023-12-05 14:22:48,create_stock_data_db,CFIVU,'NoneType' object is not subscriptable
+2023-12-05 14:23:02,create_stock_data_db,CETU,'NoneType' object is not subscriptable
+2023-12-05 14:23:05,create_stock_data_db,CDAQ,'Growth'
+2023-12-05 14:23:08,create_stock_data_db,CCNEP,'NoneType' object is not subscriptable
+2023-12-05 14:23:17,create_stock_data_db,CCAIU,'NoneType' object is not subscriptable
+2023-12-05 14:23:17,create_stock_data_db,CCAI,'NoneType' object is not subscriptable
+2023-12-05 14:23:22,create_stock_data_db,CBRGU,'NoneType' object is not subscriptable
+2023-12-05 14:23:31,create_stock_data_db,CB,'NoneType' object is not subscriptable
+2023-12-05 14:23:32,create_stock_data_db,CATY,'NoneType' object is not subscriptable
+2023-12-05 14:23:33,create_stock_data_db,CATC,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:23:35,create_stock_data_db,CARV,'NoneType' object is not subscriptable
+2023-12-05 14:23:39,create_stock_data_db,CADE,'NoneType' object is not subscriptable
+2023-12-05 14:23:39,create_stock_data_db,CACC,'NoneType' object is not subscriptable
+2023-12-05 14:23:41,create_stock_data_db,C,'NoneType' object is not subscriptable
+2023-12-05 14:23:42,create_stock_data_db,BYTSU,'NoneType' object is not subscriptable
+2023-12-05 14:23:44,create_stock_data_db,BYNOU,'NoneType' object is not subscriptable
+2023-12-05 14:23:46,create_stock_data_db,BYN,'NoneType' object is not subscriptable
+2023-12-05 14:23:56,create_stock_data_db,BWBBP,'NoneType' object is not subscriptable
+2023-12-05 14:24:04,create_stock_data_db,BUJAU,'NoneType' object is not subscriptable
+2023-12-05 14:24:06,create_stock_data_db,BTWNU,'NoneType' object is not subscriptable
+2023-12-05 14:24:35,create_stock_data_db,BRLIU,'NoneType' object is not subscriptable
+2023-12-05 14:24:39,create_stock_data_db,BRKH,'Growth'
+2023-12-05 14:24:39,create_stock_data_db,BREZR,'NoneType' object is not subscriptable
+2023-12-05 14:24:41,create_stock_data_db,BRDG,'NoneType' object is not subscriptable
+2023-12-05 14:24:41,create_stock_data_db,BRD,'Growth'
+2023-12-05 14:24:43,create_stock_data_db,BPYPP,'NoneType' object is not subscriptable
+2023-12-05 14:24:44,create_stock_data_db,BPYPO,'NoneType' object is not subscriptable
+2023-12-05 14:24:44,create_stock_data_db,BPYPN,'NoneType' object is not subscriptable
+2023-12-05 14:24:54,create_stock_data_db,BOCN,'Growth'
+2023-12-05 14:25:00,create_stock_data_db,BNIXR,'NoneType' object is not subscriptable
+2023-12-05 14:25:03,create_stock_data_db,BMAC,'Growth'
+2023-12-05 14:25:12,create_stock_data_db,BLACU,'NoneType' object is not subscriptable
+2023-12-05 14:25:27,create_stock_data_db,BIOS,'Growth'
+2023-12-05 14:25:34,create_stock_data_db,BHFAP,'NoneType' object is not subscriptable
+2023-12-05 14:25:34,create_stock_data_db,BHFAO,'NoneType' object is not subscriptable
+2023-12-05 14:25:35,create_stock_data_db,BHFAN,'NoneType' object is not subscriptable
+2023-12-05 14:25:36,create_stock_data_db,BHFAM,'NoneType' object is not subscriptable
+2023-12-05 14:25:36,create_stock_data_db,BHFAL,'NoneType' object is not subscriptable
+2023-12-05 14:25:40,create_stock_data_db,BHACU,'NoneType' object is not subscriptable
+2023-12-05 14:25:41,create_stock_data_db,BHAC,'Growth'
+2023-12-05 14:25:57,create_stock_data_db,BFAC,'Growth'
+2023-12-05 14:25:57,create_stock_data_db,BENFW,'NoneType' object is not subscriptable
+2023-12-05 14:26:05,create_stock_data_db,BCSAW,'NoneType' object is not subscriptable
+2023-12-05 14:26:05,create_stock_data_db,BCSAU,'NoneType' object is not subscriptable
+2023-12-05 14:26:06,create_stock_data_db,BCSA,'Growth'
+2023-12-05 14:26:12,create_stock_data_db,BCAL,'NoneType' object is not subscriptable
+2023-12-05 14:26:24,create_stock_data_db,BACA,'Growth'
+2023-12-05 14:26:37,create_stock_data_db,AVHIU,'NoneType' object is not subscriptable
+2023-12-05 14:26:37,create_stock_data_db,AVHI,'Growth'
+2023-12-05 14:26:38,create_stock_data_db,AURCU,'NoneType' object is not subscriptable
+2023-12-05 14:26:38,create_stock_data_db,AURC,'NoneType' object is not subscriptable
+2023-12-05 14:26:41,create_stock_data_db,ATMV,'Growth'
+2023-12-05 14:26:42,create_stock_data_db,ATMC,'Growth'
+2023-12-05 14:26:46,create_stock_data_db,ATLCP,'NoneType' object is not subscriptable
+2023-12-05 14:26:48,create_stock_data_db,ATEK,'Growth'
+2023-12-05 14:26:49,create_stock_data_db,ATAKU,'NoneType' object is not subscriptable
+2023-12-05 14:26:49,create_stock_data_db,ATAKR,'NoneType' object is not subscriptable
+2023-12-05 14:26:50,create_stock_data_db,ATAK,'Growth'
+2023-12-05 14:26:55,create_stock_data_db,ASCBR,'NoneType' object is not subscriptable
+2023-12-05 14:26:55,create_stock_data_db,ASCB,'Growth'
+2023-12-05 14:26:56,create_stock_data_db,ASCAU,'NoneType' object is not subscriptable
+2023-12-05 14:26:56,create_stock_data_db,ASCA,'Growth'
+2023-12-05 14:26:59,create_stock_data_db,ARTEU,'NoneType' object is not subscriptable
+2023-12-05 14:27:04,create_stock_data_db,ARIZ,'Growth'
+2023-12-05 14:27:12,create_stock_data_db,AQUNU,'NoneType' object is not subscriptable
+2023-12-05 14:27:12,create_stock_data_db,AQU,'Growth'
+2023-12-05 14:27:21,create_stock_data_db,APCA,'Growth'
+2023-12-05 14:27:23,create_stock_data_db,APAC,'Growth'
+2023-12-05 14:27:27,create_stock_data_db,ANZU,'NoneType' object is not subscriptable
+2023-12-05 14:27:39,create_stock_data_db,ALTUU,'NoneType' object is not subscriptable
+2023-12-05 14:27:43,create_stock_data_db,ALSA,'Growth'
+2023-12-05 14:27:45,create_stock_data_db,ALOR,'Growth'
+2023-12-05 14:27:49,create_stock_data_db,ALCYU,'NoneType' object is not subscriptable
+2023-12-05 14:27:49,create_stock_data_db,ALCY,'Growth'
+2023-12-05 14:28:03,create_stock_data_db,AIBBR,'NoneType' object is not subscriptable
+2023-12-05 14:28:03,create_stock_data_db,AIB,'Growth'
+2023-12-05 14:28:12,create_stock_data_db,AGAC,'NoneType' object is not subscriptable
+2023-12-05 14:28:20,create_stock_data_db,AFARU,'NoneType' object is not subscriptable
+2023-12-05 14:28:20,create_stock_data_db,AFAR,'Growth'
+2023-12-05 14:28:25,create_stock_data_db,AEAE,'Growth'
+2023-12-05 14:28:27,create_stock_data_db,ADRT,'Growth'
+2023-12-05 14:28:28,create_stock_data_db,ADERU,'NoneType' object is not subscriptable
+2023-12-05 14:28:28,create_stock_data_db,ADER,'NoneType' object is not subscriptable
+2023-12-05 14:28:34,create_stock_data_db,ACGLO,'NoneType' object is not subscriptable
+2023-12-05 14:28:34,create_stock_data_db,ACGLN,'NoneType' object is not subscriptable
+2023-12-05 14:28:38,create_stock_data_db,ACAC,'Growth'
+2023-12-05 14:28:39,create_stock_data_db,ACABU,'NoneType' object is not subscriptable
+2023-12-05 14:28:46,create_stock_data_db,AB,'NoneType' object is not subscriptable
+2023-12-05 14:28:50,create_stock_data_db,AACI,'Growth'
+2023-12-05 14:29:28,create_stock_data_db,TPET,'Growth'
+2023-12-05 14:29:39,create_stock_data_db,STR,'NoneType' object is not subscriptable
+2023-12-05 14:30:48,create_stock_data_db,NSS,'NoneType' object is not subscriptable
+2023-12-05 14:30:55,create_stock_data_db,NPWR,'Growth'
+2023-12-05 14:31:00,create_stock_data_db,NEX,'NoneType' object is not subscriptable
+2023-12-05 14:31:18,create_stock_data_db,MMP,'NoneType' object is not subscriptable
+2023-12-05 14:31:40,create_stock_data_db,KNTK,'NoneType' object is not subscriptable
+2023-12-05 14:32:40,create_stock_data_db,ENCP,'Growth'
+2023-12-05 14:33:12,create_stock_data_db,CRGY,'NoneType' object is not subscriptable
+2023-12-05 14:33:13,create_stock_data_db,CRC,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:33:17,create_stock_data_db,CNX,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:33:18,create_stock_data_db,CLMT,'NoneType' object is not subscriptable
+2023-12-05 14:33:19,create_stock_data_db,CKX,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:33:25,create_stock_data_db,CEIX,'NoneType' object is not subscriptable
+2023-12-05 14:33:35,create_stock_data_db,BRY,'NoneType' object is not subscriptable
+2023-12-05 14:33:37,create_stock_data_db,BROG,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:33:39,create_stock_data_db,BRN,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:33:54,create_stock_data_db,ARKOW,'NoneType' object is not subscriptable
+2023-12-05 14:34:07,create_stock_data_db,ACDC,'NoneType' object is not subscriptable
+2023-12-05 14:34:09,create_stock_data_db,YOTA,'Growth'
+2023-12-05 14:34:11,create_stock_data_db,WVVIP,'NoneType' object is not subscriptable
+2023-12-05 14:37:43,create_stock_data_db,ZEV,'NoneType' object is not subscriptable
+2023-12-05 14:37:43,create_stock_data_db,ZD,'NoneType' object is not subscriptable
+2023-12-05 14:37:47,create_stock_data_db,YUMC,'NoneType' object is not subscriptable
+2023-12-05 14:37:49,create_stock_data_db,YOSH,'NoneType' object is not subscriptable
+2023-12-05 14:38:00,create_stock_data_db,XELAP,'NoneType' object is not subscriptable
+2023-12-05 14:38:04,create_stock_data_db,WWW,'NoneType' object is not subscriptable
+2023-12-05 14:38:04,create_stock_data_db,WWE,'NoneType' object is not subscriptable
+2023-12-05 14:38:52,create_stock_data_db,WALD,'Growth'
+2023-12-05 14:39:22,create_stock_data_db,VIEWW,'NoneType' object is not subscriptable
+2023-12-05 14:40:24,create_stock_data_db,TRTN,'NoneType' object is not subscriptable
+2023-12-05 14:40:58,create_stock_data_db,TKAT,'NoneType' object is not subscriptable
+2023-12-05 14:41:35,create_stock_data_db,SWAGW,'NoneType' object is not subscriptable
+2023-12-05 14:42:39,create_stock_data_db,SLGG,'NoneType' object is not subscriptable
+2023-12-05 14:43:09,create_stock_data_db,SHAP,'Growth'
+2023-12-05 14:43:45,create_stock_data_db,SCHN,'NoneType' object is not subscriptable
+2023-12-05 14:45:09,create_stock_data_db,RADI,'NoneType' object is not subscriptable
+2023-12-05 14:45:11,create_stock_data_db,QUOT,'NoneType' object is not subscriptable
+2023-12-05 14:45:16,create_stock_data_db,QRTEP,'NoneType' object is not subscriptable
+2023-12-05 14:45:27,create_stock_data_db,PXSAP,'NoneType' object is not subscriptable
+2023-12-05 14:45:32,create_stock_data_db,PTRA,'NoneType' object is not subscriptable
+2023-12-05 14:47:02,create_stock_data_db,OPA,'Growth'
+2023-12-05 14:49:13,create_stock_data_db,MGAM,'Growth'
+2023-12-05 14:50:26,create_stock_data_db,LOV,'NoneType' object is not subscriptable
+2023-12-05 14:52:22,create_stock_data_db,ITP,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 14:52:29,create_stock_data_db,IPW,'NoneType' object is not subscriptable
+2023-12-05 14:52:40,create_stock_data_db,IMPPP,'NoneType' object is not subscriptable
+2023-12-05 14:53:55,create_stock_data_db,HCDIP,'NoneType' object is not subscriptable
+2023-12-05 14:54:47,create_stock_data_db,GOEVW,'NoneType' object is not subscriptable
+2023-12-05 14:55:01,create_stock_data_db,GMBLP,'NoneType' object is not subscriptable
+2023-12-05 14:56:49,create_stock_data_db,FATPU,'NoneType' object is not subscriptable
+2023-12-05 14:56:50,create_stock_data_db,FATP,'Growth'
+2023-12-05 14:56:50,create_stock_data_db,FATBP,'NoneType' object is not subscriptable
+2023-12-05 14:57:07,create_stock_data_db,EWCZ,'NoneType' object is not subscriptable
+2023-12-05 14:57:14,create_stock_data_db,EVGO,'NoneType' object is not subscriptable
+2023-12-05 14:57:42,create_stock_data_db,EFHT,'Growth'
+2023-12-05 14:57:52,create_stock_data_db,EDR,'NoneType' object is not subscriptable
+2023-12-05 14:58:19,create_stock_data_db,DMS,'NoneType' object is not subscriptable
+2023-12-05 14:59:43,create_stock_data_db,CSSEP,'NoneType' object is not subscriptable
+2023-12-05 15:00:23,create_stock_data_db,COMSP,'NoneType' object is not subscriptable
+2023-12-05 15:01:00,create_stock_data_db,CISS,'Growth'
+2023-12-05 15:01:59,create_stock_data_db,BZFD,'NoneType' object is not subscriptable
+2023-12-05 15:02:10,create_stock_data_db,BURL,'NoneType' object is not subscriptable
+2023-12-05 15:02:11,create_stock_data_db,BTBD,'>=' not supported between instances of 'NoneType' and 'int'
+2023-12-05 15:02:12,create_stock_data_db,BTB,'NoneType' object is not subscriptable
+2023-12-05 15:02:15,create_stock_data_db,BROS,'NoneType' object is not subscriptable
+2023-12-05 15:02:16,create_stock_data_db,BRLT,'NoneType' object is not subscriptable
+2023-12-05 15:03:45,create_stock_data_db,AUVIP,'NoneType' object is not subscriptable
+2023-12-05 15:04:27,create_stock_data_db,APE,'NoneType' object is not subscriptable
+2023-12-05 15:05:06,create_stock_data_db,AIRTP,'NoneType' object is not subscriptable
+2023-12-05 15:05:27,create_stock_data_db,AENTW,'NoneType' object is not subscriptable
+2023-12-05 15:05:46,create_stock_data_db,ACBAU,'NoneType' object is not subscriptable
+2023-12-05 15:07:15,create_stock_data_db,HYMCW,'NoneType' object is not subscriptable
+2023-12-05 15:07:16,create_stock_data_db,HYMCL,'NoneType' object is not subscriptable
+2023-12-05 15:08:01,create_stock_data_db,ATCOL,'NoneType' object is not subscriptable
+2023-12-05 15:12:17,update_databases,,'dict' object has no attribute 'to_csv'
