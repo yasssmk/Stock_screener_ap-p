@@ -1,5 +1,7 @@
 #Specific file
-
+structure.txt
+.idea/
+__pycache__/
 
 
 

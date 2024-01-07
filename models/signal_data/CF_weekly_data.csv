@@ -1,0 +1,100 @@
+Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest Price,Lowest MACD,Divergence spotted,Signal
+2015-01-05,2015-01-05,2015-02-02,Bullish breath,Neutral,62.12,,55.03,,,
+2015-02-02,2015-02-02,2015-08-10,,Neutral,70.32,4.1,55.6,-1.24,,
+2015-08-10,2015-08-10,2015-08-24,,MACD Bullish breath,65.12,0.44,56.58,-0.64,,
+2015-08-24,2015-08-24,2015-10-19,,MACD Bearish,59.87,-1.99,43.85,-9.14,,
+2015-10-19,2015-10-19,2015-11-02,,MACD Bearish breath,54.27,-4.18,50.5,-4.64,,
+2015-11-02,2015-11-02,2016-02-15,,MACD Bearish,53.13,-6.45,26.1,-13.82,,
+2016-02-15,2016-02-15,2016-05-09,,MACD Bearish breath,37.72,-4.53,28.7,-10.45,,
+2016-05-09,2016-05-09,2016-05-30,,MACD Bearish,31.15,-6.3,27.15,-6.47,,
+2016-05-30,2016-05-30,2016-06-20,,MACD Bearish breath,32.42,-5.02,26.55,-5.92,,
+2016-06-20,2016-06-20,2016-07-11,,MACD Bearish,29.25,-6.0,22.75,-6.75,Weekly Bullish Divergence,
+2016-07-11,2016-07-11,2016-08-01,,MACD Bearish breath,28.32,-5.15,23.75,-5.33,Weekly Bullish Divergence,
+2016-08-01,2016-08-01,2016-08-15,,MACD Bearish,25.15,-6.27,20.77,-6.36,Weekly Bullish Divergence,
+2016-08-15,2016-08-15,2016-12-05,,MACD Bearish breath,30.24,1.42,22.0,-5.88,Weekly Bullish Divergence,Sell signal
+2016-12-05,2016-12-05,2017-02-13,,MACD Bullish,37.17,5.46,27.75,2.27,Weekly Bullish Divergence,Sell signal
+2017-02-13,2017-02-13,2017-04-10,,MACD Bullish breath,37.1,4.1,28.14,-0.93,Weekly Bullish Divergence,
+2017-04-10,2017-04-10,2017-05-15,,MACD Bearish,30.07,-1.24,25.04,-2.54,Weekly Bullish Divergence,
+2017-05-15,2017-05-15,2017-05-29,,MACD Bearish breath,29.29,-1.19,26.78,-1.38,Weekly Bullish Divergence,
+2017-05-29,2017-05-29,2017-06-12,,MACD Bearish,28.37,-1.64,25.65,-1.79,Weekly Bullish Divergence,
+2017-06-12,2017-06-12,2017-07-31,,MACD Bearish breath,31.32,1.07,26.51,-1.37,Weekly Bullish Divergence,
+2017-07-31,2017-07-31,2017-08-21,,MACD Bullish,32.59,1.74,27.77,0.67,Weekly Bullish Divergence,Sell signal
+2017-08-21,2017-08-21,2017-09-04,,MACD Bullish breath,30.08,0.47,28.47,0.25,Weekly Bullish Divergence,
+2017-09-04,2017-09-04,2017-11-06,,MACD Bullish,39.04,5.12,28.95,1.44,Weekly Bullish Divergence,Sell signal
+2017-11-06,2017-11-06,2017-11-13,Bearish breath,MACD Bullish,39.32,4.59,36.42,4.59,Weekly Bearish Divergence,
+2017-11-13,2017-11-13,2017-12-04,Bearish breath,MACD Bullish breath,37.85,3.41,33.5,2.93,Weekly Bearish Divergence,
+2017-12-04,2017-12-04,2018-01-15,Bearish breath,MACD Bullish,43.98,6.41,36.51,4.06,Weekly Bearish Divergence,
+2018-01-15,2018-01-15,2018-02-19,Bearish breath,MACD Bullish breath,42.97,4.7,35.9,1.67,Weekly Bearish Divergence,
+2018-02-19,2018-02-19,2018-02-26,Bearish breath,MACD Bullish,44.2,3.7,40.3,3.7,Weekly Bearish Divergence,
+2018-02-26,2018-02-26,2018-04-23,Bearish breath,MACD Bullish breath,45.0,3.38,35.7,-0.94,Weekly Bearish Divergence,
+2018-04-23,2018-04-23,2018-04-30,Bearish breath,MACD Bullish,40.1,0.42,38.42,0.42,Weekly Bearish Divergence,
+2018-04-30,2018-04-30,2018-05-07,Bearish breath,MACD Bullish breath,39.89,0.21,37.35,0.21,Weekly Bearish Divergence,
+2018-05-07,2018-05-07,2018-07-09,Bullish,MACD Bullish,46.2,4.08,37.02,0.53,Weekly Bearish Divergence,
+2018-07-09,2018-07-09,2018-07-30,Bullish,MACD Bullish breath,45.52,2.52,41.49,2.03,Weekly Bearish Divergence,
+2018-07-30,2018-07-30,2018-10-08,Bullish,MACD Bullish,56.51,7.25,43.7,4.6,Weekly Bearish Divergence,
+2018-10-08,2018-10-08,2018-11-05,Bullish,MACD Bullish breath,55.92,6.0,43.31,0.88,Weekly Bearish Divergence,Waiting for confirmation : Buy
+2018-11-05,2018-11-05,2018-12-03,Bullish breath,MACD Bullish breath,54.08,2.75,41.95,-2.93,Sell - divergence,
+2018-12-03,2018-12-03,2019-01-07,Bullish breath,MACD Bearish,44.7,-2.5,39.99,-4.2,,Waiting for confirmation : Buy
+2019-01-07,2019-01-07,2019-02-04,Bullish breath,MACD Bearish breath,46.51,-1.38,40.98,-1.87,,Waiting for confirmation : Buy
+2019-02-04,2019-02-04,2019-02-18,Bullish breath,MACD Bearish,45.15,-2.15,40.71,-2.35,,Waiting for confirmation : Buy
+2019-02-18,2019-02-18,2019-03-04,Bullish breath,MACD Bearish breath,45.43,-1.37,41.13,-1.63,,Waiting for confirmation : Buy
+2019-03-04,2019-03-04,2019-03-11,Bullish breath,MACD Bearish,43.05,-2.54,38.9,-2.54,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2019-03-11,2019-03-11,2019-03-18,Bullish breath,MACD Bearish breath,43.37,-1.69,40.02,-1.69,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2019-03-18,2019-03-18,2019-04-01,Bullish breath,MACD Bearish,43.26,-2.64,38.94,-2.96,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2019-04-01,2019-04-01,2019-05-06,Bullish breath,MACD Bearish breath,45.72,0.85,40.77,-1.28,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2019-05-06,2019-05-06,2019-06-10,Bullish breath,MACD Bearish,44.2,-0.52,39.17,-2.0,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2019-06-10,2019-06-10,2019-06-24,Bullish breath,MACD Bearish breath,47.85,1.84,41.64,0.6,Weekly Bullish Divergence,Sell signal
+2019-06-24,2019-06-24,2019-07-01,Bullish breath,MACD Bullish,47.92,2.32,46.24,2.32,Weekly Bullish Divergence,Sell signal
+2019-07-01,2019-07-01,2019-08-19,Bullish,MACD Bullish,55.15,4.95,43.81,2.12,Buy - divergence,Buy signal
+2019-08-19,2019-08-19,2019-10-07,Bullish,MACD Bullish breath,52.3,2.65,46.07,1.85,,
+2019-10-07,2019-10-07,2019-10-14,Bullish breath,MACD Bullish,51.06,2.47,48.18,2.47,Weekly Bearish Divergence,
+2019-10-14,2019-10-14,2019-11-25,Bullish breath,MACD Bullish breath,50.26,1.44,43.32,-1.23,Weekly Bearish Divergence,Waiting for confirmation : Buy
+2019-11-25,2019-11-25,2019-12-02,Bullish breath,MACD Bearish,46.37,-0.9,45.31,-0.9,Weekly Bearish Divergence,Waiting for confirmation : Buy
+2019-12-02,2019-12-02,2019-12-16,Bullish,MACD Bearish,46.23,-1.08,43.67,-1.21,Weekly Bearish Divergence,Waiting for confirmation : Buy
+2019-12-16,2019-12-16,2020-01-06,Bullish,MACD Bearish breath,48.88,0.41,45.65,-0.1,Weekly Bearish Divergence,Buy signal
+2020-01-06,2020-01-06,2020-03-02,Bullish breath,MACD Bearish,46.42,-0.63,35.18,-5.63,Sell - divergence,
+2020-03-02,2020-03-02,2020-04-06,Bearish,MACD Bearish,39.01,-5.84,19.73,-13.32,,
+2020-04-06,2020-04-06,2020-09-07,Bearish,MACD Bearish breath,36.12,1.34,23.05,-9.47,,Sell signal
+2020-09-07,2020-09-07,2020-09-21,Bearish,MACD Bullish,35.63,1.11,31.53,0.85,,
+2020-09-21,2020-09-21,2020-09-28,Bearish,MACD Bullish breath,33.24,-0.34,29.97,-0.34,,
+2020-09-28,2020-09-28,2020-11-09,Bearish,MACD Bearish,32.62,-0.85,25.3,-3.23,,
+2020-11-09,2020-11-09,2020-11-30,Bearish,MACD Bearish breath,39.41,3.33,28.37,-1.68,,Sell signal
+2020-11-30,2020-11-30,2020-12-07,Bearish,MACD Bullish,39.9,4.99,37.08,4.99,Weekly Bearish Divergence,Sell signal
+2020-12-07,2020-12-07,2021-03-22,Bearish breath,MACD Bullish,51.24,7.71,36.21,3.92,Weekly Bearish Divergence,Sell signal
+2021-03-22,2021-03-22,2021-04-05,Bearish breath,MACD Bullish breath,48.45,6.07,43.37,5.14,Weekly Bearish Divergence,
+2021-04-05,2021-04-05,2021-05-03,Bullish,MACD Bullish breath,50.46,4.89,44.32,4.55,Weekly Bearish Divergence,
+2021-05-03,2021-05-03,2021-06-07,Bullish,MACD Bullish,57.19,8.28,48.24,7.11,Weekly Bearish Divergence,
+2021-06-07,2021-06-07,2021-08-02,Bullish,MACD Bullish breath,56.58,6.93,45.24,-0.11,Weekly Bearish Divergence,
+2021-08-02,2021-08-02,2021-08-23,Bullish breath,MACD Bullish breath,49.64,-0.1,43.19,-1.45,Sell - divergence,
+2021-08-23,2021-08-23,2021-09-06,Bullish breath,MACD Bearish,46.32,-1.67,44.31,-1.7,,
+2021-09-06,2021-09-06,2021-09-13,Bullish,MACD Bearish,46.48,-1.5,44.04,-1.5,Weekly Bullish Divergence,
+2021-09-13,2021-09-13,2021-09-20,Bullish,MACD Bearish breath,50.04,0.1,45.52,0.1,Weekly Bullish Divergence,
+2021-09-20,2021-09-20,2021-11-29,Bullish,MACD Bullish,68.09,9.49,46.83,3.29,Weekly Bullish Divergence,
+2021-11-29,2021-11-29,2021-12-20,Bullish,MACD Bullish breath,66.1,6.92,57.25,5.79,Weekly Bullish Divergence,
+2021-12-20,2021-12-20,2022-01-10,Bullish,MACD Bullish,74.77,10.94,62.19,10.1,Weekly Bullish Divergence,
+2022-01-10,2022-01-10,2022-01-31,Bullish,MACD Bullish breath,72.47,8.19,63.1,6.81,Weekly Bullish Divergence,
+2022-01-31,2022-01-31,2022-04-18,Bullish,MACD Bullish,113.49,27.21,66.95,10.02,Weekly Bullish Divergence,
+2022-04-18,2022-04-18,2022-06-06,Bullish,MACD Bullish breath,111.68,20.0,90.06,8.92,Weekly Bullish Divergence,
+2022-06-06,2022-06-06,2022-07-04,Bullish breath,MACD Bullish breath,97.07,4.5,80.35,-1.27,Weekly Bullish Divergence,
+2022-07-04,2022-07-04,2022-07-25,Bullish,MACD Bullish breath,87.7,-1.11,79.18,-1.68,Buy - divergence,
+2022-07-25,2022-07-25,2022-09-05,Bullish,MACD Bullish,119.6,17.42,85.38,2.91,,
+2022-09-05,2022-09-05,2022-09-12,Bullish breath,MACD Bullish,108.3,11.67,100.05,11.67,Weekly Bearish Divergence,
+2022-09-12,2022-09-12,2022-10-03,Bullish breath,MACD Bullish breath,106.55,7.62,90.25,2.4,Weekly Bearish Divergence,
+2022-10-03,2022-10-03,2022-10-17,Bullish,MACD Bullish breath,108.31,5.48,97.22,3.82,Weekly Bearish Divergence,
+2022-10-17,2022-10-17,2022-11-07,Bullish,MACD Bullish,110.79,7.33,95.44,6.89,Weekly Bearish Divergence,Buy signal
+2022-11-07,2022-11-07,2022-11-21,Bullish,MACD Bullish breath,112.44,5.69,98.18,4.18,Weekly Bearish Divergence,
+2022-11-21,2022-11-21,2022-11-28,Bullish,MACD Bullish,109.79,6.43,98.84,6.43,Weekly Bearish Divergence,
+2022-11-28,2022-11-28,2022-12-05,Bullish,MACD Bullish breath,109.01,5.43,102.93,5.43,Weekly Bearish Divergence,
+2022-12-05,2022-12-05,2022-12-26,Bullish breath,MACD Bullish breath,108.87,2.34,88.32,-3.95,Sell - divergence,
+2022-12-26,2022-12-26,2023-02-06,Bullish breath,MACD Bearish,91.15,-7.67,80.32,-9.44,,
+2023-02-06,2023-02-06,2023-02-13,Bullish breath,MACD Bearish breath,91.23,-5.47,82.77,-5.47,,Waiting for confirmation : Buy
+2023-02-13,2023-02-13,2023-02-20,Bullish breath,MACD Bearish,89.61,-7.45,82.01,-7.45,,Waiting for confirmation : Buy
+2023-02-20,2023-02-20,2023-03-06,Bullish breath,MACD Bearish breath,87.48,-5.88,81.1,-6.72,,Waiting for confirmation : Buy
+2023-03-06,2023-03-06,2023-04-10,Bullish breath,MACD Bearish,86.3,-8.55,67.95,-14.82,,Waiting for confirmation : Buy
+2023-04-10,2023-04-10,2023-05-01,Bullish breath,MACD Bearish breath,78.66,-9.58,68.67,-10.28,,Waiting for confirmation : Buy
+2023-05-01,2023-05-01,2023-06-05,Bullish breath,MACD Bearish,76.17,-10.82,60.08,-13.43,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2023-06-05,2023-06-05,2023-08-14,Bullish breath,MACD Bearish breath,84.3,3.62,62.26,-10.76,Weekly Bullish Divergence,Sell signal
+2023-08-14,2023-08-14,2023-08-21,Bullish breath,MACD Bullish,79.59,2.78,76.68,2.78,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2023-08-21,2023-08-21,2023-08-28,Bullish breath,MACD Bullish breath,79.92,0.07,72.4,0.07,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2023-08-28,2023-08-28,2023-10-23,Bullish breath,MACD Bullish,87.9,5.68,73.65,1.22,Weekly Bullish Divergence,Waiting for confirmation : Buy
+2023-10-23,2023-10-23,2023-11-27,Bullish breath,MACD Bullish breath,82.99,2.07,73.85,-1.68,,Waiting for confirmation : Buy

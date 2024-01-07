@@ -1,0 +1,13 @@
+Sector,Average Last EPS,Average 3 years EPS,Average Last Growth,Average EPS Growth,Average EPS median Growth,Average Debt to Equity,Average NWC per share,Average ROE,Average Free Cash Flow,Number of companies
+Utilities,1.6,1.5,0.3,0.5,0.1,1.3,-0.1,-0.0,9990958.2,126
+Telecommunications,0.6,1.7,-0.6,0.7,0.1,1.2,3.3,-0.1,231355825.9,68
+Technology,-0.6,-0.9,-0.6,-2.7,-0.5,0.5,3.4,-0.3,91778743.2,691
+Real Estate,0.6,-0.1,0.7,0.5,-0.0,1.9,1.6,0.0,79296080.1,199
+Miscellaneous,0.1,0.6,-1.0,-0.7,-0.5,0.1,4.0,-0.0,-11714563.8,39
+Industrials,2.6,1.9,0.0,0.2,0.1,0.6,8.8,0.1,95515512.5,487
+Health Care,-5.1,-7.4,-0.6,-0.8,-0.3,0.3,3.0,-0.6,9938581.2,1060
+Finance,1.4,1.9,-0.9,0.5,0.0,0.7,8.9,-0.0,140859019.3,982
+Energy,4.8,-0.7,2.6,0.2,0.8,0.8,2.5,1.0,182797055.1,157
+Consumer Staples,0.5,0.9,-1.2,1.8,0.9,0.8,4.0,-0.2,81166666.7,122
+Consumer Discretionary,-0.5,-1.0,-0.0,0.1,0.0,1.0,4.6,-0.1,57990062.9,959
+Basic Materials,0.6,0.8,-0.2,2.4,1.1,0.5,2.0,-0.0,20659252.7,74

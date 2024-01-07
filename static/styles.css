@@ -1,0 +1,161 @@
+
+/* Home page */
+.title {
+  font-family: 'Playfair Display', serif;
+}
+
+.text {
+  font-family: 'Open Sans', sans-serif;
+  text-align: justify;
+}
+
+.feature-icon {
+  width: 4rem;
+  height: 4rem;
+  border-radius: .75rem;
+}
+
+
+.stratplan {
+  box-shadow: -.3em 0 .4em  darkgray !important;
+  border-radius: 5%;
+}
+
+
+
+/* Home Page Animation*/
+@keyframes buttonPressedAnimation {
+  0% {
+      transform: scale(1);
+      filter: brightness(100%);
+  }
+  50% {
+      transform: scale(0.95);
+      filter: brightness(85%);
+  }
+  100% {
+      transform: scale(1);
+      filter: brightness(100%);
+  }
+}
+
+.button-pressed {
+  animation: buttonPressedAnimation 0.4s ease;
+}
+
+/* CSS for the button hover effect */
+.btn-outline-light:hover {
+  background-color: #666; /* Darker shade for hover state */
+  transition: background-color 0.3s ease; /* Smooth transition for the color change */
+}
+
+/* CSS for changing SVG color on button hover */
+.btn-outline-light:hover svg {
+  fill: white; /* Change SVG color to white */
+  transition: fill 0.3s ease; /* Smooth transition for the SVG color change */
+}
+
+
+
+/* Feature Page*/
+.btn-body{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 16px;
+ 
+}
+
+.btn-body .btn {
+  width: 150px;
+}
+
+/* Ensure that the arrows are visible outside the container */
+.carousel-wrapper {
+  position: relative;
+  width: calc(23rem + 60px); /* Width of carousel plus space for arrows */
+  margin: auto; /* Center the carousel wrapper */
+}
+
+.carousel-container {
+  position: relative;
+  overflow: hidden; /* Hide overflow content */
+  width: 23rem; /* Width of the carousel */
+  margin: 0 30px; /* Margin for arrow buttons */
+}
+
+.carousel-slide-container {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.carousel-slide {
+  transition: transform 0.5s ease;
+  display: flex;
+}
+
+.card {
+  flex: 0 0 auto;
+  margin-right: 15px;
+}
+
+.carousel-control {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 24px;
+  cursor: pointer;
+  z-index: 1000;
+  background-color: #FFF; /* Background color for visibility */
+  color: #000;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.prev {
+  left: -10px; /* Position at the left edge of the carousel wrapper */
+}
+
+.next {
+  right: -10px; /* Position at the right edge of the carousel wrapper */
+}
+
+@media (max-width: 768px) {
+  .carousel-container {
+    width: 100vw; /* viewport width */
+    overflow: hidden; /* hide the overflow */
+  }
+
+  .carousel-slide-container {
+    justify-content: center; /* center the slides */
+  }
+
+  .carousel-slide {
+    justify-content: center; /* center the slides if they are inline-flex or flex */
+  }
+
+  .card {
+    width: 80%; /* adjust the width of cards to fit within the view */
+    margin: auto; /* center the cards */
+  }
+
+  /* Adjust the arrows to be inside the viewport */
+  .carousel-control.prev, .carousel-control.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .carousel-control.prev {
+    left: 5%; /* adjust as necessary */
+  }
+
+  .carousel-control.next {
+    right: 5%; /* adjust as necessary */
+  }
+}
