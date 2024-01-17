@@ -12,24 +12,37 @@ import os
 import math
 from scipy import stats
 from io import StringIO
-
-
+from dotenv import load_dotenv
+from supabase import create_client, Client
 
 def get_company_info(symbol):
-    stock_list_df = pd.read_csv('./stocks_data_csv/data_base/stock_list_data_base.csv')
-    # Find the row corresponding to the provided symbol
-    symbol_row = stock_list_df[stock_list_df['Symbol'] == symbol]
+    load_dotenv()
 
-    # Initialize an empty dictionary to store company information
-    company_info = {}
+    url: str = os.getenv('sb_url')
+    key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
+    supabase: Client = create_client(url, key)
 
-    # Extract the desired information using setdefault
-    company_info.setdefault('Company Name', symbol_row['Company Name'].values[0])
-    company_info.setdefault('Country', symbol_row['Country'].values[0])
-    company_info.setdefault('Sector', symbol_row['Sector'].values[0])
-    company_info.setdefault('Industry', symbol_row['Industry'].values[0])
+    response = supabase.table('stocks_list').select("*").eq('Symbol', symbol).execute()
+    company_info = response.data[0]
 
     return company_info
+
+
+# def get_company_info(symbol):
+#     stock_list_df = pd.read_csv('./stocks_data_csv/data_base/stock_list_data_base.csv')
+#     # Find the row corresponding to the provided symbol
+#     symbol_row = stock_list_df[stock_list_df['Symbol'] == symbol]
+#
+#     # Initialize an empty dictionary to store company information
+#     company_info = {}
+#
+#     # Extract the desired information using setdefault
+#     company_info.setdefault('Company Name', symbol_row['Company Name'].values[0])
+#     company_info.setdefault('Country', symbol_row['Country'].values[0])
+#     company_info.setdefault('Sector', symbol_row['Sector'].values[0])
+#     company_info.setdefault('Industry', symbol_row['Industry'].values[0])
+#
+#     return company_info
 
 def get_stock_price(symbol):
     r = round(yf.Ticker(symbol).history(interval="1wk")['Close'].tail(1).values[0],2)

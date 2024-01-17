@@ -2,7 +2,8 @@
 structure.txt
 .idea/
 __pycache__/
-
+.env
+test.py
 
 
 #Template
