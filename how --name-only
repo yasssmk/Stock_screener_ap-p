@@ -1,0 +1,235 @@
+[33mcommit fc9040efe6ae0f323884f7ccd29f25e863469967[m[33m ([m[1;36mHEAD -> [m[1;32mmain[m[33m)[m
+Author: yasssmk <ysamkawi@gmail.com>
+Date:   Wed Jan 17 15:28:11 2024 +0100
+
+    Update the get company info function with supabase db
+
+[1mdiff --git a/.gitignore b/.gitignore[m
+[1mindex 16123f6..c904e86 100644[m
+[1m--- a/.gitignore[m
+[1m+++ b/.gitignore[m
+[36m@@ -2,7 +2,8 @@[m
+ structure.txt[m
+ .idea/[m
+ __pycache__/[m
+[31m-[m
+[32m+[m[32m.env[m
+[32m+[m[32mtest.py[m
+ [m
+ [m
+ #Template[m
+[1mdiff --git a/BackEnd/stocks_data_csv/data_base/stock_list.csv b/BackEnd/stocks_data_csv/data_base/stock_list.csv[m
+[1mindex e8ee14a..d8d488e 100644[m
+[1m--- a/BackEnd/stocks_data_csv/data_base/stock_list.csv[m
+[1m+++ b/BackEnd/stocks_data_csv/data_base/stock_list.csv[m
+[36m@@ -1,5771 +1,5771 @@[m
+[31m-Company Name,Symbol,Country,Sector,Industry[m
+[31m-York Water Company (The),YORW,United States,Utilities,Water Supply[m
+[31m-Xcel Energy Inc.,XEL,United States,Utilities,Power Generation[m
+[31m-Essential Utilities Inc.,WTRG,United States,Utilities,Water Supply[m
+[31m-Williams Companies Inc. (The),WMB,United States,Utilities,Natural Gas Distribution[m
+[31m-Waste Management Inc.,WM,United States,Utilities,Environmental Services[m
+[31m-Western Midstream Partners LP Common Units Representing Limited Partner Interests,WES,United States,Utilities,Natural Gas Distribution[m
+[31m-WEC Energy Group Inc.,WEC,United States,Utilities,Power Generation[m
+[31m-Waste Connections Inc. Common Shares,WCN,Canada,Utilities,Environmental Services[m
+[31m-Eco Wave Power Global AB (publ) American Depositary Shares,WAVE,Israel,Utilities,Electric Utilities: Central[m
+[31m-VivoPower International PLC Ordinary Shares,VVPR,United Kingdom,Utilities,Power Generation[m
+[31m-Vistra Corp.,VST,,Utilities,Electric Utilities: Central[m
+[31m-Via Renewables Inc. 8.75% Series A Fixed-to-Floating Rate Cumulative Redeemable Perpetual Preferred Stock,VIASP,United States,Utilities,Power Generation[m
+[31m-Via Renewables Inc. Class A,VIA,United States,Utilities,Power Generation[m
+[31m-UNITIL Corporation,UTL,United States,Utilities,Power Generation[m
+[31m-USA Compression Partners LP Common Units Representing Limited Partner Interests,USAC,United States,Utilities,Natural Gas Distribution[m
+[31m-UGI Corporation Corporate Units,UGIC,United States,Utilities,Natural Gas Distribution[m
+[31m-UGI Corporation,UGI,United States,Utilities,Natural Gas Distribution[m
+[31m-Tennessee Valley Authority,TVE,United States,Utilities,Electric Utilities: Central[m
+[31m-Tennessee Valley Authority,TVC,United States,Utilities,Electric Utilities: Central[m
+[31m-Targa Resources Inc.,TRGP,United States,Utilities,Natural Gas Distribution[m
+[31m-Southwest Gas Holdings Inc. (DE),SWX,United States,Utilities,Oil & Gas Production[m
+[31m-DBA Sempra,SRE,United States,Utilities,Oil/Gas Transmission[m
+[31m-Spire Inc.,SR,United States,Utilities,Oil/Gas Transmission[m
+[31m-Sonim Technologies Inc.,SONM,United States,Utilities,Telecommunications Equipment[m
+[31m-Southern Company (The),SO,United States,Utilities,Power Generation[m
+[31m-Summit Midstream Partners LP Common Units Representing Limited Partner Interests,SMLP,United States,Utilities,Natural Gas Distribution[m
+[31m-Stabilis Solutions Inc.,SLNG,United States,Utilities,Oil/Gas Transmission[m
+[31m-SJW Group (DE),SJW,United States,Utilities,Water Supply[m
+[31m-374Water Inc.,SCWO,United States,Utilities,Environmental Services[m
+[31m-Republic Services Inc.,RSG,United States,Utilities,Environmental Services[m
+[31m-RGC Resources Inc.,RGCO,United States,Utilities,Oil & Gas Production[m
+[31m-Quest Resource Holding Corporation,QRHC,United States,Utilities,Environmental Services[m
+[31m-PPL Corporation,PPL,United States,Utilities,Electric Utilities: Central[m
+[31m-Portland General Electric Co,POR,United States,Utilities,Electric Utilities: Central[m
+[31m-Pinnacle West Capital Corporation,PNW,United States,Utilities,Electric Utilities: Central[m
+[31m-PNM Resources Inc. (Holding Co.),PNM,United States,Utilities,Electric Utilities: Central[m
+[31m-Pure Cycle Corporation,PCYO,United States,Utilities,Water Supply[m
+[31m-PureCycle Technologies Inc. Unit,PCTTU,United States,Utilities,Environmental Services[m
+[31m-PureCycle Technologies Inc.,PCT,United States,Utilities,Environmental Services[m
+[31m-Pacific Gas & Electric Co. Equity Unit,PCGU,United States,Utilities,Power Generation[m
+[31m-Pacific Gas & Electric Co.,PCG,United States,Utilities,Power Generation[m
+[31m-Pampa Energia S.A. Pampa Energia S.A.,PAM,Argentina,Utilities,Electric Utilities: Central[m
+[31m-Otter Tail Corporation,OTTR,United States,Utilities,Electric Utilities: Central[m
+[31m-Ormat Technologies Inc.,ORA,United States,Utilities,Electric Utilities: Central[m
+[31m-OPAL Fuels Inc. Class A,OPAL,United States,Utilities,Natural Gas Distribution[m
+[31m-ONEOK Inc.,OKE,United States,Utilities,Oil & Gas Production[m
+[31m-ONE Gas Inc.,OGS,,Utilities,Oil/Gas Transmission[m
+[31m-OGE Energy Corp,OGE,United States,Utilities,Electric Utilities: Central[m
+[31m-Northwest Natural Holding Company,NWN,United States,Utilities,Oil/Gas Transmission[m
+[31m-NorthWestern Corporation,NWE,United States,Utilities,Power Generation[m
+[31m-NETGEAR Inc.,NTGR,United States,Utilities,Telecommunications Equipment[m
+[31m-NRG Energy Inc.,NRG,United States,Utilities,Electric Utilities: Central[m
+[31m-Sunnova Energy International Inc.,NOVA,United States,Utilities,Electric Utilities: Central[m
+[31m-NewJersey Resources Corporation,NJR,United States,Utilities,Oil/Gas Transmission[m
+[31m-NiSource Inc Series A Corporate Units,NIMC,United States,Utilities,Power Generation[m
+[31m-NiSource Inc,NI,United States,Utilities,Power Generation[m
+[31m-NGL ENERGY PARTNERS LP Common Units representing Limited Partner Interests,NGL,United States,Utilities,Natural Gas Distribution[m
+[31m-National Fuel Gas Company,NFG,United States,Utilities,Oil/Gas Transmission[m
+[31m-New Fortress Energy Inc. Class A,NFE,United States,Utilities,Oil/Gas Transmission[m
+[31m-NextDecade Corporation,NEXT,United States,Utilities,Oil & Gas Production[m
+[31m-NextEra Energy Partners LP Common Units representing limited partner interests,NEP,United States,Utilities,Electric Utilities: Central[m
+[31m-Middlesex Water Company,MSEX,United States,Utilities,Water Supply[m
+[31m-Montauk Renewables Inc.,MNTK,United States,Utilities,Natural Gas Distribution[m
+[31m-Molekule Group Inc.,MKUL,United States,Utilities,Environmental Services[m
+[31m-Minim Inc.,MINM,United States,Utilities,Telecommunications Equipment[m
+[31m-Alliant Energy Corporation,LNT,United States,Utilities,Power Generation[m
+[31m-Cheniere Energy Inc.,LNG,United States,Utilities,Oil/Gas Transmission[m
+[31m-Kinder Morgan Inc.,KMI,United States,Utilities,Natural Gas Distribution[m
+[31m-Kenon Holdings Ltd. Ordinary Shares,KEN,Singapore,Utilities,Electric Utilities: Central[m
+[31m-Infinera Corporation,INFN,United States,Utilities,Telecommunications Equipment[m
+[31m-IDACORP Inc.,IDA,United States,Utilities,Electric Utilities: Central[m
+[31m-Heliogen Inc.,HLGN,,Utilities,Electric Utilities: Central[m
+[31m-Hawaiian Electric Industries Inc.,HE,United States,Utilities,Power Generation[m
+[31m-Global Water Resources Inc.,GWRS,United States,Utilities,Water Supply[m
+[31m-Genie Energy Ltd. Class B Stock,GNE,United States,Utilities,Power Generation[m
+[31m-Fabrinet Ordinary Shares,FN,Cayman Islands,Utilities,Telecommunications Equipment[m
+[31m-Franklin Wireless Corp.,FKWL,United States,Utilities,Telecommunications Equipment[m
+[31m-FirstEnergy Corp.,FE,United States,Utilities,Electric Utilities: Central[m
+[31m-FuelCell Energy Inc.,FCEL,United States,Utilities,Electric Utilities: Central[m
+[31m-Exelon Corporation,EXC,United States,Utilities,Power Generation[m
+[31m-Evergy Inc.,EVRG,United States,Utilities,Power Generation[m
+[31m-Equitrans Midstream Corporation ,ETRN,,Utilities,Natural Gas Distribution[m
+[31m-Entergy Corporation,ETR,United States,Utilities,Electric Utilities: Central[m
+[31m-Energy Transfer LP Common Units ,ET,United States,Utilities,Natural Gas Distribution[m
+[31m-Eversource Energy (D/B/A),ES,United States,Utilities,Electric Utilities: Central[m
+[31m-Enterprise Products Partners L.P.,EPD,United States,Utilities,Natural Gas Distribution[m
+[31m-EnLink Midstream LLC Common Units representing Limited Partner Interests,ENLC,,Utilities,Natural Gas Distribution[m
+[31m-Edison International,EIX,United States,Utilities,Electric Utilities: Central[m
+[31m-Excelerate Energy Inc. Class A,EE,,Utilities,Oil/Gas Transmission[m
+[31m-Consolidated Edison Inc.,ED,United States,Utilities,Power Generation[m
+[31m-DZS Inc.,DZSI,United States,Utilities,Telecommunications Equipment[m
+[31m-Duke Energy Corporation (Holding Company),DUK,United States,Utilities,Power Generation[m
+[31m-DT Midstream Inc. ,DTM,United States,Utilities,Oil & Gas Production[m
+[31m-DTE Energy Company,DTE,United States,Utilities,Electric Utilities: Central[m
+[31m-Dominion Energy Inc.,D,United States,Utilities,Electric Utilities: Central[m
+[31m-California Water Service Group,CWT,United States,Utilities,Water Supply[m
+[31m-Casella Waste Systems Inc. Class A,CWST,United States,Utilities,Environmental Services[m
+[31m-Clearway Energy Inc. Class C,CWEN,United States,Utilities,Electric Utilities: Central[m
+[31m-Consolidated Water Co. Ltd. Ordinary Shares,CWCO,Cayman Islands,Utilities,Water Supply[m
+[31m-Cheniere Energy Partners LP Cheniere Energy Partners LP Common Units,CQP,United States,Utilities,Oil/Gas Transmission[m
+[31m-Chesapeake Utilities Corporation,CPK,United States,Utilities,Oil & Gas Production[m
+[31m-CenterPoint Energy Inc (Holding Co),CNP,United States,Utilities,Electric Utilities: Central[m
+[31m-CMS Energy Corporation,CMS,United States,Utilities,Power Generation[m
+[31m-ClearOne Inc. (DE),CLRO,United States,Utilities,Telecommunications Equipment[m
+[31m-Clean Energy Fuels Corp.,CLNE,United States,Utilities,Natural Gas Distribution[m
+[31m-Clean Earth Acquisitions Corp. Right,CLINR,United States,Utilities,Power Generation[m
+[31m-Clean Earth Acquisitions Corp. Class A,CLIN,United States,Utilities,Power Generation[m
+[31m-Clearfield Inc.,CLFD,United States,Utilities,Telecommunications Equipment[m
+[31m-Ciena Corporation,CIEN,United States,Utilities,Telecommunications Equipment[m
+[31m-Clean Energy Technologies Inc.,CETY,United States,Utilities,Power Generation[m
+[31m-Crestwood Equity Partners LP,CEQP,United States,Utilities,Oil & Gas Production[m
+[31m-Constellation Energy Corporation ,CEG,United States,Utilities,Electric Utilities: Central[m
+[31m-Cadiz Inc. Depositary Shares,CDZIP,United States,Utilities,Water Supply[m
+[31m-CADIZ Inc.,CDZI,United States,Utilities,Water Supply[m
+[31m-Black Hills Corporation,BKH,United States,Utilities,Electric Utilities: Central[m
+[31m-Brookfield Infrastructure Partners LP Limited Partnership Units,BIP,Bermuda,Utilities,Power Generation[m
+[31m-Brookfield Renewable Partners L.P. ,BEP,Canada,Utilities,Electric Utilities: Central[m
+[31m-Atlantica Sustainable Infrastructure plc Ordinary Shares,AY,United Kingdom,Utilities,Electric Utilities: Central[m
+[31m-Avalon Holdings Corporation,AWX,United States,Utilities,Environmental Services[m
+[31m-American States Water Company,AWR,United States,Utilities,Water Supply[m
+[31m-American Water Works Company Inc.,AWK,United States,Utilities,Water Supply[m
+[31m-Avista Corporation,AVA,United States,Utilities,Power Generation[m
+[31m-AudioCodes Ltd.,AUDC,Israel,Utilities,Telecommunications Equipment[m
+[31m-Atmos Energy Corporation,ATO,United States,Utilities,Oil/Gas Transmission[m
+[31m-Artesian Resources Corporation Class A,ARTNA,United States,Utilities,Water Supply[m
+[31m-Archrock Inc.,AROC,United States,Utilities,Natural Gas Distribution[m
+[31m-Aris Water Solutions Inc. Class A,ARIS,United States,Utilities,Water Supply[m
+[31m-Algonquin Power & Utilities Corp. Corporate Units,AQNU,United States,Utilities,Electric Utilities: Central[m
+[31m-Algonquin Power & Utilities Corp. Common Shares,AQN,United States,Utilities,Electric Utilities: Central[m
+[31m-Altus Power Inc. Class A,AMPS,,Utilities,Electric Utilities: Central[m
+[31m-Antero Midstream Corporation,AM,United States,Utilities,Natural Gas Distribution[m
+[31m-Allete Inc.,ALE,United States,Utilities,Power Generation[m
+[31m-Akoustis Technologies Inc.,AKTS,United States,Utilities,Telecommunications Equipment[m
+[31m-Avangrid Inc.,AGR,United States,Utilities,Electric Utilities: Central[m
+[31m-The AES Corporation Corporate Units,AESC,United States,Utilities,Electric Utilities: Central[m
+[31m-The AES Corporation,AES,United States,Utilities,Electric Utilities: Central[m
+[31m-American Electric Power Company Inc.,AEP,United States,Utilities,Electric Utilities: Central[m
+[31m-Ameren Corporation,AEE,United States,Utilities,Power Generation[m
+[31m-ADTRAN Holdings Inc.,ADTN,United States,Utilities,Telecommunications Equipment[m
+[31m-Advent Technologies Holdings Inc. Class A,ADN,United States,Utilities,Power Generation[m
+[31m-WideOpenWest Inc.,WOW,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Wearable Devices Ltd. Ordinary Share,WLDS,Israel,Telecommunications,Computer Communications Equipment[m
+[31m-Warner Bros. Discovery Inc. Series A ,WBD,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Verizon Communications Inc.,VZ,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Vislink Technologies Inc.,VISL,United States,Telecommunications,Telecommunications Equipment[m
+[31m-VEON Ltd. ADS,VEON,Netherlands,Telecommunications,Telecommunications Equipment[m
+[31m-UTStarcom Holdings Corp. Ordinary Shares,UTSI,China,Telecommunications,Telecommunications Equipment[m
+[31m-United States Cellular Corporation,USM,United States,Telecommunications,Telecommunications Equipment[m
+[31m-TechTarget Inc.,TTGT,United States,Telecommunications,Telecommunications Equipment[m
+[31m-T-Mobile US Inc.,TMUS,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Millicom International Cellular S.A.,TIGO,Luxembourg,Telecommunications,Telecommunications Equipment[m
+[31m-Telephone and Data Systems Inc. Common Shares,TDS,United States,Telecommunications,Telecommunications Equipment[m
+[31m-AT&T Inc.,T,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Siyata Mobile Inc. Common Shares,SYTA,Canada,Telecommunications,Telecommunications Equipment[m
+[31m-Senstar Technologies Ltd. Ordinary Shares,SNT,Israel,Telecommunications,Telecommunications Equipment[m
+[31m-Sidus Space Inc. Class A,SIDU,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Shenandoah Telecommunications Co,SHEN,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Roku Inc. Class A,ROKU,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Rekor Systems Inc.,REKR,United States,Telecommunications,Telecommunications Equipment[m
+[31m-PowerFleet Inc.,PWFL,United States,Telecommunications,Telecommunications Equipment[m
+[31m-NextPlat Corp,NXPL,United States,Telecommunications,Telecommunications Equipment[m
+[31m-NAPCO Security Technologies Inc.,NSSC,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Moving iMage Technologies Inc.,MITQ,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Matthews International Corporation Class A,MATW,United States,Telecommunications,Metal Fabrications[m
+[31m-Lumen Technologies Inc.,LUMN,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Lantronix Inc.,LTRX,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Lumentum Holdings Inc.,LITE,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Liberty Latin America Ltd. Class C,LILAK,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Liberty Latin America Ltd. Class A,LILA,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Liberty Global plc Class C Ordinary Shares,LBTYK,United Kingdom,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Liberty Global plc Class B Ordinary Shares,LBTYB,United Kingdom,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Liberty Global plc Class A Ordinary Shares,LBTYA,United Kingdom,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Liberty Broadband Corporation Series A Cumulative Redeemable Preferred Stock,LBRDP,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Liberty Broadband Corporation Class C,LBRDK,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Liberty Broadband Corporation Class A,LBRDA,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Knightscope Inc. Class A,KSCP,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Juniper Networks Inc.,JNPR,United States,Telecommunications,Computer Communications Equipment[m
+[31m-Iteris Inc.,ITI,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Iridium Communications Inc,IRDM,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Intrusion Inc.,INTZ,United States,Telecommunications,Computer Communications Equipment[m
+[31m-Inseego Corp.,INSG,United States,Telecommunications,Telecommunications Equipment[m
+[31m-IHS Holding Limited Ordinary Shares,IHS,,Telecommunications,Telecommunications Equipment[m
+[31m-IDT Corporation Class B,IDT,United States,Telecommunications,Telecommunications Equipment[m
+[31m-InterDigital Inc.,IDCC,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Turtle Beach Corporation,HEAR,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Extreme Networks Inc.,EXTR,United States,Telecommunications,Telecommunications Equipment[m
+[31m-ESCO Technologies Inc.,ESE,United States,Telecommunications,Telecommunications Equipment[m
+[31m-DISH Network Corporation Class A,DISH,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Crexendo Inc.,CXDO,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Cisco Systems Inc. (DE),CSCO,United States,Telecommunications,Computer Communications Equipment[m
+[31m-Consolidated Communications Holdings Inc.,CNSL,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Comcast Corporation Class A,CMCSA,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Charter Communications Inc. Class A New,CHTR,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Comcast Holdings ZONES,CCZ,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Churchill Capital Corp V Class A,CCV,,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Cable One Inc.,CABO,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Broadwind Inc.,BWEN,United States,Telecommunications,Metal Fabrications[m
+[31m-Boxlight Corporation Class A,BOXL,United States,Telecommunications,Telecommunications Equipment[m
+[31m-B.O.S. Better Online Solutions,BOSC,Israel,Telecommunications,Computer Communications Equipment[m
+[31m-Aviat Networks Inc.,AVNW,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Altice USA Inc. Class A,ATUS,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-ATN International Inc.,ATNI,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Anterix Inc.,ATEX,United States,Telecommunications,Telecommunications Equipment[m
+[31m-A10 Networks Inc.,ATEN,United States,Telecommunications,Computer Communications Equipment[m
+[31m-Actelis Networks Inc.,ASNS,United States,Telecommunications,Telecommunications Equipment[m
+[31m-Arista Networks Inc.,ANET,United States,Telecommunications,Computer Communications Equipment[m
+[31m-Amplitech Group Inc.,AMPG,United States,Telecommunications,Telecommunications Equipment[m
+[31m-AMC Networks Inc. Class A,AMCX,United States,Telecommunications,Cable & Other Pay Television Services[m
+[31m-Alpine 4 Holdings Inc. Class A,A

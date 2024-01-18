@@ -17,33 +17,23 @@ import utils.Errors_logging
 import pandas as pd
 
 
-def create_stock_data_db(stock_list):
-    symbols = stock_list['Symbol'].tolist()
-    nbr_stock = len(symbols)
-    done = 0
+def create_stock_data_db():
+    load_dotenv()
+    url: str = os.getenv('sb_url')
+    key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
+    supabase: Client = create_client(url, key)
 
-    data = {
-        'Company Name': [],
-        'Symbol': [],
-        'Country': [],
-        'Sector': [],
-        'Industry': [],
-        'Last EPS': [],
-        '3 years av': [],
-        'Last Growth': [],
-        'EPS average Growth': [],
-        'EPS median Growth': [],
-        'Years of Data': [],
-        'Debt to Equity': [],
-        'NWC per share': [],
-        'ROE': [],
-        'Free Cash Flow': []
-    }
+    response = supabase.table('stocks_list').select("Stock_id", "Symbol").execute()
+    symbols_data = response.data
 
-    for symbol in symbols:
+    # nbr_stock = len(symbols_data)
+    # done = 0
+
+    for data in symbols_data:
+        symbol = data["Symbol"]
+        stock_id = data["Stock_id"]
         try:
-            #print(symbol)
-            company_info = utils.Stock_Data.get_company_info(symbol)
+            # print(symbol)
             last_eps = utils.Stock_Data.get_eps(symbol)
             av_eps = utils.Stock_Data.get_3years_av_eps(symbol)
             result_df = utils.Stock_Data.get_yearly_growth(symbol)
@@ -54,48 +44,42 @@ def create_stock_data_db(stock_list):
             dte = utils.Stock_Data.debt_to_equity_ratio(symbol)
             nwc = utils.Stock_Data.get_nwc(symbol)
             roe = utils.Stock_Data.get_roe(symbol)
-            fcf = utils.Stock_Data.get_fcf(symbol)
 
-            if years_data >= 3:
-                data['Company Name'].append(company_info['Company Name'])
-                data['Symbol'].append(symbol)
-                data['Country'].append(company_info['Country'])
-                data['Sector'].append(company_info['Sector'])
-                data['Industry'].append(company_info['Industry'])
-                data['Last EPS'].append(last_eps)
-                data['3 years av'].append(av_eps)
-                data['Last Growth'].append(last_growth)
-                data['EPS average Growth'].append(eps_growth)
-                data['EPS median Growth'].append(median_eps_growth)
-                data['Years of Data'].append(years_data)
-                data['Debt to Equity'].append(dte)
-                data['NWC per share'].append(nwc)
-                data['ROE'].append(roe)
-                data['Free Cash Flow'].append(fcf)
+            insert_data = {
+                'Stock_id': stock_id,
+                'Last EPS': last_eps,
+                '3 years av': av_eps,
+                'Last Growth': last_growth,
+                'EPS average Growth': eps_growth,
+                'EPS median Growth': median_eps_growth,
+                'Years of Data': years_data,
+                'Debt to Equity': dte,
+                'NWC per share': nwc,
+                'ROE': roe,
+            }
+
+            check_response = supabase.table('data_stocks').select("*").eq('Stock_id', stock_id).execute()
+            if check_response.data:
+                # Update the existing record
+                update_response = supabase.table('data_stocks').update(insert_data).eq('Stock_id', stock_id).execute()
+                if update_response.error:
+                    utils.Errors_logging.functions_error_log("create_stock_data_db", update_response.error,
+                                                             utils.Errors_logging.log_name_rundb, symbol=symbol)
+            else:
+                # Insert a new record
+                insert_response = supabase.table('data_stocks').insert(insert_data).execute()
+                if insert_response.error:
+                    utils.Errors_logging.functions_error_log("create_stock_data_db", insert_response.error,
+                                                             utils.Errors_logging.log_name_rundb, symbol=symbol)
 
         except Exception as e:
             utils.Errors_logging.functions_error_log("create_stock_data_db", e, utils.Errors_logging.log_name_rundb, symbol=symbol)
             continue
 
-        #done += 1
-        #progress = (done / nbr_stock) * 100  # Recalculate avancement
-        #pct_avc = math.ceil(progress)  # Update pct_avc
-        #print(f'{done} sur {nbr_stock} : {pct_avc}%')
-
-    df = pd.DataFrame(data)
-
-    file_path = "./stocks_data_csv/data_base/Data_Base.csv"
-
-    try:
-        # Save the DataFrame to a CSV file
-        df.to_csv(file_path, index=False)# Set index to False if you don't want to save the row numbers
-        #print(f'CSV file saved to {file_path}')
-    except Exception as e:
-        utils.Errors_logging.functions_error_log("create_stock_data_db", e, utils.Errors_logging.log_name_rundb)
-        #print(f'Error: {e}')
-
-    return df
-
+        # done += 1
+        # progress = (done / nbr_stock) * 100  # Recalculate avancement
+        # pct_avc = math.ceil(progress)  # Update pct_avc
+        # print(f'{done} sur {nbr_stock} : {pct_avc}%')
 
 def remove_outliers(data):
     try:

@@ -13,7 +13,7 @@ import utils.Errors_logging
 import math
 
 data_end_date = datetime.now()
-two_years_ago = data_end_date - timedelta(days=365 * 4)
+five_years_ago = data_end_date - timedelta(days=365 * 5)
 # data_start_date = two_years_ago.strftime('%Y-%m-%d')
 data_start_date = '2015-01-05'
 

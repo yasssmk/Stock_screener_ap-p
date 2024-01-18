@@ -96,15 +96,26 @@ def get_last_eps(symbol):
 def get_eps(symbol):
     try:
         stock = yf.Ticker(symbol)
-        eps = round(stock.info.get('trailingEps', None),1)
-        return eps
-    except:
         try:
-            inc_stm = stock.income_stmt
-            eps = round(inc_stm.loc['Diluted EPS'].iloc[0],1)
-            return eps
+            eps = stock.info.get('trailingEps')
+            return round(eps, 1)
         except:
-            return None
+            try:
+                # If 'trailingEps' is not available or is NaN, try 'Diluted EPS'
+                inc_stm = stock.income_stmt
+                eps = inc_stm.loc['Diluted EPS'].iloc[0]
+
+                # If the first 'Diluted EPS' is NaN, try the next
+                if math.isnan(eps):
+                    eps = inc_stm.loc['Diluted EPS'].iloc[1]
+
+                return round(eps, 1) if eps is not None and not math.isnan(eps) else None
+            except:
+                return None
+
+    except:
+        # print(f"An error occurred: {e}")
+        return None
 
 
 def get_3years_av_eps(symbol):
