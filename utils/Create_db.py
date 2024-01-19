@@ -15,6 +15,8 @@ import utils.Stock_Data
 import utils.Sending_Email
 import utils.Errors_logging
 import pandas as pd
+from dotenv import load_dotenv
+from supabase import create_client, Client
 
 
 def create_stock_data_db():
@@ -47,6 +49,7 @@ def create_stock_data_db():
 
             insert_data = {
                 'Stock_id': stock_id,
+                'Symbol': symbol,
                 'Last EPS': last_eps,
                 '3 years av': av_eps,
                 'Last Growth': last_growth,
@@ -59,18 +62,17 @@ def create_stock_data_db():
             }
 
             check_response = supabase.table('data_stocks').select("*").eq('Stock_id', stock_id).execute()
-            if check_response.data:
-                # Update the existing record
-                update_response = supabase.table('data_stocks').update(insert_data).eq('Stock_id', stock_id).execute()
-                if update_response.error:
-                    utils.Errors_logging.functions_error_log("create_stock_data_db", update_response.error,
-                                                             utils.Errors_logging.log_name_rundb, symbol=symbol)
-            else:
-                # Insert a new record
-                insert_response = supabase.table('data_stocks').insert(insert_data).execute()
-                if insert_response.error:
-                    utils.Errors_logging.functions_error_log("create_stock_data_db", insert_response.error,
-                                                             utils.Errors_logging.log_name_rundb, symbol=symbol)
+            try:
+                if check_response.data:
+                    # Update the existing record
+                    supabase.table('data_stocks').update(insert_data).eq('Stock_id', stock_id).execute()
+                else:
+                    # Insert a new record
+                    supabase.table('data_stocks').insert(insert_data).execute()
+            except Exception as e:
+                utils.Errors_logging.functions_error_log("create_stock_data_db", e,utils.Errors_logging.log_name_rundb, symbol=symbol)
+                continue
+
 
         except Exception as e:
             utils.Errors_logging.functions_error_log("create_stock_data_db", e, utils.Errors_logging.log_name_rundb, symbol=symbol)
@@ -97,221 +99,160 @@ def remove_outliers(data):
         utils.Errors_logging.functions_error_log("remove_outliers", e, utils.Errors_logging.log_name_rundb)
 
 def calculate_industry_stat():
-    df = pd.read_csv("./stocks_data_csv/data_base/Data_Base.csv")
-    technologies = df['Industry'].dropna().unique().tolist()
-    industry_stats = {
-        'Sector': [],
-        'Industry': [],
-        'Average Last EPS': [],
-        'Average 3 years EPS': [],
-        'Average Last Growth': [],
-        'Average EPS Growth': [],
-        'Average EPS median Growth': [],
-        'Average Debt to Equity': [],
-        'Average NWC per share': [],
-        'Average ROE': [],
-        'Average Free Cash Flow': [],
-        'Number of companies': []
-    }
+    load_dotenv()
+    url: str = os.getenv('sb_url')
+    key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
+    supabase: Client = create_client(url, key)
 
-    for techno in technologies:
-        numbers_company = len(df[df['Industry'] == techno])
-        sector = df[df['Industry'] == techno]['Sector'].iloc[0]
+    fin_response = supabase.table('data_stocks').select("*").execute()
+    fin_data = fin_response.data
+    stock_response = supabase.table('stocks_list').select("Stock_id", "Industry", "Sector").execute()
+    stock_data = stock_response.data
 
-        if numbers_company > 5:
-            techno_eps = df[df['Industry'] == techno]['Last EPS']
-            techno_eps = remove_outliers(techno_eps)
-            three_years = df[df['Industry'] == techno]['3 years av']
-            three_years = pd.to_numeric(three_years, errors='coerce')
-            three_years = remove_outliers(three_years)
-            last_growth = df[df['Industry'] == techno]['Last Growth']
-            last_growth = pd.to_numeric(last_growth, errors='coerce')
-            last_growth = remove_outliers(last_growth)
-            techno_eps_growth = df[df['Industry'] == techno]['EPS average Growth']
-            techno_eps_growth = pd.to_numeric(techno_eps_growth, errors='coerce')
-            techno_eps_growth = remove_outliers(techno_eps_growth)
-            techno_eps_median_growth = df[df['Industry'] == techno]['EPS median Growth']
-            techno_eps_median_growth = pd.to_numeric(techno_eps_median_growth, errors='coerce')
-            techno_eps_median_growth = remove_outliers(techno_eps_median_growth)
-            der = df[df['Industry'] == techno]['Debt to Equity']
-            der = pd.to_numeric(der, errors='coerce')
-            der = remove_outliers(der)
-            nwc = df[df['Industry'] == techno]['NWC per share']
-            nwc = pd.to_numeric(nwc, errors='coerce')
-            nwc = remove_outliers(nwc)
-            roe = df[df['Industry'] == techno]['ROE']
-            roe = pd.to_numeric(roe, errors='coerce')
-            roe = remove_outliers(roe)
-            fcf = df[df['Industry'] == techno]['Free Cash Flow']
-            fcf = pd.to_numeric(fcf, errors='coerce')
-            fcf = remove_outliers(fcf)
+    def calculate_mean(data, number_of_companies):
+        if number_of_companies > 5:
+            # Remove outliers and then calculate mean
+            return round(utils.Create_db.remove_outliers(data).mean(), 1)
         else:
-            techno_eps = df[df['Industry'] == techno]['Last EPS']
-            three_years = df[df['Industry'] == techno]['3 years av']
-            three_years = pd.to_numeric(three_years, errors='coerce')
-            last_growth = df[df['Industry'] == techno]['Last Growth']
-            last_growth = pd.to_numeric(last_growth, errors='coerce')
-            techno_eps_growth = df[df['Industry'] == techno]['EPS average Growth']
-            techno_eps_growth = pd.to_numeric(techno_eps_growth, errors='coerce')
-            techno_eps_median_growth = df[df['Industry'] == techno]['EPS median Growth']
-            techno_eps_median_growth = pd.to_numeric(techno_eps_median_growth, errors='coerce')
-            der = df[df['Industry'] == techno]['Debt to Equity']
-            der = pd.to_numeric(der, errors='coerce')
-            nwc = df[df['Industry'] == techno]['NWC per share']
-            nwc = pd.to_numeric(nwc, errors='coerce')
-            roe = df[df['Industry'] == techno]['ROE']
-            roe = pd.to_numeric(roe, errors='coerce')
-            fcf = df[df['Industry'] == techno]['Free Cash Flow']
-            fcf = pd.to_numeric(fcf, errors='coerce')
-
-
-
-        average_techno_eps = round(techno_eps.mean(), 1)
-        three_years_average = round(three_years.mean(), 1)
-        average_last_growth = round(last_growth.mean(), 1)
-        average_techno_eps_growth = round(techno_eps_growth.mean(), 1)
-        average_techno_eps_median_growth = round(techno_eps_median_growth.mean(), 1)
-        average_der = round(der.mean(), 1)
-        average_nwc = round(nwc.mean(), 1)
-        average_roe = round(roe.mean(), 1)
-        average_fcf = round(fcf.mean(), 1)
-
-        industry_stats['Sector'].append(sector)
-        industry_stats['Industry'].append(techno)
-        industry_stats['Average Last EPS'].append(average_techno_eps)
-        industry_stats['Average 3 years EPS'].append(three_years_average)
-        industry_stats['Average Last Growth'].append(average_last_growth)
-        industry_stats['Average EPS Growth'].append(average_techno_eps_growth)
-        industry_stats['Average EPS median Growth'].append(average_techno_eps_median_growth)
-        industry_stats['Average Debt to Equity'].append(average_der)
-        industry_stats['Average NWC per share'].append(average_nwc)
-        industry_stats['Average ROE'].append(average_roe)
-        industry_stats['Average Free Cash Flow'].append(average_fcf)
-        industry_stats['Number of companies'].append(numbers_company)
-
-    file_path = "./stocks_data_csv/data_base/Industry_stat_data_base.csv"
-
+            # Directly calculate mean
+            return round(data.mean(), 1)
     try:
-        industry_stats_df = pd.DataFrame(industry_stats)
-        industry_stats_df.to_csv(file_path, index=False)
-        #print(f'CSV file saved to {file_path}')
+        joined_data = []
+        for fin_item in fin_data:
+            stock_id = fin_item['Stock_id']
+            stock_item = next((item for item in stock_data if item['Stock_id'] == stock_id), None)
+            if stock_item:
+                joined_item = {**fin_item, **stock_item}
+                joined_data.append(joined_item)
+
+        # Assuming 'joined_data' is a list of dictionaries as before
+        df = pd.DataFrame(joined_data)
+
+        # Group by 'Industry' and aggregate data
+        industry_financials = df.groupby('Industry').agg({
+            'Sector': 'first',
+            'Stock_id': 'count',
+            # Other columns are aggregated into lists for further processing
+            'Last EPS': list,
+            '3 years av': list,
+            'Last Growth': list,
+            'EPS average Growth': list,
+            'EPS median Growth': list,
+            'Debt to Equity': list,
+            'NWC per share': list,
+            'ROE': list
+        }).reset_index()
+
+        # Apply the logic for mean calculation
+        for index, row in industry_financials.iterrows():
+            number_of_companies = row['Stock_id']
+            for col in ['Last EPS', '3 years av', 'Last Growth', 'EPS average Growth', 'EPS median Growth', 'Debt to Equity', 'NWC per share', 'ROE']:
+                data_series = pd.Series(row[col])
+                industry_financials.at[index, col] = calculate_mean(data_series, number_of_companies)
+
+        # Renaming 'Stock_id' column to 'Number of Companies'
+        industry_financials.rename(columns={'Stock_id': 'Number of Companies'}, inplace=True)
+
+        # Convert the DataFrame to a list of dictionaries if needed
+        industries_list = industry_financials.to_dict(orient='records')
+
+        for i in industries_list:
+            industry = i["Industry"]
+            check_response = supabase.table('industries_fin_data').select("*").eq('Industry',industry).execute()
+
+            try:
+                # Update existing record
+                if check_response.data:
+                    update_response = supabase.table('industries_fin_data').update(i).eq('Industry',industry).execute()
+
+                    # Insert new record
+                else:
+                    insert_response = supabase.table('industries_fin_data').insert(i).execute()
+            except Exception as e:
+                utils.Errors_logging.functions_error_log("calculate_industry_stat update db", e,
+                                                         utils.Errors_logging.log_name_rundb)
+
     except Exception as e:
         utils.Errors_logging.functions_error_log("calculate_industry_stat", e, utils.Errors_logging.log_name_rundb)
-        #print(f'Error: {e}')
-
-    return industry_stats_df
 
 
 def calculate_sector_stat():
-    df = pd.read_csv("./stocks_data_csv/data_base/Data_Base.csv")
-    sectors = df['Sector'].dropna().unique().tolist()
+    load_dotenv()
+    url: str = os.getenv('sb_url')
+    key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
+    supabase: Client = create_client(url, key)
 
-    sector_stats = {
-        'Sector': [],
-        'Average Last EPS': [],
-        'Average 3 years EPS': [],
-        'Average Last Growth': [],
-        'Average EPS Growth': [],
-        'Average EPS median Growth': [],
-        'Average Debt to Equity': [],
-        'Average NWC per share': [],
-        'Average ROE': [],
-        'Average Free Cash Flow': [],
-        'Number of companies': []
-    }
+    fin_response = supabase.table('data_stocks').select("*").execute()
+    fin_data = fin_response.data
+    stock_response = supabase.table('stocks_list').select("Stock_id", "Sector").execute()
+    stock_data = stock_response.data
 
-    for sector in sectors:
-        sector_df = df[df['Sector'] == sector]
-        numbers_company = len(sector_df)
-
-        if numbers_company > 5:
-            techno_eps = sector_df['Last EPS']
-            techno_eps = remove_outliers(techno_eps)
-            three_years = sector_df['3 years av']
-            three_years = pd.to_numeric(three_years, errors='coerce')
-            three_years = remove_outliers(three_years)
-            last_growth = sector_df['Last Growth']
-            last_growth = pd.to_numeric(last_growth, errors='coerce')
-            last_growth = remove_outliers(last_growth)
-            eps_growth = sector_df['EPS average Growth']
-            eps_growth = pd.to_numeric(eps_growth, errors='coerce')
-            eps_growth = remove_outliers(eps_growth)
-            eps_median_growth = sector_df['EPS median Growth']
-            eps_median_growth = pd.to_numeric(eps_median_growth, errors='coerce')
-            eps_median_growth = remove_outliers(eps_median_growth)
-            der = sector_df['Debt to Equity']
-            der = pd.to_numeric(der, errors='coerce')
-            der = remove_outliers(der)
-            nwc = sector_df['NWC per share']
-            nwc = pd.to_numeric(nwc, errors='coerce')
-            nwc = remove_outliers(nwc)
-            roe = sector_df['ROE']
-            roe = pd.to_numeric(roe, errors='coerce')
-            roe = remove_outliers(roe)
-            fcf = sector_df['Free Cash Flow']
-            fcf = pd.to_numeric(fcf, errors='coerce')
-            fcf = remove_outliers(fcf)
-
-            # Repeat for other columns
-
+    def calculate_mean(data, number_of_companies):
+        if number_of_companies > 5:
+            # Remove outliers and then calculate mean
+            return round(utils.Create_db.remove_outliers(data).mean(), 1)
         else:
-            techno_eps = sector_df['Last EPS']
-            three_years = sector_df['3 years av']
-            three_years = pd.to_numeric(three_years, errors='coerce')
-            last_growth = sector_df['Last Growth']
-            last_growth = pd.to_numeric(last_growth, errors='coerce')
-            eps_growth = sector_df['EPS average Growth']
-            eps_growth = pd.to_numeric(eps_growth, errors='coerce')
-            eps_median_growth = sector_df['EPS median Growth']
-            eps_median_growth = pd.to_numeric(eps_median_growth, errors='coerce')
-            der = sector_df['Debt to Equity']
-            der = pd.to_numeric(der, errors='coerce')
-            nwc = sector_df['NWC per share']
-            nwc = pd.to_numeric(nwc, errors='coerce')
-            roe = sector_df['ROE']
-            roe = pd.to_numeric(roe, errors='coerce')
-            fcf = sector_df['Free Cash Flow']
-            fcf = pd.to_numeric(fcf, errors='coerce')
-
-
-
-        average_techno_eps = round(techno_eps.mean(), 1)
-        three_years_average = round(three_years.mean(), 1)
-        average_last_growth = round(last_growth.mean(), 1)
-        average_eps_growth= round(eps_growth.mean(), 1)
-        average_eps_median_growth = round(eps_median_growth.mean(), 1)
-        average_der = round(der.mean(), 1)
-        average_nwc = round(nwc.mean(), 1)
-        average_roe = round(roe.mean(), 1)
-        average_fcf = round(fcf.mean(), 1)
-
-        # Repeat for other columns
-
-        sector_stats['Sector'].append(sector)
-        sector_stats['Average Last EPS'].append(average_techno_eps)
-        sector_stats['Average 3 years EPS'].append(three_years_average)
-        sector_stats['Average Last Growth'].append(average_last_growth)
-        sector_stats['Average EPS Growth'].append(average_eps_growth)
-        sector_stats['Average EPS median Growth'].append(average_eps_median_growth)
-        sector_stats['Average Debt to Equity'].append(average_der)
-        sector_stats['Average NWC per share'].append(average_nwc)
-        sector_stats['Average ROE'].append(average_roe)
-        sector_stats['Average Free Cash Flow'].append(average_fcf)
-
-        # Repeat for other columns
-
-        sector_stats['Number of companies'].append(numbers_company)
-
-    file_path = "./stocks_data_csv/data_base/Sector_stat_data_base.csv"
+            # Directly calculate mean
+            return round(data.mean(), 1)
 
     try:
-        sector_stats_df = pd.DataFrame(sector_stats)
-        sector_stats_df.to_csv(file_path, index=False)
-        #print(f'CSV file saved to {file_path}')
+        joined_data = []
+        for fin_item in fin_data:
+            stock_id = fin_item['Stock_id']
+            stock_item = next((item for item in stock_data if item['Stock_id'] == stock_id), None)
+            if stock_item:
+                joined_item = {**fin_item, **stock_item}
+                joined_data.append(joined_item)
+
+        # Assuming 'joined_data' is a list of dictionaries as before
+        df = pd.DataFrame(joined_data)
+
+        # Group by 'Industry' and aggregate data
+        sector_financials = df.groupby('Sector').agg({
+            'Stock_id': 'count',
+            # Other columns are aggregated into lists for further processing
+            'Last EPS': list,
+            '3 years av': list,
+            'Last Growth': list,
+            'EPS average Growth': list,
+            'EPS median Growth': list,
+            'Debt to Equity': list,
+            'NWC per share': list,
+            'ROE': list
+        }).reset_index()
+
+        # Apply the logic for mean calculation
+        for index, row in sector_financials.iterrows():
+            number_of_companies = row['Stock_id']
+            for col in ['Last EPS', '3 years av', 'Last Growth', 'EPS average Growth', 'EPS median Growth',
+                        'Debt to Equity', 'NWC per share', 'ROE']:
+                data_series = pd.Series(row[col])
+                sector_financials.at[index, col] = calculate_mean(data_series, number_of_companies)
+
+        # Renaming 'Stock_id' column to 'Number of Companies'
+        sector_financials.rename(columns={'Stock_id': 'Number of Companies'}, inplace=True)
+
+        # Convert the DataFrame to a list of dictionaries if needed
+        sectors_list = sector_financials.to_dict(orient='records')
+
+        for i in sectors_list:
+            sector = i["Sector"]
+            check_response = supabase.table('sectors_fin_data').select("*").eq('Sector', sector).execute()
+
+            try:
+                # Update existing record
+                if check_response.data:
+                    update_response = supabase.table('sectors_fin_data').update(i).eq('Sector', sector).execute()
+
+                    # Insert new record
+                else:
+                    insert_response = supabase.table('sectors_fin_data').insert(i).execute()
+            except Exception as e:
+                utils.Errors_logging.functions_error_log("calculate_sector_stat", e,
+                                                         utils.Errors_logging.log_name_rundb)
+
     except Exception as e:
         utils.Errors_logging.functions_error_log("calculate_sector_stat", e, utils.Errors_logging.log_name_rundb)
-
-    return sector_stats_df
 
 
 def add_percentile(dataframe):

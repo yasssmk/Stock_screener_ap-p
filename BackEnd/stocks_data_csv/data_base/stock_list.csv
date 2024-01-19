@@ -10,7 +10,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 9,1895 Bancorp of Wisconsin Inc. ,BCOW,United States,Finance,Banks
 10,1st Source Corporation,SRCE,United States,Finance,Major Banks
 11,1stdibs.com Inc.,DIBS,United States,Consumer Discretionary,Catalog/Specialty Distribution
-12,22nd Century Group Inc.,XXII,United States,Health Care, Medicinal Chemicals and Botanical Products 
+12,22nd Century Group Inc.,XXII,United States,Health Care,Medicinal Chemicals and Botanical Products 
 13,23andMe Holding Co. Class A,ME,United States,Health Care,Precision Instruments
 14,26 Capital Acquisition Corp. Class A,ADER,United States,Finance,Blank Checks
 15,26 Capital Acquisition Corp. Unit,ADERU,United States,Finance,Blank Checks
@@ -91,7 +91,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 90,Acorda Therapeutics Inc.,ACOR,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
 91,ACRES Commercial Realty Corp.,ACR,United States,Real Estate,Real Estate Investment Trusts
 92,Acri Capital Acquisition Corporation Class A,ACAC,United States,Finance,Blank Checks
-93,Acrivon Therapeutics Inc.,ACRV,United States,Health Care, Medicinal Chemicals and Botanical Products 
+93,Acrivon Therapeutics Inc.,ACRV,United States,Health Care,Medicinal Chemicals and Botanical Products 
 94,Acropolis Infrastructure Acquisition Corp. Class A,ACRO,,Finance,Blank Checks
 95,Actelis Networks Inc.,ASNS,United States,Telecommunications,Telecommunications Equipment
 96,Actinium Pharmaceuticals Inc. ,ATNM,United States,Health Care,Biotechnology: Pharmaceutical Preparations
@@ -200,7 +200,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 199,AirSculpt Technologies Inc.,AIRS,United States,Health Care,Medical/Nursing Services
 200,Airspan Networks Holdings Inc.,MIMO,,Consumer Discretionary,Telecommunications Equipment
 201,Akamai Technologies Inc.,AKAM,United States,Consumer Discretionary,Business Services
-202,Akanda Corp. Common Shares,AKAN,United Kingdom,Health Care, Medicinal Chemicals and Botanical Products 
+202,Akanda Corp. Common Shares,AKAN,United Kingdom,Health Care,Medicinal Chemicals and Botanical Products 
 203,Akari Therapeutics plc ADS,AKTX,United Kingdom,Health Care,Biotechnology: Pharmaceutical Preparations
 204,Akebia Therapeutics Inc.,AKBA,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 205,Akerna Corp.,KERN,United States,Technology,EDP Services
@@ -267,7 +267,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 266,Alpha Pro Tech Ltd.,APT,Canada,Health Care,Industrial Specialties
 267,Alpha Star Acquisition Corporation Ordinary Shares,ALSA,United States,Finance,Blank Checks
 268,Alpha Tau Medical Ltd. Ordinary Shares,DRTS,Israel,Health Care,Biotechnology: Pharmaceutical Preparations
-269,Alpha Teknova Inc.,TKNO,United States,Health Care, Medicinal Chemicals and Botanical Products 
+269,Alpha Teknova Inc.,TKNO,United States,Health Care,Medicinal Chemicals and Botanical Products 
 270,Alphabet Inc. Class A,GOOGL,United States,Technology,Computer Software: Programming Data Processing
 271,Alphabet Inc. Class C Capital Stock,GOOG,United States,Technology,Computer Software: Programming Data Processing
 272,Alphatec Holdings Inc.,ATEC,United States,Health Care,Medical/Dental Instruments
@@ -293,11 +293,11 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 292,Altitude Acquisition Corp. Class A,ALTU,United States,Finance,Blank Checks
 293,Altitude Acquisition Corp. Unit,ALTUU,United States,Finance,Blank Checks
 294,Alto Ingredients Inc.,ALTO,United States,Industrials,Major Chemicals
-295,Altria Group Inc.,MO,United States,Health Care, Medicinal Chemicals and Botanical Products 
+295,Altria Group Inc.,MO,United States,Health Care,Medicinal Chemicals and Botanical Products 
 296,Altus Power Inc. Class A,AMPS,,Utilities,Electric Utilities: Central
 297,Alvotech Ordinary Shares,ALVO,Luxembourg,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
 298,ALX Oncology Holdings Inc.,ALXO,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-299,Alzamend Neuro Inc.,ALZN,United States,Health Care, Medicinal Chemicals and Botanical Products 
+299,Alzamend Neuro Inc.,ALZN,United States,Health Care,Medicinal Chemicals and Botanical Products 
 300,Amalgamated Financial Corp. ,AMAL,United States,Finance,Commercial Banks
 301,Amarin Corporation plc,AMRN,Ireland,Health Care,Biotechnology: Pharmaceutical Preparations
 302,A-Mark Precious Metals Inc.,AMRK,United States,Industrials,Other Specialty Stores
@@ -555,11 +555,11 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 554,AT&T Inc.,T,United States,Telecommunications,Telecommunications Equipment
 555,ATAI Life Sciences N.V. Common Shares,ATAI,Germany,Health Care,Biotechnology: Pharmaceutical Preparations
 556,Atara Biotherapeutics Inc.,ATRA,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
-557,Atea Pharmaceuticals Inc.,AVIR,United States,Health Care, Medicinal Chemicals and Botanical Products 
+557,Atea Pharmaceuticals Inc.,AVIR,United States,Health Care,Medicinal Chemicals and Botanical Products 
 558,Athena Consumer Acquisition Corp. Class A,ACAQ,,Finance,Blank Checks
 559,Athena Technology Acquisition Corp. II Class A,ATEK,,Finance,Blank Checks
 560,Athersys Inc.,ATHX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-561,Athira Pharma Inc.,ATHA,United States,Health Care, Medicinal Chemicals and Botanical Products 
+561,Athira Pharma Inc.,ATHA,United States,Health Care,Medicinal Chemicals and Botanical Products 
 562,ATI Inc.,ATI,United States,Industrials,Steel/Iron Ore
 563,ATI Physical Therapy Inc. Class A,ATIP,,Health Care,Hospital/Nursing Management
 564,ATIF Holdings Limited Ordinary Shares,ATIF,China,Consumer Discretionary,Professional Services
@@ -754,7 +754,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 753,BILL Holdings Inc.,BILL,United States,Technology,EDP Services
 754,BIMI International Medical Inc.,BIMI,China,Health Care,Other Pharmaceuticals
 755,bioAffinity Technologies Inc.,BIAF,United States,Health Care,Biotechnology: In Vitro & In Vivo Diagnostic Substances
-756,BioAtla Inc.,BCAB,United States,Health Care, Medicinal Chemicals and Botanical Products 
+756,BioAtla Inc.,BCAB,United States,Health Care,Medicinal Chemicals and Botanical Products 
 757,BioCardia Inc.,BCDA,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
 758,Biocept Inc.,BIOC,United States,Health Care,Medical Specialities
 759,Bioceres Crop Solutions Corp. Ordinary Shares,BIOX,Argentina,Industrials,Agricultural Chemicals
@@ -779,7 +779,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 778,Bio-Rad Laboratories Inc. Class A,BIO,United States,Industrials,Biotechnology: Laboratory Analytical Instruments
 779,BioRestorative Therapies Inc. ,BRTX,United States,Health Care,Managed Health Care
 780,BioSig Technologies Inc.,BSGM,United States,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus
-781,Biote Corp. Class A,BTMD,United States,Health Care, Medicinal Chemicals and Botanical Products 
+781,Biote Corp. Class A,BTMD,United States,Health Care,Medicinal Chemicals and Botanical Products 
 782,Bio-Techne Corp,TECH,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
 783,Biotricity Inc.,BTCY,United States,Health Care,Medical/Dental Instruments
 784,Bioventus Inc. Class A,BVS,United States,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus
@@ -891,7 +891,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 890,Boise Cascade L.L.C.,BCC,United States,Consumer Discretionary,RETAIL: Building Materials
 891,BOK Financial Corporation,BOKF,United States,Finance,Major Banks
 892,Bolt Biotherapeutics Inc.,BOLT,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-893,Bon Natural Life Limited Ordinary Shares,BON,China,Health Care, Medicinal Chemicals and Botanical Products 
+893,Bon Natural Life Limited Ordinary Shares,BON,China,Health Care,Medicinal Chemicals and Botanical Products 
 894,Bone Biologics Corp,BBLG,United States,Health Care,Industrial Specialties
 895,Booking Holdings Inc.,BKNG,United States,Consumer Discretionary,Transportation Services
 896,Boot Barn Holdings Inc.,BOOT,United States,Consumer Discretionary,Clothing/Shoe/Accessory Stores
@@ -1016,7 +1016,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 1015,CADIZ Inc.,CDZI,United States,Utilities,Water Supply
 1016,Cadiz Inc. Depositary Shares,CDZIP,United States,Utilities,Water Supply
 1017,Cadre Holdings Inc.,CDRE,United States,Health Care,Industrial Specialties
-1018,Cadrenal Therapeutics Inc.,CVKD,United States,Health Care, Medicinal Chemicals and Botanical Products 
+1018,Cadrenal Therapeutics Inc.,CVKD,United States,Health Care,Medicinal Chemicals and Botanical Products 
 1019,Caesars Entertainment Inc.,CZR,United States,Consumer Discretionary,Hotels/Resorts
 1020,Caesarstone Ltd. Ordinary Shares,CSTE,Israel,Consumer Discretionary,Multi-Sector Companies
 1021,Calamos Convertible and High Income Fund,CHY,United States,Finance,Investment Managers
@@ -1080,7 +1080,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 1079,CareMax Inc. Class A,CMAX,United States,Technology,Computer Software: Prepackaged Software
 1080,CareTrust REIT Inc.,CTRE,United States,Real Estate,Real Estate Investment Trusts
 1081,CarGurus Inc. Class A ,CARG,United States,Technology,EDP Services
-1082,Caribou Biosciences Inc.,CRBU,United States,Health Care, Medicinal Chemicals and Botanical Products 
+1082,Caribou Biosciences Inc.,CRBU,United States,Health Care,Medicinal Chemicals and Botanical Products 
 1083,Carisma Therapeutics Inc.,CARM,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 1084,Carlisle Companies Incorporated,CSL,United States,Industrials,Specialty Chemicals
 1085,Carlyle Secured Lending Inc.,CGBD,United States,Finance,Finance: Consumer Services
@@ -1161,7 +1161,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 1160,Century Aluminum Company,CENX,United States,Industrials,Aluminum
 1161,Century Casinos Inc.,CNTY,United States,Consumer Discretionary,Hotels/Resorts
 1162,Century Communities Inc.,CCS,United States,Consumer Discretionary,Homebuilding
-1163,Century Therapeutics Inc.,IPSC,United States,Health Care, Medicinal Chemicals and Botanical Products 
+1163,Century Therapeutics Inc.,IPSC,United States,Health Care,Medicinal Chemicals and Botanical Products 
 1164,Cepton Inc.,CPTN,United States,Industrials,Industrial Machinery/Components
 1165,Ceragon Networks Ltd. Ordinary Shares,CRNT,Israel,Technology,Radio And Television Broadcasting And Communications Equipment
 1166,Cerence Inc.,CRNC,United States,Technology,EDP Services
@@ -1229,7 +1229,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 1228,Choice Hotels International Inc.,CHH,United States,Consumer Discretionary,Hotels/Resorts
 1229,ChoiceOne Financial Services Inc.,COFS,United States,Finance,Major Banks
 1230,Chord Energy Corporation,CHRD,United States,Energy,Oil & Gas Production
-1231,ChromaDex Corporation,CDXC,United States,Health Care, Medicinal Chemicals and Botanical Products 
+1231,ChromaDex Corporation,CDXC,United States,Health Care,Medicinal Chemicals and Botanical Products 
 1232,CHS Inc Class B Cumulative Redeemable Preferred Stock Series 4,CHSCL,United States,Industrials,Farming/Seeds/Milling
 1233,CHS Inc Class B Reset Rate Cumulative Redeemable Preferred Stock Series 3,CHSCM,United States,Industrials,Farming/Seeds/Milling
 1234,CHS Inc Preferred Class B Series 2 Reset Rate,CHSCN,United States,Industrials,Farming/Seeds/Milling
@@ -1531,7 +1531,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 1530,CVRx Inc.,CVRX,United States,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus
 1531,CVS Health Corporation,CVS,United States,Consumer Staples,Retail-Drug Stores and Proprietary Stores
 1532,CXApp Inc. Class A,CXAI,United States,Technology,EDP Services
-1533,Cyanotech Corporation,CYAN,United States,Health Care, Medicinal Chemicals and Botanical Products 
+1533,Cyanotech Corporation,CYAN,United States,Health Care,Medicinal Chemicals and Botanical Products 
 1534,CyberArk Software Ltd. Ordinary Shares,CYBR,Israel,Technology,Computer Software: Prepackaged Software
 1535,Cyclacel Pharmaceuticals Inc.,CYCC,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 1536,Cyclacel Pharmaceuticals Inc. 6% Convertible Preferred Stock,CYCCP,United States,Health Care,Biotechnology: Pharmaceutical Preparations
@@ -1715,7 +1715,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 1714,Dynatrace Inc.,DT,United States,Technology,EDP Services
 1715,Dynatronics Corporation,DYNT,United States,Health Care,Medical/Dental Instruments
 1716,Dynavax Technologies Corporation,DVAX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-1717,Dyne Therapeutics Inc.,DYN,United States,Health Care, Medicinal Chemicals and Botanical Products 
+1717,Dyne Therapeutics Inc.,DYN,United States,Health Care,Medicinal Chemicals and Botanical Products 
 1718,Dynex Capital Inc.,DX,United States,Real Estate,Real Estate Investment Trusts
 1719,DZS Inc.,DZSI,United States,Utilities,Telecommunications Equipment
 1720,e.l.f. Beauty Inc.,ELF,United States,Consumer Discretionary,Package Goods/Cosmetics
@@ -2150,7 +2150,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 2149,Focus Financial Partners Inc. Class A,FOCS,United States,Finance,Investment Managers
 2150,Focus Impact Acquisition Corp. Class A,FIAC,United States,Finance,Blank Checks
 2151,Focus Universal Inc.,FCUV,United States,Industrials,Industrial Machinery/Components
-2152,Foghorn Therapeutics Inc.,FHTX,United States,Health Care, Medicinal Chemicals and Botanical Products 
+2152,Foghorn Therapeutics Inc.,FHTX,United States,Health Care,Medicinal Chemicals and Botanical Products 
 2153,Fonar Corporation,FONR,United States,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus
 2154,Foot Locker Inc.,FL,United States,Consumer Discretionary,Clothing/Shoe/Accessory Stores
 2155,Forafric Global PLC Ordinary Shares,AFRI,Gibraltar,Consumer Staples,Packaged Foods
@@ -2413,7 +2413,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 2412,Granite Point Mortgage Trust Inc.,GPMT,,Real Estate,Real Estate Investment Trusts
 2413,Granite Ridge Resources Inc.,GRNT,,Finance,Blank Checks
 2414,Graphic Packaging Holding Company,GPK,United States,Consumer Discretionary,Containers/Packaging
-2415,Graphite Bio Inc.,GRPH,United States,Health Care, Medicinal Chemicals and Botanical Products 
+2415,Graphite Bio Inc.,GRPH,United States,Health Care,Medicinal Chemicals and Botanical Products 
 2416,Gravitas Education Holdings Inc. American depositary shares each representing twenty Class A ordinary shares,GEHI,,Consumer Discretionary,Educational Services
 2417,Gray Television Inc.,GTN,United States,Industrials,Broadcasting
 2418,Great Ajax Corp.,AJX,United States,Real Estate,Real Estate Investment Trusts
@@ -2538,7 +2538,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 2537,Helius Medical Technologies Inc. Class A ,HSDT,United States,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus
 2538,Helix Energy Solutions Group Inc.,HLX,United States,Energy,Oilfield Services/Equipment
 2539,Helmerich & Payne Inc.,HP,United States,Energy,Oil & Gas Production
-2540,Hempacco Co. Inc.,HPCO,United States,Health Care, Medicinal Chemicals and Botanical Products 
+2540,Hempacco Co. Inc.,HPCO,United States,Health Care,Medicinal Chemicals and Botanical Products 
 2541,Hennessy Advisors Inc.,HNNA,United States,Finance,Investment Managers
 2542,Hennessy Capital Investment Corp. VI Class A,HCVI,United States,Finance,Blank Checks
 2543,Henry Schein Inc.,HSIC,United States,Health Care,Medical Specialities
@@ -2691,13 +2691,13 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 2690,Illumina Inc.,ILMN,United States,Health Care,Medical Specialities
 2691,IMAC Holdings Inc.,BACK,United States,Health Care,Medical Specialities
 2692,Immersion Corporation,IMMR,United States,Technology,Computer peripheral equipment
-2693,Immix Biopharma Inc.,IMMX,United States,Health Care, Medicinal Chemicals and Botanical Products 
+2693,Immix Biopharma Inc.,IMMX,United States,Health Care,Medicinal Chemicals and Botanical Products 
 2694,ImmuCell Corporation,ICCC,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 2695,Immuneering Corporation Class A,IMRX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 2696,Immunic Inc.,IMUX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 2697,ImmunityBio Inc.,IBRX,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
 2698,ImmunoGen Inc.,IMGN,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-2699,Immunome Inc.,IMNM,United States,Health Care, Medicinal Chemicals and Botanical Products 
+2699,Immunome Inc.,IMNM,United States,Health Care,Medicinal Chemicals and Botanical Products 
 2700,Immunovant Inc.,IMVT,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
 2701,Impel Pharmaceuticals Inc.,IMPL,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 2702,Imperial Petroleum Inc. 8.75% Series A Cumulative Redeemable Perpetual Preferred Shares,IMPPP,Greece,Consumer Discretionary,Marine Transportation
@@ -2869,7 +2869,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 2868,IronNet Inc.,IRNT,United States,Technology,Computer Software: Prepackaged Software
 2869,Ironwood Pharmaceuticals Inc. Class A,IRWD,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 2870,iSpecimen Inc.,ISPC,United States,Health Care,Precision Instruments
-2871,Ispire Technology Inc.,ISPR,United States,Health Care, Medicinal Chemicals and Botanical Products 
+2871,Ispire Technology Inc.,ISPR,United States,Health Care,Medicinal Chemicals and Botanical Products 
 2872,Israel Acquisitions Corp Class A Ordinary Shares,ISRL,United States,Finance,Blank Checks
 2873,Israel Acquisitions Corp Unit,ISRLU,United States,Finance,Blank Checks
 2874,Issuer Direct Corporation,ISDR,United States,Consumer Discretionary,Publishing
@@ -2952,7 +2952,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 2951,Kadant Inc,KAI,United States,Industrials,Industrial Machinery/Components
 2952,Kairous Acquisition Corp. Limited Rights,KACLR,Malaysia,Finance,Blank Checks
 2953,Kaiser Aluminum Corporation,KALU,United States,Industrials,Metal Fabrications
-2954,Kaival Brands Innovations Group Inc.,KAVL,United States,Health Care, Medicinal Chemicals and Botanical Products 
+2954,Kaival Brands Innovations Group Inc.,KAVL,United States,Health Care,Medicinal Chemicals and Botanical Products 
 2955,Kaixin Auto Holdings Ordinary Shares,KXIN,China,Consumer Discretionary,Retail-Auto Dealers and Gas Stations
 2956,Kala Pharmaceuticals Inc.,KALA,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 2957,Kaleyra Inc.,KLR,United States,Technology,EDP Services
@@ -3013,7 +3013,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3012,Kiora Pharmaceuticals Inc. ,KPRX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 3013,Kirby Corporation,KEX,United States,Consumer Discretionary,Marine Transportation
 3014,Kirkland's Inc. COMMONSTOCK,KIRK,United States,Consumer Discretionary,Other Specialty Stores
-3015,Kiromic BioPharma Inc.,KRBP,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3015,Kiromic BioPharma Inc.,KRBP,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3016,Kite Realty Group Trust,KRG,United States,Real Estate,Real Estate Investment Trusts
 3017,KKR & Co. Inc.,KKR,United States,Finance,Investment Managers
 3018,KKR Real Estate Finance Trust Inc.,KREF,United States,Real Estate,Real Estate Investment Trusts
@@ -3040,7 +3040,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3039,Kratos Defense & Security Solutions Inc.,KTOS,United States,Industrials,Military/Government/Technical
 3040,Krispy Kreme Inc.,DNUT,United States,Consumer Staples,Food Chains
 3041,Kroger Company ,KR,United States,Consumer Staples,Food Chains
-3042,Kronos Bio Inc.,KRON,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3042,Kronos Bio Inc.,KRON,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3043,Kronos Worldwide Inc,KRO,United States,Industrials,Major Chemicals
 3044,Krystal Biotech Inc.,KRYS,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
 3045,Kubient Inc.,KBNT,United States,Technology,EDP Services
@@ -3049,7 +3049,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3048,Kura Oncology Inc.,KURA,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 3049,Kura Sushi USA Inc. Class A,KRUS,United States,Consumer Discretionary,Restaurants
 3050,KVH Industries Inc.,KVHI,United States,Technology,Radio And Television Broadcasting And Communications Equipment
-3051,Kymera Therapeutics Inc.,KYMR,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3051,Kymera Therapeutics Inc.,KYMR,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3052,Kyndryl Holdings Inc.,KD,United States,Technology,EDP Services
 3053,L Catterton Asia Acquisition Corp Class A Ordinary Shares,LCAA,Singapore,Finance,Blank Checks
 3054,L.B. Foster Company,FSTR,United States,Industrials,Metal Fabrications
@@ -3070,7 +3070,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3069,Lancaster Colony Corporation,LANC,United States,Consumer Staples,Packaged Foods
 3070,Landcadia Holdings IV Inc. Class A,LCA,United States,Finance,Blank Checks
 3071,Landmark Bancorp Inc.,LARK,United States,Finance,Major Banks
-3072,Landos Biopharma Inc.,LABP,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3072,Landos Biopharma Inc.,LABP,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3073,Lands' End Inc.,LE,United States,Consumer Discretionary,Clothing/Shoe/Accessory Stores
 3074,Landsea Homes Corporation,LSEA,United States,Consumer Discretionary,Homebuilding
 3075,Landstar System Inc.,LSTR,United States,Industrials,Trucking Freight/Courier Services
@@ -3202,7 +3202,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3201,LogicMark Inc. ,LGMK,United States,Health Care,Industrial Specialties
 3202,Logitech International S.A. Ordinary Shares,LOGI,United States,Technology,Computer peripheral equipment
 3203,Longboard Pharmaceuticals Inc.,LBPH,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-3204,Longeveron Inc. Class A,LGVN,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3204,Longeveron Inc. Class A,LGVN,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3205,Loop Industries Inc.,LOOP,Canada,Industrials,Major Chemicals
 3206,Loop Media Inc.,LPTV,,Industrials,Broadcasting
 3207,Lottery.com Inc.,LTRY,United States,Technology,Computer Software: Prepackaged Software
@@ -3274,7 +3274,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3273,Manhattan Bridge Capital Inc,LOAN,United States,Real Estate,Real Estate Investment Trusts
 3274,Manitex International Inc.,MNTX,United States,Technology,Industrial Machinery/Components
 3275,Manitowoc Company Inc. ,MTW,United States,Industrials,Construction/Ag Equipment/Trucks
-3276,Mannatech Incorporated,MTEX,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3276,Mannatech Incorporated,MTEX,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3277,MannKind Corporation,MNKD,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 3278,ManpowerGroup,MAN,United States,Consumer Discretionary,Professional Services
 3279,Maquia Capital Acquisition Corporation Class A,MAQC,United States,Finance,Blank Checks
@@ -3354,7 +3354,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3353,Medicinova Inc,MNOV,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 3354,MEDIFAST INC,MED,United States,Consumer Staples,Packaged Foods
 3355,Medigus Ltd. American Depositary Shares,MDGS,Israel,Health Care,Medical/Dental Instruments
-3356,MediWound Ltd. Ordinary Shares,MDWD,Israel,Health Care, Medicinal Chemicals and Botanical Products 
+3356,MediWound Ltd. Ordinary Shares,MDWD,Israel,Health Care,Medicinal Chemicals and Botanical Products 
 3357,Medpace Holdings Inc.,MEDP,United States,Health Care,Biotechnology: Commercial Physical & Biological Resarch
 3358,Medtronic plc. Ordinary Shares,MDT,United States,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus
 3359,Mega Matrix Corp.,MPU,United States,Consumer Discretionary,Transportation Services
@@ -3449,7 +3449,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3448,Millicom International Cellular S.A.,TIGO,Luxembourg,Telecommunications,Telecommunications Equipment
 3449,MiMedx Group Inc,MDXG,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 3450,MIND C.T.I. Ltd. Ordinary Shares,MNDO,Israel,Technology,EDP Services
-3451,Mind Medicine  Inc. Common Shares,MNMD,Canada,Health Care, Medicinal Chemicals and Botanical Products 
+3451,Mind Medicine  Inc. Common Shares,MNMD,Canada,Health Care,Medicinal Chemicals and Botanical Products 
 3452,MIND Technology Inc. ,MIND,United States,Industrials,Industrial Machinery/Components
 3453,MIND Technology Inc. Series A 9.00% Series A Cumulative Preferred Stock ,MINDP,United States,Industrials,Industrial Machinery/Components
 3454,Minerals Technologies Inc.,MTX,United States,Industrials,Major Chemicals
@@ -3458,7 +3458,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3457,Minerva Surgical Inc.,UTRS,United States,Technology,Computer Software: Prepackaged Software
 3458,MingZhu Logistics Holdings Limited Ordinary Shares,YGMZ,China,Consumer Discretionary,Transportation Services
 3459,Minim Inc.,MINM,United States,Utilities,Telecommunications Equipment
-3460,MiNK Therapeutics Inc.,INKT,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3460,MiNK Therapeutics Inc.,INKT,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3461,Mirati Therapeutics Inc.,MRTX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 3462,Mirion Technologies Inc. Class A,MIR,United States,Technology,Industrial Machinery/Components
 3463,Miromatrix Medical Inc.,MIRO,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
@@ -3580,7 +3580,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3579,National Storage Affiliates Trust Common Shares of Beneficial Interest,NSA,United States,Real Estate,Real Estate Investment Trusts
 3580,National Vision Holdings Inc.,EYE,United States,Health Care,Ophthalmic Goods
 3581,National Western Life Group Inc. Class A,NWLI,United States,Finance,Life Insurance
-3582,Natural Alternatives International Inc.,NAII,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3582,Natural Alternatives International Inc.,NAII,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3583,Natural Gas Services Group Inc.,NGS,United States,Energy,Oilfield Services/Equipment
 3584,Natural Grocers by Vitamin Cottage Inc.,NGVC,United States,Consumer Staples,Food Chains
 3585,Natural Health Trends Corp.,NHTC,United States,Consumer Discretionary,Consumer Specialties
@@ -3772,7 +3772,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3771,Nuvalent Inc. Class A,NUVL,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 3772,NuVasive Inc.,NUVA,United States,Health Care,Medical/Dental Instruments
 3773,Nuvation Bio Inc. Class A,NUVB,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-3774,Nuvectis Pharma Inc.,NVCT,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3774,Nuvectis Pharma Inc.,NVCT,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3775,Nuveen AMT-Free Municipal Credit Income Fund ,NVG,United States,Finance,Investment Managers
 3776,Nuveen AMT-Free Quality Municipal Income Fund Common Shares of Beneficial Interest Par Value $.01,NEA,United States,Finance,Finance/Investors Services
 3777,Nuveen Arizona Quality Municipal Income Fund,NAZ,United States,Finance,Finance/Investors Services
@@ -3925,7 +3925,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 3924,OraSure Technologies Inc.,OSUR,United States,Health Care,Medical/Dental Instruments
 3925,Orbital Infrastructure Group Inc.,OIG,United States,Technology,Electronic Components
 3926,Orchard Therapeutics plc American Depositary Shares,ORTX,United Kingdom,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
-3927,Orchestra BioMed Holdings Inc. Ordinary Shares,OBIO,United States,Health Care, Medicinal Chemicals and Botanical Products 
+3927,Orchestra BioMed Holdings Inc. Ordinary Shares,OBIO,United States,Health Care,Medicinal Chemicals and Botanical Products 
 3928,Orchid Island Capital Inc.,ORC,United States,Real Estate,Real Estate Investment Trusts
 3929,O'Reilly Automotive Inc.,ORLY,United States,Consumer Discretionary,Auto & Home Supply Stores
 3930,Organogenesis Holdings Inc. Class A,ORGO,United States,Health Care,Biotechnology: Pharmaceutical Preparations
@@ -4009,9 +4009,9 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4008,Paragon 28 Inc.,FNA,United States,Health Care,Biotechnology: Electromedical & Electrotherapeutic Apparatus
 4009,Paramount Gold Nevada Corp.,PZG,United States,Basic Materials,Metal Mining
 4010,Paramount Group Inc.,PGRE,United States,Real Estate,Real Estate Investment Trusts
-4011,Paranovus Entertainment Technology Ltd. Class A Ordinary Shares,PAVS,China,Health Care, Medicinal Chemicals and Botanical Products 
+4011,Paranovus Entertainment Technology Ltd. Class A Ordinary Shares,PAVS,China,Health Care,Medicinal Chemicals and Botanical Products 
 4012,Paratek Pharmaceuticals Inc.,PRTK,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-4013,Pardes Biosciences Inc.,PRDS,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4013,Pardes Biosciences Inc.,PRDS,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4014,Park Aerospace Corp.,PKE,United States,Industrials,Military/Government/Technical
 4015,Park City Group Inc.,PCYG,United States,Technology,EDP Services
 4016,Park Hotels & Resorts Inc. ,PK,United States,Real Estate,Real Estate Investment Trusts
@@ -4035,7 +4035,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4034,Patterson Companies Inc.,PDCO,United States,Health Care,Medical Specialities
 4035,Patterson-UTI Energy Inc.,PTEN,United States,Energy,Oil & Gas Production
 4036,PAVmed Inc.,PAVM,United States,Health Care,Medical/Dental Instruments
-4037,PaxMedica Inc.,PXMD,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4037,PaxMedica Inc.,PXMD,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4038,Paychex Inc.,PAYX,United States,Consumer Discretionary,Business Services
 4039,Paycom Software Inc.,PAYC,,Technology,Computer Software: Prepackaged Software
 4040,Paycor HCM Inc.,PYCR,United States,Technology,Computer Software: Prepackaged Software
@@ -4112,9 +4112,9 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4111,Pharming Group N.V. ADS each representing 10 ordinary shares,PHAR,Netherlands,Health Care,Biotechnology: Pharmaceutical Preparations
 4112,Phathom Pharmaceuticals Inc.,PHAT,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 4113,PhenixFIN Corporation,PFX,United States,Finance,Finance: Consumer Services
-4114,PhenomeX Inc.,CELL,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4114,PhenomeX Inc.,CELL,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4115,Phibro Animal Health Corporation Class A,PAHC,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-4116,Philip Morris International Inc,PM,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4116,Philip Morris International Inc,PM,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4117,Phillips 66,PSX,United States,Energy,Integrated oil Companies
 4118,Phillips Edison & Company Inc.,PECO,United States,Real Estate,Real Estate Investment Trusts
 4119,Phio Pharmaceuticals Corp.,PHIO,United States,Health Care,Biotechnology: Pharmaceutical Preparations
@@ -4184,7 +4184,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4183,PLUS THERAPEUTICS Inc. ,PSTV,United States,Health Care,Medical/Dental Instruments
 4184,Plutonian Acquisition Corp.,PLTN,United States,Finance,Blank Checks
 4185,Plymouth Industrial REIT Inc.,PLYM,United States,Real Estate,Real Estate Investment Trusts
-4186,PMV Pharmaceuticals Inc.,PMVP,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4186,PMV Pharmaceuticals Inc.,PMVP,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4187,PNC Financial Services Group Inc. ,PNC,United States,Finance,Major Banks
 4188,PNM Resources Inc. ,PNM,United States,Utilities,Electric Utilities: Central
 4189,POET Technologies Inc. Common Shares,POET,Canada,Technology,Semiconductors
@@ -4232,7 +4232,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4231,Predictive Oncology Inc.,POAI,United States,Health Care,Industrial Specialties
 4232,Preferred Bank,PFBC,United States,Finance,Major Banks
 4233,Preformed Line Products Company,PLPC,United States,Industrials,Water Sewer Pipeline Comm & Power Line Construction
-4234,Prelude Therapeutics Incorporated,PRLD,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4234,Prelude Therapeutics Incorporated,PRLD,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4235,Premier Financial Corp.,PFC,United States,Finance,Major Banks
 4236,Premier Inc. Class A,PINC,United States,Consumer Discretionary,Other Consumer Services
 4237,Prenetics Global Limited Class A Ordinary Share,PRE,Hong Kong,Industrials,Biotechnology: Laboratory Analytical Instruments
@@ -4242,7 +4242,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4241,Presto Automation Inc.,PRST,United States,Technology,EDP Services
 4242,PriceSmart Inc.,PSMT,United States,Consumer Discretionary,Department/Specialty Retail Stores
 4243,Prime Impact Acquisition I Class A Ordinary Shares,PIAI,,Finance,Blank Checks
-4244,Prime Medicine Inc.,PRME,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4244,Prime Medicine Inc.,PRME,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4245,Prime Number Acquisition I Corp. Class A,PNAC,United States,Finance,Blank Checks
 4246,Prime Number Acquisition I Corp. Unit,PNACU,United States,Finance,Blank Checks
 4247,PrimeEnergy Resources Corporation,PNRG,United States,Energy,Oil & Gas Production
@@ -4375,7 +4375,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4374,Rand Capital Corporation,RAND,United States,Finance,Finance: Consumer Services
 4375,Range Resources Corporation,RRC,United States,Energy,Oil & Gas Production
 4376,Ranger Energy Services Inc. Class A,RNGR,United States,Energy,Oilfield Services/Equipment
-4377,Rani Therapeutics Holdings Inc. Class A,RANI,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4377,Rani Therapeutics Holdings Inc. Class A,RANI,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4378,Ranpak Holdings Corp Class A,PACK,United States,Consumer Discretionary,Containers/Packaging
 4379,Rapid Micro Biosystems Inc. Class A,RPID,United States,Health Care,Medical Specialities
 4380,Rapid7 Inc.,RPD,United States,Technology,Computer Software: Prepackaged Software
@@ -4416,7 +4416,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4415,Redwoods Acquisition Corp. Rights,RWODR,United States,Finance,Blank Checks
 4416,REE Automotive Ltd. Class A Ordinary Shares,REE,Israel,Consumer Discretionary,Auto Manufacturing
 4417,Regal Rexnord Corporation,RRX,United States,Consumer Discretionary,Metal Fabrications
-4418,Regencell Bioscience Holdings Limited Ordinary Shares,RGC,Hong Kong,Health Care, Medicinal Chemicals and Botanical Products 
+4418,Regencell Bioscience Holdings Limited Ordinary Shares,RGC,Hong Kong,Health Care,Medicinal Chemicals and Botanical Products 
 4419,Regency Centers Corporation,REG,United States,Real Estate,Real Estate Investment Trusts
 4420,Regeneron Pharmaceuticals Inc.,REGN,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 4421,REGENXBIO Inc.,RGNX,United States,Health Care,Biotechnology: Biological Products (No Diagnostic Substances)
@@ -4574,7 +4574,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4573,Sally Beauty Holdings Inc. ,SBH,United States,Consumer Discretionary,Other Specialty Stores
 4574,Samsara Inc. Class A,IOT,United States,Technology,Retail: Computer Software & Peripheral Equipment
 4575,San Juan Basin Royalty Trust,SJT,United States,Energy,Oil & Gas Production
-4576,Sana Biotechnology Inc.,SANA,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4576,Sana Biotechnology Inc.,SANA,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4577,Sanara MedTech Inc.,SMTI,United States,Health Care,Medical/Dental Instruments
 4578,SandRidge Energy Inc.,SD,United States,Energy,Oil & Gas Production
 4579,Sandy Spring Bancorp Inc.,SASR,United States,Finance,Major Banks
@@ -4632,7 +4632,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4631,SecureWorks Corp. Class A,SCWX,United States,Technology,EDP Services
 4632,Security National Financial Corporation Class A,SNFCA,United States,Finance,Finance: Consumer Services
 4633,Seelos Therapeutics Inc.,SEEL,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-4634,Seer Inc. Class A,SEER,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4634,Seer Inc. Class A,SEER,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4635,SEI Investments Company,SEIC,United States,Finance,Investment Bankers/Brokers/Service
 4636,Select Medical Holdings Corporation,SEM,United States,Health Care,Hospital/Nursing Management
 4637,Select Water Solutions Inc. Class A,WTTR,United States,Energy,Oilfield Services/Equipment
@@ -4689,7 +4689,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4688,Shift Technologies Inc. Class A,SFT,United States,Consumer Discretionary,Retail-Auto Dealers and Gas Stations
 4689,Shift4 Payments Inc. Class A,FOUR,United States,Consumer Discretionary,Business Services
 4690,ShiftPixy Inc.,PIXY,United States,Consumer Discretionary,Diversified Commercial Services
-4691,Shineco Inc.,SISI,China,Health Care, Medicinal Chemicals and Botanical Products 
+4691,Shineco Inc.,SISI,China,Health Care,Medicinal Chemicals and Botanical Products 
 4692,SHL Telemedicine Ltd American Depositary Shares,SHLT,Israel,Consumer Discretionary,Business Services
 4693,Shoals Technologies Group Inc. Class A,SHLS,United States,Technology,Semiconductors
 4694,ShockWave Medical Inc.,SWAV,United States,Health Care,Medical/Dental Instruments
@@ -4716,7 +4716,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4715,Silicon Motion Technology Corporation American Depositary Shares,SIMO,Taiwan,Technology,Semiconductors
 4716,Silk Road Medical Inc.,SILK,United States,Health Care,Medical/Dental Instruments
 4717,Silo Pharma Inc.,SILO,United States,Consumer Discretionary,Apparel
-4718,Silver Spike Investment Corp.,SSIC,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4718,Silver Spike Investment Corp.,SSIC,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4719,SilverBow Resorces Inc.,SBOW,United States,Energy,Oil & Gas Production
 4720,SilverBox Corp III Class A,SBXC,,Finance,Blank Checks
 4721,Silvercorp Metals Inc. Common Shares,SVM,,Basic Materials,Precious Metals
@@ -4763,7 +4763,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4762,SLM Corporation Floating Rate Non-Cumulative Preferred Stock Series B,SLMBP,United States,Finance,Finance: Consumer Services
 4763,SLR Investment Corp.,SLRC,United States,Finance,Finance/Investors Services
 4764,SM Energy Company,SM,United States,Energy,Oil & Gas Production
-4765,Smart for Life Inc. ,SMFL,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4765,Smart for Life Inc. ,SMFL,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4766,SMART Global Holdings Inc. Ordinary Shares,SGH,United States,Technology,Semiconductors
 4767,Smart Powerr Corp.,CREG,China,Consumer Discretionary,Business Services
 4768,Smart Sand Inc.,SND,United States,Industrials,Mining & Quarrying of Nonmetallic Minerals (No Fuels)
@@ -4873,7 +4873,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4872,Sprott Focus Trust Inc.,FUND,United States,Finance,Investment Managers
 4873,Sprout Social Inc Class A,SPT,United States,Technology,EDP Services
 4874,Sprouts Farmers Market Inc.,SFM,United States,Consumer Staples,Food Chains
-4875,Spruce Biosciences Inc.,SPRB,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4875,Spruce Biosciences Inc.,SPRB,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4876,Spruce Power Holding Corporation Class A,SPRU,United States,Consumer Discretionary,Auto Parts:O.E.M.
 4877,SPS Commerce Inc.,SPSC,United States,Technology,Computer Software: Prepackaged Software
 4878,SPX Technologies Inc.,SPXC,United States,Industrials,Industrial Machinery/Components
@@ -4979,7 +4979,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4978,Surgery Partners Inc.,SGRY,United States,Health Care,Hospital/Nursing Management
 4979,Surmodics Inc.,SRDX,United States,Health Care,Medical/Dental Instruments
 4980,SuRo Capital Corp.,SSSS,United States,Finance,Finance: Consumer Services
-4981,Surrozen Inc.,SRZN,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4981,Surrozen Inc.,SRZN,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4982,Sutro Biopharma Inc.,STRO,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 4983,Sweetgreen Inc. Class A,SG,United States,Consumer Discretionary,Restaurants
 4984,Swiss Helvetia Fund Inc. ,SWZ,United States,Finance,Finance Companies
@@ -4988,7 +4988,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 4987,Sylvamo Corporation,SLVM,United States,Basic Materials,Paper
 4988,Symbotic Inc. Class A,SYM,United States,Industrials,Industrial Machinery/Components
 4989,Synaptics Incorporated $0.001 Par Value,SYNA,United States,Technology,Semiconductors
-4990,Synaptogenix Inc.,SNPX,United States,Health Care, Medicinal Chemicals and Botanical Products 
+4990,Synaptogenix Inc.,SNPX,United States,Health Care,Medicinal Chemicals and Botanical Products 
 4991,Synchronoss Technologies Inc.,SNCR,United States,Technology,EDP Services
 4992,Synchrony Financial,SYF,United States,Finance,Finance: Consumer Services
 4993,Syndax Pharmaceuticals Inc.,SNDX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
@@ -5025,7 +5025,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 5024,Target Global Acquisition I Corp. Class A Ordinary Share,TGAA,Cayman Islands,Finance,Blank Checks
 5025,Target Hospitality Corp.,TH,United States,Consumer Discretionary,Hotels/Resorts
 5026,Taro Pharmaceutical Industries Ltd. Ordinary Shares,TARO,Israel,Health Care,Biotechnology: Pharmaceutical Preparations
-5027,Tarsus Pharmaceuticals Inc.,TARS,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5027,Tarsus Pharmaceuticals Inc.,TARS,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5028,TaskUs Inc. Class A,TASK,United States,Technology,Retail: Computer Software & Peripheral Equipment
 5029,TAT Technologies Ltd. Ordinary Shares,TATT,Israel,Industrials,Aerospace
 5030,Taylor Devices Inc.,TAYD,United States,Industrials,Industrial Machinery/Components
@@ -5069,7 +5069,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 5068,Tenable Holdings Inc.,TENB,United States,Technology,Computer Software: Prepackaged Software
 5069,Tenaris S.A. American Depositary Shares,TS,Luxembourg,Industrials,Steel/Iron Ore
 5070,Tenax Therapeutics Inc.,TENX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-5071,Tenaya Therapeutics Inc.,TNYA,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5071,Tenaya Therapeutics Inc.,TNYA,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5072,Tenet Healthcare Corporation,THC,United States,Health Care,Hospital/Nursing Management
 5073,Tennant Company,TNC,United States,Industrials,Industrial Machinery/Components
 5074,Tennessee Valley Authority,TVE,United States,Utilities,Electric Utilities: Central
@@ -5374,7 +5374,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 5373,Unum Group,UNM,United States,Finance,Accident &Health Insurance
 5374,UP Fintech Holding Ltd American Depositary Share representing fifteen Class A Ordinary Shares,TIGR,China,Finance,Investment Bankers/Brokers/Service
 5375,Upbound Group Inc.,UPBD,United States,Consumer Discretionary,Diversified Commercial Services
-5376,Upexi Inc.,UPXI,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5376,Upexi Inc.,UPXI,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5377,UpHealth Inc.,UPH,,Health Care,Medical/Nursing Services
 5378,Upland Software Inc.,UPLD,United States,Technology,Computer Software: Prepackaged Software
 5379,Upstart Holdings Inc.,UPST,United States,Finance,Finance: Consumer Services
@@ -5391,7 +5391,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 5390,Urstadt Biddle Properties Inc.,UBA,United States,Real Estate,Real Estate Investment Trusts
 5391,US Foods Holding Corp.,USFD,United States,Consumer Discretionary,Food Distributors
 5392,USA Compression Partners LP Common Units Representing Limited Partner Interests,USAC,United States,Utilities,Natural Gas Distribution
-5393,USANA Health Sciences Inc.,USNA,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5393,USANA Health Sciences Inc.,USNA,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5394,USCB Financial Holdings Inc. Class A,USCB,United States,Finance,Major Banks
 5395,USD Partners LP Common Units representing limited partner interest,USDP,United States,Industrials,Railroads
 5396,Usio Inc.,USIO,United States,Technology,EDP Services
@@ -5429,13 +5429,13 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 5428,Vaxxinity Inc. Class A,VAXX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 5429,VBI Vaccines Inc. New ,VBIV,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 5430,Vector Acquisition Corporation II Class A Ordinary Shares,VAQC,United States,Finance,Blank Checks
-5431,Vector Group Ltd.,VGR,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5431,Vector Group Ltd.,VGR,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5432,Veeco Instruments Inc.,VECO,United States,Technology,Semiconductors
 5433,Veeva Systems Inc. Class A,VEEV,United States,Technology,Computer Software: Prepackaged Software
 5434,Velo3D Inc.,VLD,United States,Industrials,Wholesale Distributors
 5435,Velocity Financial Inc.,VEL,United States,Finance,Finance: Consumer Services
 5436,Ventas Inc.,VTR,United States,Real Estate,Real Estate Investment Trusts
-5437,Ventyx Biosciences Inc.,VTYX,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5437,Ventyx Biosciences Inc.,VTYX,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5438,Venus Concept Inc.,VERO,United States,Health Care,Medical/Dental Instruments
 5439,VEON Ltd. ADS,VEON,Netherlands,Telecommunications,Telecommunications Equipment
 5440,Vera Bradley Inc.,VRA,United States,Consumer Discretionary,Apparel
@@ -5465,13 +5465,13 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 5464,Vertex Pharmaceuticals Incorporated,VRTX,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 5465,Vertiv Holdings LLC Class A,VRT,United States,Technology,Industrial Machinery/Components
 5466,Veru Inc.,VERU,United States,Health Care,Biotechnology: Pharmaceutical Preparations
-5467,Verve Therapeutics Inc.,VERV,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5467,Verve Therapeutics Inc.,VERV,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5468,Via Renewables Inc. 8.75% Series A Fixed-to-Floating Rate Cumulative Redeemable Perpetual Preferred Stock,VIASP,United States,Utilities,Power Generation
 5469,Via Renewables Inc. Class A,VIA,United States,Utilities,Power Generation
 5470,Viad Corp,VVI,United States,Consumer Discretionary,Business Services
 5471,Viant Technology Inc. Class A,DSP,United States,Technology,EDP Services
 5472,ViaSat Inc.,VSAT,United States,Technology,Radio And Television Broadcasting And Communications Equipment
-5473,Viatris Inc.,VTRS,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5473,Viatris Inc.,VTRS,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5474,Viavi Solutions Inc.,VIAV,United States,Technology,Semiconductors
 5475,Vicarious Surgical Inc. Class A,RBOT,Hong Kong,Health Care,Medical Specialities
 5476,VICI Properties Inc.,VICI,,Real Estate,Real Estate Investment Trusts
@@ -5501,7 +5501,7 @@ Stock_id,Company Name,Symbol,Country,Sector,Industry
 5500,Viridian Therapeutics Inc.,VRDN,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 5501,Virios Therapeutics Inc.,VIRI,United States,Health Care,Biotechnology: Pharmaceutical Preparations
 5502,VirnetX Holding Corp,VHC,United States,Miscellaneous,Multi-Sector Companies
-5503,Virpax Pharmaceuticals Inc.,VRPX,United States,Health Care, Medicinal Chemicals and Botanical Products 
+5503,Virpax Pharmaceuticals Inc.,VRPX,United States,Health Care,Medicinal Chemicals and Botanical Products 
 5504,VirTra Inc.,VTSI,United States,Consumer Discretionary,Miscellaneous manufacturing industries
 5505,Virtu Financial Inc. Class A,VIRT,United States,Finance,Investment Bankers/Brokers/Service
 5506,Virtus Convertible & Income Fund Common Shares of Beneficial Interest,NCV,United States,Finance,Finance Companies

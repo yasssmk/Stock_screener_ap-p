@@ -174,11 +174,15 @@ def get_yearly_growth(symbol):
         return None
 
 def calculate_eps_growth(result_df):
+    if result_df['Growth'].isna().all():
+        return None
     av_eps_growth = round(result_df['Growth'].mean(), 2)
     return av_eps_growth
 
 
 def calculate_median_eps_growth(result_df):
+    if result_df['Growth'].isna().all():
+        return None
     median_eps_growth = round(result_df['Growth'].median(), 2)
     return median_eps_growth
 
@@ -186,12 +190,17 @@ def calculate_median_eps_growth(result_df):
 def get_last_growth(symbol):
     try:
         result_df = get_yearly_growth(symbol)
+        if result_df is None:
+            return None
+
         last_growth = result_df.iloc[0]['Growth']
-        if np.isnan(last_growth):
+        if np.isnan(last_growth) and len(result_df) > 1:
             last_growth = result_df.iloc[1]['Growth']
-        return last_growth
+
+        return None if np.isnan(last_growth) else last_growth
     except:
         return None
+
 
 
 def get_years_of_data(symbol):
@@ -220,10 +229,11 @@ def debt_to_equity_ratio(symbol):
         bs = stock.quarterly_balance_sheet.iloc[:, 0]
         debts = get_debt(symbol)
         total_equity = bs.get('Total Equity Gross Minority Interest', 0)
-        if debts != 0:
-            der = round(debts / total_equity, 2)
-        else:
-            der = 0
+
+        if debts is None or total_equity in (None, 0):
+            return None
+
+        der = round(debts / total_equity, 2)
         return der
     except:
         return None
@@ -235,9 +245,20 @@ def get_nwc(symbol):
         bs = stock.quarterly_balance_sheet.iloc[:, 0]
         current_assets = bs.get('Current Assets', 0) or bs.get('Cash And Cash Equivalents', 0)
         current_liabilities = bs.get('Current Liabilities', 0)
+        shares_issued = bs.get('Share Issued', 0)
+
+        # Ensure that shares_issued is not zero to avoid division by zero
+        if shares_issued == 0:
+            return None
+
         nwc = current_assets - current_liabilities
-        nwc_per_share = round(nwc / bs.get('Share Issued', 0), 2)
-        return nwc_per_share
+        nwc_per_share = nwc / shares_issued
+
+        # Check if nwc_per_share is NaN
+        if math.isnan(nwc_per_share):
+            return None
+
+        return round(nwc_per_share, 2)
     except:
         return None
 
@@ -259,9 +280,17 @@ def get_roe(symbol):
         total_equity = bs.get('Total Equity Gross Minority Interest', None)
         ist = stock.income_stmt.iloc[:, 0]
         net_income = ist.get('Net Income', None)
-        if total_equity is not None and net_income is not None:
-            roe = round(net_income / total_equity, 2)
-            return roe
+
+        # Ensure total_equity and net_income are not None and total_equity is not zero
+        if total_equity is not None and total_equity != 0 and net_income is not None:
+            roe = net_income / total_equity
+
+            # Check if roe is NaN
+            if math.isnan(roe):
+                return None
+
+            return round(roe, 2)
+
         return None
     except:
         return None
