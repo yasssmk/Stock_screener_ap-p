@@ -112,7 +112,7 @@ def calculate_industry_stat():
     def calculate_mean(data, number_of_companies):
         if number_of_companies > 5:
             # Remove outliers and then calculate mean
-            return round(utils.Create_db.remove_outliers(data).mean(), 1)
+            return round(remove_outliers(data).mean(), 1)
         else:
             # Directly calculate mean
             return round(data.mean(), 1)
