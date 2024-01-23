@@ -1,15 +1,6 @@
 import pandas as pd
-import sqlite3
-from sqlite3 import connect
-import csv
 import numpy as np
-import random
-import yfinance as yf
-from datetime import datetime, timedelta, date
-#import ta
 import os
-#import matplotlib.pyplot as plt
-import math
 from scipy import stats
 import utils.Stock_Data
 import utils.Sending_Email
@@ -18,13 +9,14 @@ import pandas as pd
 from dotenv import load_dotenv
 from supabase import create_client, Client
 
+load_dotenv()
+url: str = os.getenv('sb_url')
+key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
+supabase: Client = create_client(url, key)
+
+error_log_path = './errors_logs/update_db'
 
 def create_stock_data_db():
-    load_dotenv()
-    url: str = os.getenv('sb_url')
-    key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
-    supabase: Client = create_client(url, key)
-
     response = supabase.table('stocks_list').select("Stock_id", "Symbol").execute()
     symbols_data = response.data
 
@@ -70,7 +62,7 @@ def create_stock_data_db():
                     # Insert a new record
                     supabase.table('data_stocks').insert(insert_data).execute()
             except Exception as e:
-                utils.Errors_logging.functions_error_log("create_stock_data_db", e,utils.Errors_logging.log_name_rundb, symbol=symbol)
+                utils.Errors_logging.functions_error_log("create_stock_data_db - Update data_stock", e,utils.Errors_logging.log_name_rundb, symbol=symbol)
                 continue
 
 
@@ -98,11 +90,8 @@ def remove_outliers(data):
     except Exception as e:
         utils.Errors_logging.functions_error_log("remove_outliers", e, utils.Errors_logging.log_name_rundb)
 
+
 def calculate_industry_stat():
-    load_dotenv()
-    url: str = os.getenv('sb_url')
-    key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
-    supabase: Client = create_client(url, key)
 
     fin_response = supabase.table('data_stocks').select("*").execute()
     fin_data = fin_response.data
@@ -177,10 +166,6 @@ def calculate_industry_stat():
 
 
 def calculate_sector_stat():
-    load_dotenv()
-    url: str = os.getenv('sb_url')
-    key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
-    supabase: Client = create_client(url, key)
 
     fin_response = supabase.table('data_stocks').select("*").execute()
     fin_data = fin_response.data
@@ -248,229 +233,270 @@ def calculate_sector_stat():
                 else:
                     insert_response = supabase.table('sectors_fin_data').insert(i).execute()
             except Exception as e:
-                utils.Errors_logging.functions_error_log("calculate_sector_stat", e,
+                utils.Errors_logging.functions_error_log("calculate_sector_stat update db", e,
                                                          utils.Errors_logging.log_name_rundb)
 
     except Exception as e:
         utils.Errors_logging.functions_error_log("calculate_sector_stat", e, utils.Errors_logging.log_name_rundb)
 
 
-def add_percentile(dataframe):
+def add_percentile():
+
+    # Retrieve data from Supabase tables
+    fin_response = supabase.table('data_stocks').select("*").execute()
+    fin_data = fin_response.data
+    stock_response = supabase.table('stocks_list').select("Stock_id", "Industry", "Sector").execute()
+    stock_data = stock_response.data
+
+    # Join data
+    joined_data = []
     try:
-        dataframe['Growth percentile'] = dataframe.groupby('Industry')['EPS average Growth'].rank(
-            pct=True)
+        for fin_item in fin_data:
+            stock_id = fin_item['Stock_id']
+            stock_item = next((item for item in stock_data if item['Stock_id'] == stock_id), None)
+            if stock_item:
+                joined_item = {**fin_item, **stock_item}
+                joined_data.append(joined_item)
+
+        # Convert joined data to a DataFrame
+        dataframe = pd.DataFrame(joined_data)
+
+        # Calculate percentiles
+        dataframe['Growth percentile'] = dataframe.groupby('Industry')['EPS average Growth'].rank(pct=True)
         dataframe['Total Growth percentile'] = dataframe.groupby('Sector')['EPS average Growth'].rank(pct=True)
         dataframe['Last Growth percentile'] = dataframe.groupby('Industry')['Last Growth'].rank(pct=True)
-        dataframe['Total last Growth percentile'] = dataframe.groupby('Sector')['Last Growth'].rank(
-            pct=True)
-
+        dataframe['Total last Growth percentile'] = dataframe.groupby('Sector')['Last Growth'].rank(pct=True)
         dataframe['NWC percentile'] = dataframe.groupby('Industry')['NWC per share'].rank(pct=True)
         dataframe['DER percentile'] = dataframe.groupby('Industry')['Debt to Equity'].rank(pct=True)
 
-        output_path = "./stocks_data_csv/data_base/Data_Base.csv"
-        dataframe.to_csv(output_path, index=False)
+        # Prepare data for insertion into 'stock_ranking' table
+        percentile_data = dataframe[
+            ['Stock_id', 'Symbol', 'Industry', 'Sector', 'Growth percentile', 'Total Growth percentile',
+             'Last Growth percentile', 'Total last Growth percentile', 'NWC percentile', 'DER percentile']].copy()
+
+
+        return percentile_data
 
     except Exception as e:
         utils.Errors_logging.functions_error_log("add_percentile", e, utils.Errors_logging.log_name_rundb)
 
-
-def custom_ranking(symbol):
+def get_industries_data():
     try:
-        all_stocks_stat_df = pd.read_csv("./stocks_data_csv/data_base/Data_Base.csv")
-        stock_stat = all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]
-
-        if stock_stat.empty:
-            return None
-
-        # Stock Info
-        industry = stock_stat['Industry'].values[0]
-        sector = stock_stat['Sector'].values[0]
-        name = stock_stat['Company Name'].values[0]
-        y = stock_stat['Years of Data'].values[0]
-
-        # Industry data
-        all_industry_data = pd.read_csv("./stocks_data_csv/data_base/Industry_stat_data_base.csv")
-        industry_stats = all_industry_data[all_industry_data['Industry'] == industry]
-
-        # Sector data
-        all_sector_data = pd.read_csv("./stocks_data_csv/data_base/Sector_stat_data_base.csv")
-        sector_statistics = all_sector_data[all_sector_data['Sector'] == sector]
-
-        # Value for investors:
-        past_years_average = stock_stat['3 years av'].values[0]
-        last_eps = stock_stat['Last EPS'].values[0]
-        if industry_stats['Number of companies'].values[0] > 10:
-            delta_eps = (past_years_average - industry_stats['Average 3 years EPS'].values[0])
-        else:
-            delta_eps = (past_years_average - sector_statistics['Average 3 years EPS'].values[0])
-
-        value_eps = (past_years_average + delta_eps) * 0.8 + last_eps * 0.2
-
-        roe = stock_stat['ROE'].values[0]
-        if industry_stats['Number of companies'].values[0] > 10:
-            delta_roe = (roe - industry_stats['Average ROE'].values[0])
-        else:
-            delta_roe = (roe - sector_statistics['Average ROE'].values[0])
-
-        value_eps = (past_years_average + delta_eps) * 0.7 + last_eps * 0.3
-        value_roe = roe + delta_roe
-        total_value = value_eps * 0.7 + value_roe * 0.3
-
-        # Growth:
-        # all_stocks_stat_df['Growth percentile'] = all_stocks_stat_df.groupby('Industry')['EPS average Growth'].rank(pct=True)
-        # all_stocks_stat_df['Total Growth percentile'] = all_stocks_stat_df.groupby('Sector')['EPS average Growth'].rank(pct=True)
-        growth_percentile_by_indus = all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]['Growth percentile'].values[0]
-        growth_percentile = all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]['Total Growth percentile'].values[0]
-        # all_stocks_stat_df['Last Growth percentile'] = all_stocks_stat_df.groupby('Industry')['Last Growth'].rank(pct=True)
-        # all_stocks_stat_df['Total last Growth percentile'] = all_stocks_stat_df.groupby('Sector')['Last Growth'].rank(pct=True)
-        last_growth_percentile_by_indus = all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]['Last Growth percentile'].values[0]
-        last_growth_percentile = all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]['Total last Growth percentile'].values[0]
-
-        if industry_stats['Number of companies'].values[0] > 10:
-            value_growth = last_growth_percentile_by_indus * 0.25 + last_growth_percentile * 0.25 + growth_percentile_by_indus * 0.25 + growth_percentile * 0.25
-        else:
-            value_growth = last_growth_percentile * 0.5 + growth_percentile * 0.5
-
-        # risk:
-        # all_stocks_stat_df['NWC percentile'] = all_stocks_stat_df.groupby('Industry')['NWC per share'].rank(pct=True)
-        # all_stocks_stat_df['DER percentile'] = all_stocks_stat_df.groupby('Industry')['Debt to Equity'].rank(pct=True)
-        nwc_percentile = all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]['NWC percentile'].values[0]
-        der_percentile = 1 - all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]['DER percentile'].values[0]
-
-        risk_ratio = (nwc_percentile * 0.5 + der_percentile * 0.5)
-
-        composite_score = (total_value * 4 * value_growth * risk_ratio
-                           )
-        composite_score = round(composite_score, 1)
-
-        # print(total_value)
-        # print(value_growth)
-        # print(risk_ratio)
-        return composite_score
+        # Retrieve data from Supabase tables
+        fin_response = supabase.table('industries_fin_data').select("*").execute()
+        fin_data = fin_response.data
+        df = pd.DataFrame(fin_data)
+        return df
     except Exception as e:
-        utils.Errors_logging.functions_error_log("custom_ranking", e, utils.Errors_logging.log_name_rundb, symbol=symbol)
-        return None
+        utils.Errors_logging.functions_error_log("get_industries_data", e, utils.Errors_logging.log_name_rundb)
 
-def is_outperformer(symbol):
+def get_sectors_data():
     try:
-        all_stocks_stat_df = pd.read_csv("./stocks_data_csv/data_base/Data_Base.csv")
-        stock_stat = all_stocks_stat_df[all_stocks_stat_df['Symbol'] == symbol]
-
-        # Stock Info
-        industry = stock_stat['Industry'].values[0]
-        sector = stock_stat['Sector'].values[0]
-        name = stock_stat['Company Name'].values[0]
-        y = stock_stat['Years of Data'].values[0]
-
-        # Industry data
-        all_industry_data = pd.read_csv("./stocks_data_csv/data_base/Industry_stat_data_base.csv")
-        industry_stats = all_industry_data[all_industry_data['Industry'] == industry]
-
-        # Sector data
-        all_sector_data = pd.read_csv("./stocks_data_csv/data_base/Sector_stat_data_Bbse.csv")
-        sector_statistics = all_sector_data[all_sector_data['Sector'] == sector]
-
-        if industry_stats['Number of companies'].values[0] > 10:
-            industry_df = all_stocks_stat_df[all_stocks_stat_df['Industry'] == industry].copy()
-            industry_df.replace([np.inf, -np.inf], np.nan, inplace=True)
-            # Select the 'EPS average Growth' column and drop NaN values
-            eps_growth_data = industry_df['EPS average Growth'].dropna()
-        else:
-            sector_df = all_stocks_stat_df[all_stocks_stat_df['Sector'] == sector].copy()
-            sector_df.replace([np.inf, -np.inf], np.nan, inplace=True)
-            # Select the 'EPS average Growth' column and drop NaN values
-            eps_growth_data = sector_df['EPS average Growth'].dropna()
-
-        # Convert 'EPS average Growth' to numeric
-        eps_growth_data = pd.to_numeric(eps_growth_data, errors='coerce')
-
-        # Calculate the IQR (Interquartile Range)
-        Q1 = eps_growth_data.quantile(0.25)
-        Q3 = eps_growth_data.quantile(0.75)
-        IQR = Q3 - Q1
-
-        # Define the lower and upper bounds to identify outliers
-        lower_bound = Q1 - 1.5 * IQR
-        upper_bound = Q3 + 1.5 * IQR
-
-        # Filter the data to remove outliers
-        filtered_eps_growth_data = eps_growth_data[(eps_growth_data >= lower_bound) & (eps_growth_data <= upper_bound)]
-
-        # Calculate the standard deviation on the filtered data
-        standard_deviation = filtered_eps_growth_data.std()
-
-        mean = filtered_eps_growth_data.mean()
-        min_value = filtered_eps_growth_data.mean() - standard_deviation
-        max_value = filtered_eps_growth_data.mean() + standard_deviation
-
-        # Convert 'growth' and 'max_value' to numeric
-        growth = pd.to_numeric(stock_stat['EPS average Growth'].values[0], errors='coerce')
-        max_value = pd.to_numeric(max_value, errors='coerce')
-
-        if growth > max_value:
-            return 'Outperformer'
-        if growth < min_value:
-            return 'Underperformer'
-        else:
-            return 'Regular growth'
+        # Retrieve data from Supabase tables
+        fin_response = supabase.table('sectors_fin_data').select("*").execute()
+        fin_data = fin_response.data
+        df = pd.DataFrame(fin_data)
+        return df
     except Exception as e:
-        utils.Errors_logging.functions_error_log("is_outperformer", e, utils.Errors_logging.log_name_rundb, symbol=symbol)
+        utils.Errors_logging.functions_error_log("get_sectors_data", e, utils.Errors_logging.log_name_rundb)
 
-def update_databases(stock_list_path):
+def get_stocks_data():
     try:
-        # Read stock list
-        stock_list = pd.read_csv(stock_list_path)
-        # Create a stock data dataframe
-        create_stock_data_db(stock_list)
+        # Retrieve data from Supabase tables
+        fin_response = supabase.table('data_stocks').select("*").execute()
+        fin_data = fin_response.data
+        df = pd.DataFrame(fin_data)
+        return df
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("get_stocks_data", e, utils.Errors_logging.log_name_rundb)
 
-        data_df = pd.read_csv("./stocks_data_csv/data_base/Data_Base.csv")
 
-        # Calculate industry statistics
-        industry_stats = calculate_industry_stat()
+def calculate_industry_outliers():
+    try:
+        fin_response = supabase.table('data_stocks').select("Stock_id", "EPS average Growth").execute()
+        fin_data = fin_response.data
+        stock_response = supabase.table('stocks_list').select("Stock_id", "Industry", "Sector").execute()
+        stock_data = stock_response.data
+        joined_data = []
+        for fin_item in fin_data:
+            stock_id = fin_item['Stock_id']
+            stock_item = next((item for item in stock_data if item['Stock_id'] == stock_id), None)
+            if stock_item:
+                joined_item = {**fin_item, **stock_item}
+                joined_data.append(joined_item)
 
-        # Calculate sector statistics
-        sector_stats = calculate_sector_stat()
+        # Create DataFrame from joined data
+        df = pd.DataFrame(joined_data)
 
-        # Add percentiles
-        add_percentile(data_df)
+        # Group by Industry and aggregate
+        industry_financials = df.groupby('Industry').agg({
+            'Sector': 'first',
+            'Stock_id': 'count',
+            'EPS average Growth': list,
+        })
 
-        for index, row in data_df.iterrows():
-            try:
-                # Apply custom_ranking
-                score = custom_ranking(row['Symbol'])
-                if score is not None:
-                    data_df.at[index, 'Score'] = score
-                else:
-                    data_df.at[index, 'Score'] = -100  # Default value in case of None
+        # Dictionary to store results
+        industry_outliers = {}
 
-                # Apply is_outperformer
-                performance = is_outperformer(row['Symbol'])
-                if performance is not None:
-                    data_df.at[index, 'Performance'] = performance
-                else:
-                    data_df.at[index, 'Performance'] = False  # Default value in case of None
+        for industry, industry_df in industry_financials.iterrows():
+            eps_growth_data = pd.Series(industry_df['EPS average Growth'])
 
-            except Exception as e:
-                symbol = row['Symbol']
-                utils.Errors_logging.functions_error_log("update_databases", e, utils.Errors_logging.log_name_rundb, symbol=symbol)
+            # Check if number of companies is greater than 10
+            if industry_df['Stock_id'] > 10:
+                eps_growth_data = eps_growth_data.dropna()
+            else:
+                # Get sector data if number of companies <= 10
+                sector = industry_df['Sector']
+                sector_df = df[df['Sector'] == sector]['EPS average Growth']
+                eps_growth_data = sector_df.dropna()
+
+            # Convert 'EPS average Growth' to numeric and calculate stats
+            eps_growth_data = pd.to_numeric(eps_growth_data, errors='coerce')
+            Q1 = eps_growth_data.quantile(0.25)
+            Q3 = eps_growth_data.quantile(0.75)
+            IQR = Q3 - Q1
+            lower_bound = Q1 - 1.5 * IQR
+            upper_bound = Q3 + 1.5 * IQR
+            filtered_eps_growth_data = eps_growth_data[(eps_growth_data >= lower_bound) & (eps_growth_data <= upper_bound)]
+
+            # Skip if filtered data is empty
+            if filtered_eps_growth_data.empty:
                 continue
 
+            standard_deviation = filtered_eps_growth_data.std()
+            mean = filtered_eps_growth_data.mean()
+            min_value = mean - standard_deviation
+            max_value = mean + standard_deviation
 
-        # Define file paths for saving data
-        data_path = f"./stocks_data_csv/data_base/Data_Base.csv"
-        industry_stats_path = f"./stocks_data_csv/data_base/Industry_stat_data_base.csv"
-        sector_stats_path = f"./stocks_data_csv/data_base/Sector_stat_data_base.csv"
+            # Store results in dictionary
+            industry_outliers[industry] = {"max_value": max_value, "min_value": min_value}
 
-        # Save data to CSV files
-        data_df.to_csv(data_path, index=False)
-        industry_stats.to_csv(industry_stats_path, index=False)
-        sector_stats.to_csv(sector_stats_path, index=False)
+        return industry_outliers
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("calculate Industry outliers", e, utils.Errors_logging.log_name_rundb)
+        return None
 
-        error_log_path = './stocks_data_csv/errors_logs/Create_update_selection'
-        utils.Sending_Email.job_done_email("Update Data Base", error_log_path)
+
+def custom_ranking(df_percentiles):
+    try:
+        df_percentiles['Score'] = 0.0
+        df_percentiles['Outperformer'] = False
+        df_percentiles['Underperformer'] = False
+
+        if df_percentiles.empty:
+            utils.Errors_logging.functions_error_log("custom_ranking", "df_percentiles is empty", utils.Errors_logging.log_name_rundb)
+            return None
+
+        industries_data = get_industries_data()
+        sectors_data = get_sectors_data()
+        stock_data = get_stocks_data()
+        industries_ouliers = calculate_industry_outliers()
+
+        for index, row in df_percentiles.iterrows():
+
+            # Stock Info
+            industry = row['Industry']
+            sector = row['Sector']
+            symbol = row['Symbol']
+            stock_id = row['Stock_id']
+
+            # Industry data
+            industry_stats = industries_data[industries_data['Industry'] == industry]
+            # Sector data
+            sector_stats = sectors_data[sectors_data['Sector'] == sector]
+            #Stock data
+            stock_stats = stock_data[stock_data['Stock_id'] == stock_id]
+
+            # Calculate Score
+            try:
+                # Value for investors:
+                past_years_average = stock_stats['3 years av'].iloc[0]
+                last_eps = stock_stats['Last EPS'].iloc[0]
+
+                if industry_stats['Number of Companies'].iloc[0] > 10:
+                    delta_eps = (past_years_average - industry_stats['3 years av'].iloc[0])
+                else:
+                    delta_eps = (past_years_average - sector_stats['3 years av'].iloc[0])
+
+                value_eps = (past_years_average + delta_eps) * 0.7 + last_eps * 0.3
+                roe = stock_stats['ROE'].iloc[0]
+                if industry_stats['Number of Companies'].iloc[0] > 10:
+                    delta_roe = (roe - industry_stats['ROE'].iloc[0])
+                else:
+                    delta_roe = (roe - sector_stats['ROE'].iloc[0])
+
+                value_roe = roe + delta_roe
+                total_value = value_eps * 0.7 + value_roe * 0.3
+
+                # Growth:
+                growth_percentile_by_indus = row['Growth percentile']
+                growth_percentile = row['Total Growth percentile']
+                last_growth_percentile_by_indus = row['Last Growth percentile']
+                last_growth_percentile = row['Total last Growth percentile']
+
+                if industry_stats['Number of Companies'].iloc[0] > 10:
+                    value_growth = last_growth_percentile_by_indus * 0.25 + last_growth_percentile * 0.25 + growth_percentile_by_indus * 0.25 + growth_percentile * 0.25
+                else:
+                    value_growth = last_growth_percentile * 0.5 + growth_percentile * 0.5
+
+                # risk:
+                nwc_percentile = row['NWC percentile']
+                der_percentile = 1 - row['DER percentile']
+
+                risk_ratio = (nwc_percentile * 0.5 + der_percentile * 0.5)
+
+                composite_score = (total_value * 4 * value_growth * risk_ratio
+                                   )
+                composite_score = round(composite_score, 1)
+                df_percentiles.at[index, 'Score'] = composite_score
+            except Exception as e:
+                utils.Errors_logging.functions_error_log("custom_ranking - Score", e, utils.Errors_logging.log_name_rundb,symbol=symbol)
+
+            #Performace check
+            try:
+                industry_outliers = industries_ouliers[industry]
+                max_value = industry_outliers['max_value']
+                min_value = industry_outliers['min_value']
+
+                growth = stock_stats['EPS average Growth'].iloc[0]
+
+                if growth > max_value:
+                    df_percentiles.at[index,'Outperformer'] = True
+                if growth < min_value:
+                    df_percentiles.at[index,'Underperformer'] = True
+
+            except Exception as e:
+                utils.Errors_logging.functions_error_log("custom_ranking - Performance", e,
+                                                         utils.Errors_logging.log_name_rundb,
+                                                         symbol=symbol)
+        return df_percentiles
 
     except Exception as e:
-        utils.Errors_logging.functions_error_log("update_databases", e, utils.Errors_logging.log_name_rundb)
-        error_log_path = './stocks_data_csv/errors_logs/Create_update_selection'
-        utils.Sending_Email.db_error_email(e, "Data Base", error_log_path)
+        utils.Errors_logging.functions_error_log("custom_ranking", e, utils.Errors_logging.log_name_rundb)
+        return None
 
+
+def process_and_update_data():
+    try:
+        # Run the add_percentile function
+        percentile_data = add_percentile()
+        if percentile_data is None:
+            raise ValueError("Failed to get percentile data")
+
+        # Run the custom_ranking function
+        scored_data = custom_ranking(percentile_data)
+        if scored_data is None:
+            raise ValueError("Failed to calculate scores")
+
+        # Patch or add rows to the stocks_ranking_data table
+        for _, row in scored_data.iterrows():
+            try:
+                response = supabase.table('stocks_ranking_data').upsert(row.to_dict()).execute()
+                utils.Sending_Email.job_done_email("Update Data Base", error_log_path)
+            except Exception as e:
+                utils.Errors_logging.functions_error_log("process_and_update_data: upsert table", e,
+                                                         utils.Errors_logging.log_name_rundb)
+
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("process_and_export_data", e, utils.Errors_logging.log_name_rundb)
+        utils.Sending_Email.db_error_email(e, "Data Base", error_log_path)

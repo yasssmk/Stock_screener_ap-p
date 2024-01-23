@@ -15,7 +15,7 @@ def functions_error_log(function_name, error_message, log_name, symbol=None):
     error_df = pd.DataFrame(error_data)
 
     # Ensure the directory exists
-    error_log_dir = '.stocks_data_csv/errors_logs/'
+    error_log_dir = '.errors_logs/'
     if not os.path.exists(error_log_dir):
         os.makedirs(error_log_dir)
 
@@ -30,7 +30,7 @@ def functions_error_log(function_name, error_message, log_name, symbol=None):
         error_df.to_csv(error_log_path, index=False)
 
 
-log_name_rundb = "Create_update_selection.csv"
+log_name_rundb = "update_db.csv"
 log_name_weekly_signals = "Weekly_signals.csv"
 log_name_monthly_signals = "Monthly_signals.csv"
 log_name_emails = "Emails.csv"
