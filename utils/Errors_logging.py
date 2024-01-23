@@ -15,7 +15,7 @@ def functions_error_log(function_name, error_message, log_name, symbol=None):
     error_df = pd.DataFrame(error_data)
 
     # Ensure the directory exists
-    error_log_dir = '.errors_logs/'
+    error_log_dir = 'errors_logs/'
     if not os.path.exists(error_log_dir):
         os.makedirs(error_log_dir)
 

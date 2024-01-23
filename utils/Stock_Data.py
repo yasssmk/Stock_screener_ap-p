@@ -23,8 +23,8 @@ def get_company_info(symbol):
 
 def get_stock_price(symbol):
     r = round(yf.Ticker(symbol).history(interval="1wk")['Close'].tail(1).values[0],2)
-    price = f'${r}'
-    return price
+    # price = f'${r}'
+    return r
 
 
 def get_last_eps(symbol):
@@ -249,30 +249,30 @@ def get_roe(symbol):
 
 # Technical Data
 
-def get_data(symbol):
-    # Download stock data
-    stock_data = yf.download(symbol, start=data_start_date, end=data_end_date, interval='1wk')
-
-    # Save the data to a CSV file
-    csv_file_name = f"{symbol}.csv"
-    stock_data.to_csv(csv_file_name)
-    return csv_file_name
-
-def get_monthly_data(symbol):
-    # Download stock data
-    stock_data = yf.download(symbol, start=data_start_date, end=data_end_date, interval='1mo')
-
-    # Save the data to a CSV file
-    csv_file_name = f"{symbol}_monthly.csv"
-    stock_data.to_csv(csv_file_name)
-
-    return csv_file_name
-
-def load_data_from_csv(csv_file_name):
-    # Load stock data from a CSV file
-    stock_data = pd.read_csv(csv_file_name, index_col='Date', parse_dates=True)
-
-    return stock_data
+# def get_data(symbol):
+#     # Download stock data
+#     stock_data = yf.download(symbol, start=data_start_date, end=data_end_date, interval='1wk')
+#
+#     # Save the data to a CSV file
+#     csv_file_name = f"{symbol}.csv"
+#     stock_data.to_csv(csv_file_name)
+#     return csv_file_name
+#
+# def get_monthly_data(symbol):
+#     # Download stock data
+#     stock_data = yf.download(symbol, start=data_start_date, end=data_end_date, interval='1mo')
+#
+#     # Save the data to a CSV file
+#     csv_file_name = f"{symbol}_monthly.csv"
+#     stock_data.to_csv(csv_file_name)
+#
+#     return csv_file_name
+#
+# def load_data_from_csv(csv_file_name):
+#     # Load stock data from a CSV file
+#     stock_data = pd.read_csv(csv_file_name, index_col='Date', parse_dates=True)
+#
+#     return stock_data
 
 def calculate_macd(stock_data, slow, fast, signal):
     macd = ta.trend.MACD(stock_data['Close'], window_slow=slow, window_fast=fast, window_sign=signal)

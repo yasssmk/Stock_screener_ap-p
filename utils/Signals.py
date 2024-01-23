@@ -1,7 +1,4 @@
 import pandas as pd
-import csv
-import numpy as np
-import random
 import yfinance as yf
 from datetime import datetime, timedelta, date
 import ta
@@ -9,14 +6,19 @@ import os
 import utils.Stock_Data
 import utils.Sending_Email
 import utils.Errors_logging
-# import matplotlib.pyplot as plt
-import math
+from dotenv import load_dotenv
+from supabase import create_client, Client
 
 data_end_date = datetime.now()
 five_years_ago = data_end_date - timedelta(days=365 * 5)
-# data_start_date = two_years_ago.strftime('%Y-%m-%d')
 data_start_date = '2015-01-05'
 
+
+load_dotenv()
+
+url: str = os.getenv('sb_url')
+key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
+supabase: Client = create_client(url, key)
 
 # Data
 def get_data(symbol):
@@ -46,7 +48,7 @@ def get_data(symbol):
 
         if success:
             # Save the data to a CSV file
-            csv_file_name = f"./stocks_data_csv/stock_data/{symbol}.csv"
+            csv_file_name = f"stock_data/{symbol}.csv"
             stock_data.to_csv(csv_file_name)
             return csv_file_name
         else:
@@ -82,7 +84,7 @@ def get_monthly_data(symbol):
 
         if success:
             # Save the data to a CSV file
-            csv_file_name = f"./stocks_data_csv/stock_data/{symbol}_monthly.csv"
+            csv_file_name = f"stock_data/{symbol}_monthly.csv"
             stock_data.to_csv(csv_file_name)
             return csv_file_name
         else:
@@ -107,9 +109,11 @@ def calculate_macd(stock_data, slow, fast, signal):
     stock_data['Signal'] = macd.macd_signal()
     try:
         stock_data['MACD_Histogram'] = macd.macd_diff()
-    except KeyError as e:
-        print(f"KeyError: {e}. The 'MACD_Histogram' column is not available in the data.")
-    return stock_data
+        return stock_data
+    except:
+        return stock_data
+        # print(f"KeyError: {e}. The 'MACD_Histogram' column is not available in the data.")
+
 
 
 def calculate_moving_averages(stock_data):
@@ -478,193 +482,326 @@ def spot_monthly_signals(file_data, date, lt_trend, stock_data_monthly):
             return None
 
 
-# def update_portfolio(symbol, action, date):
-#     try:
-#         portfolio_file = './stocks_data_csv/data_base/portfolio.csv'
-#         transaction_log = './stocks_data_csv/data_base/transactions_logs.csv'
-#         # Check if the portfolio file exists and has content
-#         try:
-#             portfolio_df = pd.read_csv(portfolio_file)
-#             portfolio_df = portfolio_df.dropna(how='all')
-#             portfolio_df.to_csv('./stocks_data_csv/data_base/portfolio.csv', index=False)
-#         except (FileNotFoundError, pd.errors.EmptyDataError):
-#             # If the file does not exist or is empty, create a new DataFrame
-#             portfolio_df = pd.DataFrame(columns=['Symbol', 'Buying date', 'Buying price'])
-#         try:
-#             transaction_df = pd.read_csv(transaction_log)
-#         except FileNotFoundError:
-#             transaction_df = pd.DataFrame(
-#                 columns=['Symbol', 'Buying date', 'Buying Price', 'Selling Date', 'Selling Price', 'Profit', 'Yield'])
-#         if action == 'Buy':
-#             # Get the current stock price
-#             price = Stock_Data.get_stock_price(symbol, date)
-#             # Create a new row with the purchase information
-#             new_row = pd.DataFrame({'Symbol': [symbol], 'Buying date': [date], 'Buying price': [price]})
-#             # Append the new row to the DataFrame
-#             portfolio_df = pd.concat([portfolio_df, new_row], ignore_index=True)
-#
-#         elif action == 'Sell':
-#             for index, row in portfolio_df[portfolio_df['Symbol'] == symbol].iterrows():
-#                 buying_price = float(row['Buying price'].replace('$', ''))
-#                 selling_price_str = Stock_Data.get_stock_price(symbol, date)
-#                 selling_price = float(selling_price_str.replace('$', ''))
-#                 profit = selling_price - buying_price
-#                 yield_ = profit / buying_price
-#
-#                 transaction = {
-#                     'Symbol': symbol,
-#                     'Buying date': row['Buying date'],
-#                     'Buying Price': row['Buying price'],
-#                     'Selling Date': date,
-#                     'Selling Price': f'${selling_price:.2f}',
-#                     'Profit': f'${profit:.2f}',
-#                     'Yield': f'{yield_ * 100:.2f}%'
-#                 }
-#                 transaction_df = pd.concat([transaction_df, pd.DataFrame([transaction])], ignore_index=True)
-#
-#             # Save the updated data
-#             portfolio_df.to_csv(portfolio_file, index=False)
-#             transaction_df.to_csv(transaction_log, index=False)
-#             # Remove the sold stock from the DataFrame
-#             portfolio_df = portfolio_df[portfolio_df['Symbol'] != symbol]
-#
-#         # Write the updated DataFrame back to the CSV file
-#         portfolio_df.to_csv(portfolio_file, index=False)
-#     except Exception as e:
-#         #print(e)
-#         Errors_logging.functions_error_log("update_portfolio", e, Errors_logging.log_name_weekly_signals, symbol=symbol)
-
-
 def update_portfolio(symbol, action, date):
     try:
-        portfolio_file = './stocks_data_csv/data_base/portfolio.csv'
-        transaction_log = './stocks_data_csv/data_base/transactions_logs.csv'
-
-        # Ensure the directories exist
-        os.makedirs(os.path.dirname(portfolio_file), exist_ok=True)
-        os.makedirs(os.path.dirname(transaction_log), exist_ok=True)
-
-        # Read or initialize the portfolio DataFrame
-        if os.path.isfile(portfolio_file):
-            portfolio_df = pd.read_csv(portfolio_file)
-            # portfolio_df = portfolio_df.dropna(how='all')
-            # portfolio_df.to_csv('./stocks_data_csv/data_base/portfolio.csv', index=False)
-        else:
-            portfolio_df = pd.DataFrame(columns=['Symbol', 'Buying date', 'Buying Price'])
-
-        # Read or initialize the transaction DataFrame
-        if os.path.isfile(transaction_log):
-            transaction_df = pd.read_csv(transaction_log)
-            # transaction_df = portfolio_df.dropna(how='all')
-            # transaction_df.to_csv('./stocks_data_csv/data_base/transactions_logs.csv', index=False)
-        else:
-            transaction_df = pd.DataFrame(
-                columns=['Symbol', 'Buying date', 'Buying Price', 'Selling Date', 'Selling Price', 'Profit', 'Yield'])
-
         # Get the current stock price
         price = utils.Stock_Data.get_stock_price(symbol)
+        response = supabase.table('stocks_list').select("Stock_id", "Symbol").eq("Symbol", symbol).execute()
+        symbols_data = response.data
+        stock_id = symbols_data[0]["Stock_id"]
 
         if action == 'Buy':
-            if not ((portfolio_df['Symbol'] == symbol) & (portfolio_df['Buying date'] == date)).any():
-                new_row = {'Symbol': [symbol], 'Buying date': [date], 'Buying Price': [price]}
-                portfolio_df = pd.concat([portfolio_df, pd.DataFrame(new_row)], ignore_index=True)
+            # Insert new record into 'portfolio' table
+            data = {'Stock_id': stock_id, 'Symbol': symbol, 'Buying date': date, 'Buying Price': price}
+            supabase.table('portfolio').insert(data).execute()
         elif action == 'Sell':
+            # Fetch existing records from 'portfolio' table
+            portfolio_data = supabase.table('portfolio').select('*').eq('Symbol', symbol).execute().data
+
+
             # Perform selling operations...
-            for index, row in portfolio_df.loc[portfolio_df['Symbol'] == symbol].iterrows():
-                buying_price = float(row['Buying Price'].replace('$', ''))
-                selling_price_str = utils.Stock_Data.get_stock_price(symbol)
-                selling_price = float(selling_price_str.replace('$', ''))
+            for row in portfolio_data:
+                buying_price = float(row['Buying Price'])
+                selling_price = float(price)
                 profit = selling_price - buying_price
                 yield_ = profit / buying_price
 
+                # Insert new record into 'transaction logs' table
                 transaction = {
+                    'Stock_id': stock_id,
                     'Symbol': symbol,
                     'Buying date': row['Buying date'],
                     'Buying Price': row['Buying Price'],
                     'Selling Date': date,
-                    'Selling Price': f'${selling_price:.2f}',
-                    'Profit': f'${profit:.2f}',
-                    'Yield': f'{yield_ * 100:.2f}%'
+                    'Selling Price': selling_price,
+                    'Profit': profit,
+                    'Yield': yield_ * 100
                 }
-                transaction_df = pd.concat([transaction_df, pd.DataFrame([transaction])], ignore_index=True)
+                supabase.table('transactions logs').insert(transaction).execute()
 
-            # Remove the sold stock from the DataFrame
-            portfolio_df = portfolio_df.loc[portfolio_df['Symbol'] != symbol]
 
-        # Save the updated data to CSV
-        portfolio_df.to_csv(portfolio_file, index=False)
-        transaction_df.to_csv(transaction_log, index=False)
+            # Remove the sold stock from the 'portfolio' table
+            supabase.table('portfolio').delete().eq('Symbol', symbol).execute()
 
     except Exception as e:
-        # print(f"An error occurred: {e}")
-        utils.Errors_logging.functions_error_log("update_portfolio", e, utils.Errors_logging.log_name_weekly_signals, symbol=symbol)
+        utils.Errors_logging.functions_error_log("update_portfolio", e, utils.Errors_logging.log_name_weekly_signals,
+                                                 symbol=symbol)
 
-
-portfolio_file = './stocks_data_csv/data_base/portfolio.csv'
-portfolio_df = pd.read_csv(portfolio_file)
 
 def update_portfolio_details():
     try:
-        portfolio_file = './stocks_data_csv/data_base/portfolio.csv'
+        # Fetch portfolio data from Supabase
+        data = supabase.table('portfolio').select('*').execute().data
 
-        # Ensure the directory exists
-        os.makedirs(os.path.dirname(portfolio_file), exist_ok=True)
+        if not data:
+            return  # Handle case where no data is found
 
-        # Read or initialize the portfolio DataFrame
-        if os.path.isfile(portfolio_file):
-            portfolio_df = pd.read_csv(portfolio_file)
-        else:
-            #e = "Portfolio file not found."
-            #Errors_logging.functions_error_log("update_portfolio_detail", e, Errors_logging.log_name_weekly_signals)
-            return
-
-        # Add new columns if they do not exist
-        for col in ['Current Price', 'Change', 'Time (in weeks)']:
-            if col not in portfolio_df.columns:
-                portfolio_df[col] = None
-
-        # Update new columns
-        for index, row in portfolio_df.iterrows():
-            current_price_str = utils.Stock_Data.get_stock_price(row['Symbol'])
-            current_price = float(current_price_str.replace('$', ''))
-            buying_price = float(row['Buying Price'].replace('$', ''))
+        # Update each row in the portfolio
+        for row in data:
+            stock_id = row['Stock_id']
+            symbol = row['Symbol']
+            current_price = float(utils.Stock_Data.get_stock_price(symbol))
+            buying_price = float(row['Buying Price'])
             change = (current_price - buying_price) / buying_price * 100
             profit = current_price - buying_price
-            buying_date = datetime.strptime(row['Buying date'], '%Y-%m-%d')
-            time_in_weeks = (datetime.now() - buying_date).days // 7
+            buying_date = datetime.datetime.strptime(row['Buying date'], '%Y-%m-%d')
+            time_in_weeks = (datetime.datetime.now() - buying_date).days // 7
 
-            portfolio_df.at[index, 'Current Price'] = current_price_str
-            portfolio_df.at[index, 'Profit'] = f'${profit:.2f}'
-            portfolio_df.at[index, 'Change'] = f'{change:.2f}%'
-            portfolio_df.at[index, 'Time (in weeks)'] = time_in_weeks
-
-        # Save the updated data to CSV
-        portfolio_df.to_csv(portfolio_file, index=False)
+            # Update the row in the database
+            updated_data = {
+                'Current Price': current_price,
+                'Profit': profit,
+                'Change': change,
+                'Time (in weeks)': time_in_weeks
+            }
+            supabase.table('portfolio').update(updated_data).eq('Symbol', symbol).execute()
 
     except Exception as e:
         utils.Errors_logging.functions_error_log("update_portfolio_detail", e, utils.Errors_logging.log_name_weekly_signals)
 
 
-def is_symbol_in_portfolio(symbol, file_path):
+def is_symbol_in_portfolio(symbol):
     """
-    Checks if the given symbol is present in the portfolio.
+    Checks if the given symbol is present in the portfolio in the Supabase database.
 
     :param symbol: The stock symbol to check.
-    :param file_path: The path to the portfolio CSV file.
     :return: True if the symbol is in the portfolio, False otherwise.
     """
     try:
-        # Load the portfolio CSV file
-        portfolio_df = pd.read_csv(file_path)
+        # Query the 'portfolio' table for the symbol
+        data = supabase.table('portfolio').select('Symbol').eq('Symbol', symbol).execute().data
 
-        # Check if the symbol is in the 'Symbol' column
-        return symbol in portfolio_df['Symbol'].values
-    except FileNotFoundError:
-        print(f"File not found: {file_path}")
-        return False
+        # Check if the symbol is found
+        return len(data) > 0
     except Exception as e:
-        print(f"An error occurred: {e}")
+        utils.Errors_logging.functions_error_log("is_symbol_in_portfolio", e, utils.Errors_logging.log_name_weekly_signals, symbol=symbol)
         return False
+
+
+def add_weekly_stock_data(symbol):
+    try:
+        stock_data_csv = utils.Signals.get_data(symbol)
+        lt_stock_data_csv = utils.Signals.get_monthly_data(symbol)
+        stock_data = utils.Signals.load_data_from_csv(stock_data_csv)
+        lt_stock_data = utils.Signals.load_data_from_csv(lt_stock_data_csv)
+        utils.Signals.calculate_macd(stock_data, 26, 3, 7)
+        path_file = f'signal_data/{symbol}_weekly_data.csv'
+        info = utils.Stock_Data.get_company_info(symbol)
+        print(info)
+        symbol_held = is_symbol_in_portfolio(symbol)
+        print(symbol_held)
+
+        if not os.path.exists(path_file):
+            file_data = pd.DataFrame(columns=[
+                'Date', 'Start Date', 'End Date', 'LT Trend', 'MACD Trend',
+                'Highest Price', 'Highest MACD', 'Lowest Price', 'Lowest MACD',
+                'Divergence spotted', 'Signal'
+            ])
+
+            new_rows_list = []
+
+            for date in stock_data.index:
+                try:
+                    date_str = date.strftime('%Y-%m-%d')
+                    lt_trend = utils.Signals.get_lt_trend(lt_stock_data, date_str)
+                    macd_trend = utils.Signals.get_macd_trend(stock_data, date_str)
+
+                    if file_data.empty or macd_trend != file_data.iloc[-1]['MACD Trend'] or lt_trend != \
+                            file_data.iloc[-1][
+                                'LT Trend']:
+                        # Create a new row
+                        new_row = {
+                            'Date': date_str,
+                            'Start Date': date_str,
+                            'End Date': None,
+                            'LT Trend': lt_trend,
+                            'MACD Trend': macd_trend,
+                            'Highest Price': round(stock_data.loc[date]['High'], 2),
+                            'Highest MACD': round(stock_data.loc[date]['MACD'], 2),
+                            'Lowest Price': round(stock_data.loc[date]['Low'], 2),
+                            'Lowest MACD': round(stock_data.loc[date]['MACD'], 2),
+                            'Divergence spotted': None,
+                            'Signal': None,
+                        }
+
+                        # Append new_row only once
+                        if not file_data.empty:
+                            file_data.at[file_data.index[-1], 'End Date'] = date_str
+                            if len(file_data) > 4:
+                                check_date = file_data.iloc[-1]['Start Date']
+                                spot_divergence = utils.Signals.spot_weekly_divergences(stock_data, lt_stock_data, file_data,
+                                                                          check_date)
+                                if pd.isna(file_data.iloc[-1]['Divergence spotted']):
+                                    # print(f'1: {date_str}:{spot_divergence}')
+                                    file_data.loc[file_data.index[-1], 'Divergence spotted'] = spot_divergence
+                                # if spot_divergence == 'Buy - divergence':
+                                #     Sending_Email.process_buy_signals(symbol, date_str)
+                        try:
+                            signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, date_str)
+                            if signal_divergence != None:
+                                new_row['Divergence spotted'] = signal_divergence
+
+                        except Exception as e:
+                            utils.Errors_logging.functions_error_log("add_weekly_stock_data: new row", e,
+                                                               utils.Errors_logging.log_name_weekly_signals,
+                                                               symbol=symbol)
+
+                        new_rows_list.append(new_row)
+
+                        file_data = pd.concat([file_data, pd.DataFrame([new_row])], ignore_index=True)
+                        signal = utils.Signals.spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
+                        file_data.at[file_data.index[-1], 'Signal'] = signal
+
+                    # Check for divergence and add to the last row if there's any
+
+                    else:
+                        last_row = file_data.iloc[-1]
+                        # MACD trend didn't change, update the end date and check for new highs/lows
+                        trend_start_date = last_row['Start Date']
+                        trend_end_date = date_str
+
+                        # Check if there have been new highs or lows
+                        highest_price = round(stock_data['High'][trend_start_date:trend_end_date].max(), 2)
+                        lowest_price = round(stock_data['Low'][trend_start_date:trend_end_date].min(), 2)
+                        highest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].max(), 2)
+                        lowest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].min(), 2)
+                        signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, date_str)
+
+                        # Update the last row in file_data with the new end date and high/low values
+                        file_data.loc[file_data.index[-1], 'End Date'] = trend_end_date
+                        file_data.loc[file_data.index[-1], 'Highest Price'] = max(highest_price,
+                                                                                  last_row['Highest Price'])
+                        file_data.loc[file_data.index[-1], 'Lowest Price'] = min(lowest_price, last_row['Lowest Price'])
+                        file_data.loc[file_data.index[-1], 'Highest MACD'] = max(highest_macd, last_row['Highest MACD'])
+                        file_data.loc[file_data.index[-1], 'Lowest MACD'] = min(lowest_macd, last_row['Lowest MACD'])
+                        if signal_divergence != None:
+                            file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
+
+                        if file_data.iloc[-1]['Signal'] == None or file_data.iloc[-1][
+                            'Signal'] == 'Waiting for confirmation : Buy' or file_data.iloc[-1][
+                            'Signal'] == 'Waiting for confirmation : Sell':
+                            signal = utils.Signals.spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
+                            file_data.loc[file_data.index[-1], 'Signal'] = signal
+
+
+
+                except Exception as e:
+                    utils.Errors_logging.functions_error_log("add_weekly_stock_data", e,
+                                                       utils.Errors_logging.log_name_weekly_signals,
+                                                       symbol=symbol)
+                    continue
+
+            # Save the new file
+            file_data.to_csv(path_file, index=False)
+            print('Previous data added')
+
+        else:
+            file_data = pd.read_csv(path_file)
+
+            # Get the last row of the file_data
+            last_row = file_data.iloc[-1]
+
+            current_date = stock_data.index[-1].strftime('%Y-%m-%d')
+            lt_trend = utils.Signals.get_lt_trend(lt_stock_data, current_date)
+            macd_trend = utils.Signals.get_macd_trend(stock_data, current_date)
+
+            new_rows_list = []
+
+            if macd_trend != last_row['MACD Trend'] or lt_trend != last_row['LT Trend']:
+                # MACD trend changed, update trend_start_date and add a new row
+                trend_start_date = last_row['End Date']
+                new_row = {
+                    'Date': current_date,
+                    'Start Date': current_date,
+                    'End Date': None,
+                    'LT Trend': lt_trend,
+                    'MACD Trend': macd_trend,
+                    'Highest Price': round(stock_data.tail(1)['High'].iloc[0], 2),
+                    'Highest MACD': round(stock_data.tail(1)['MACD'].iloc[0], 2),
+                    'Lowest Price': round(stock_data.tail(1)['Low'].iloc[0], 2),
+                    'Lowest MACD': round(stock_data.tail(1)['MACD'].iloc[0], 2),
+                    'Divergence spotted': None,
+                    'Signal': None
+                }
+
+                file_data.at[file_data.index[-1], 'End Date'] = current_date
+                signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, current_date)
+                if signal_divergence != 'None':
+                    file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
+                    if signal_divergence == 'Buy - divergence':
+                        # utils.Sending_Email.process_buy_signals(symbol, current_date)
+                        update_portfolio(symbol, 'Buy', current_date)
+                    elif signal_divergence == 'Sell - divergence':
+                        if symbol_held:
+                            utils.Sending_Email.process_sell_signals(symbol, current_date)
+                        update_portfolio(symbol, 'Sell', current_date)
+                else:
+                    check_date = file_data.iloc[-1]['Start Date']
+                    spot_divergence = utils.Signals.spot_weekly_divergences(stock_data, lt_stock_data, file_data, check_date)
+                    file_data.loc[file_data.index[-1], 'Divergence spotted'] = spot_divergence
+
+                new_rows_list.append(new_row)
+                file_data = pd.concat([file_data, pd.DataFrame([new_row])], ignore_index=True)
+                signal = utils.Signals.spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
+                file_data.loc[file_data.index[-1], 'Signal'] = signal
+                if signal == 'Buy signal':
+                    # utils.Sending_Email.process_buy_signals(symbol, current_date)
+                    update_portfolio(symbol, 'Buy', current_date)
+                elif signal == 'Sell signal':
+                    if symbol_held:
+                        utils.Sending_Email.process_sell_signals(symbol, current_date)
+                    update_portfolio(symbol, 'Sell', current_date)
+
+            else:
+                # MACD trend didn't change, update the end date and check for new highs/lows
+                trend_start_date = last_row['Start Date']
+                trend_end_date = current_date
+                current_signal = last_row['Signal']
+                current_divergence = last_row['Divergence spotted']
+
+                # Check if there have been new highs or lows
+                highest_price = round(stock_data['High'][trend_start_date:trend_end_date].max(), 2)
+                lowest_price = round(stock_data['Low'][trend_start_date:trend_end_date].min(), 2)
+                highest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].max(), 2)
+                lowest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].min(), 2)
+
+                signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, current_date)
+                if current_divergence != signal_divergence:
+                    if signal_divergence == 'Buy - divergence':
+                        # utils.Sending_Email.process_buy_signals(symbol, current_date)
+                        update_portfolio(symbol, 'Buy', current_date)
+                    elif signal_divergence == 'Sell - divergence':
+                        if symbol_held:
+                            utils.Sending_Email.process_sell_signals(symbol, current_date)
+                        update_portfolio(symbol, 'Sell', current_date)
+
+                # Update the last row in file_data with the new end date and high/low values
+                file_data.loc[file_data.index[-1], 'End Date'] = trend_end_date
+                file_data.loc[file_data.index[-1], 'Highest Price'] = max(highest_price, last_row['Highest Price'])
+                file_data.loc[file_data.index[-1], 'Lowest Price'] = min(lowest_price, last_row['Lowest Price'])
+                file_data.loc[file_data.index[-1], 'Highest MACD'] = max(highest_macd, last_row['Highest MACD'])
+                file_data.loc[file_data.index[-1], 'Lowest MACD'] = min(lowest_macd, last_row['Lowest MACD'])
+                file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
+
+                signal = utils.Signals.spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
+                file_data.loc[file_data.index[-1], 'Signal'] = signal
+                if current_signal != signal:
+                    if signal == 'Buy signal':
+                        # utils.Sending_Email.process_buy_signals(symbol, current_date)
+                        update_portfolio(symbol, 'Buy', current_date)
+                    elif signal == 'Sell signal':
+                        if symbol_held:
+                            utils.Sending_Email.process_sell_signals(symbol, current_date)
+                        update_portfolio(symbol, 'Sell', current_date)
+
+            # Save the updated file_data back to the file
+            file_data.to_csv(path_file, index=False)
+            print('Last week data added')
+
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("add_weekly_stock_data", e,
+                                           utils.Errors_logging.log_name_weekly_signals,
+                                           symbol=symbol)
 
 
 def add_monthly_stock_data(symbol):
@@ -672,9 +809,8 @@ def add_monthly_stock_data(symbol):
         lt_stock_data_csv = get_monthly_data(symbol)
         stock_data = load_data_from_csv(lt_stock_data_csv)
         calculate_macd(stock_data, 26, 3, 7)
-        path_file = f'./stocks_data_csv/signal_data/{symbol}_monthly_data.csv'
-        symbol_held = is_symbol_in_portfolio(symbol,
-                                             file_path='./stocks_data_csv/data_base/portfolio.csv')
+        path_file = f'signal_data/{symbol}_monthly_data.csv'
+        symbol_held = is_symbol_in_portfolio(symbol)
 
         if not os.path.exists(path_file):
             file_data = pd.DataFrame(columns=[
@@ -851,236 +987,6 @@ def add_monthly_stock_data(symbol):
         utils.Errors_logging.functions_error_log("add_monthly_stock_data", e,
                                            utils.Errors_logging.log_name_monthly_signals,
                                            symbol=symbol)
-
-
-def add_weekly_stock_data(symbol):
-    try:
-        stock_data_csv = get_data(symbol)
-        lt_stock_data_csv = get_monthly_data(symbol)
-        stock_data = load_data_from_csv(stock_data_csv)
-        lt_stock_data = load_data_from_csv(lt_stock_data_csv)
-        calculate_macd(stock_data, 26, 3, 7)
-        path_file = f'./stocks_data_csv/signal_data/{symbol}_weekly_data.csv'
-        info = utils.Stock_Data.get_company_info(symbol)
-        company_name = info['Company Name']
-        symbol_held = is_symbol_in_portfolio(symbol,
-                                             file_path='./stocks_data_csv/data_base/portfolio.csv')
-
-        portfolio_file = './stocks_data_csv/data_base/portfolio.csv'
-        portfolio_df = pd.read_csv(portfolio_file)
-
-        if not os.path.exists(path_file):
-            file_data = pd.DataFrame(columns=[
-                'Date', 'Start Date', 'End Date', 'LT Trend', 'MACD Trend',
-                'Highest Price', 'Highest MACD', 'Lowest Price', 'Lowest MACD',
-                'Divergence spotted', 'Signal'
-            ])
-
-            new_rows_list = []
-
-            for date in stock_data.index:
-                try:
-                    date_str = date.strftime('%Y-%m-%d')
-                    lt_trend = get_lt_trend(lt_stock_data, date_str)
-                    macd_trend = get_macd_trend(stock_data, date_str)
-
-                    if file_data.empty or macd_trend != file_data.iloc[-1]['MACD Trend'] or lt_trend != \
-                            file_data.iloc[-1][
-                                'LT Trend']:
-                        # Create a new row
-                        new_row = {
-                            'Date': date_str,
-                            'Start Date': date_str,
-                            'End Date': None,
-                            'LT Trend': lt_trend,
-                            'MACD Trend': macd_trend,
-                            'Highest Price': round(stock_data.loc[date]['High'], 2),
-                            'Highest MACD': round(stock_data.loc[date]['MACD'], 2),
-                            'Lowest Price': round(stock_data.loc[date]['Low'], 2),
-                            'Lowest MACD': round(stock_data.loc[date]['MACD'], 2),
-                            'Divergence spotted': None,
-                            'Signal': None,
-                        }
-
-                        # Append new_row only once
-                        if not file_data.empty:
-                            file_data.at[file_data.index[-1], 'End Date'] = date_str
-                            if len(file_data) > 4:
-                                check_date = file_data.iloc[-1]['Start Date']
-                                spot_divergence = spot_weekly_divergences(stock_data, lt_stock_data, file_data,
-                                                                          check_date)
-                                if pd.isna(file_data.iloc[-1]['Divergence spotted']):
-                                    # print(f'1: {date_str}:{spot_divergence}')
-                                    file_data.loc[file_data.index[-1], 'Divergence spotted'] = spot_divergence
-                                # if spot_divergence == 'Buy - divergence':
-                                #     Sending_Email.process_buy_signals(symbol, date_str)
-                        try:
-                            signal_divergence = divergences_signal(lt_trend, file_data, date_str)
-                            if signal_divergence != None:
-                                new_row['Divergence spotted'] = signal_divergence
-
-                        except Exception as e:
-                            utils.Errors_logging.functions_error_log("add_weekly_stock_data", e,
-                                                               utils.Errors_logging.log_name_weekly_signals,
-                                                               symbol=symbol)
-
-                        new_rows_list.append(new_row)
-
-                        file_data = pd.concat([file_data, pd.DataFrame([new_row])], ignore_index=True)
-                        signal = spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
-                        file_data.at[file_data.index[-1], 'Signal'] = signal
-
-                    # Check for divergence and add to the last row if there's any
-
-                    else:
-                        last_row = file_data.iloc[-1]
-                        # MACD trend didn't change, update the end date and check for new highs/lows
-                        trend_start_date = last_row['Start Date']
-                        trend_end_date = date_str
-
-                        # Check if there have been new highs or lows
-                        highest_price = round(stock_data['High'][trend_start_date:trend_end_date].max(), 2)
-                        lowest_price = round(stock_data['Low'][trend_start_date:trend_end_date].min(), 2)
-                        highest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].max(), 2)
-                        lowest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].min(), 2)
-                        signal_divergence = divergences_signal(lt_trend, file_data, date_str)
-
-                        # Update the last row in file_data with the new end date and high/low values
-                        file_data.loc[file_data.index[-1], 'End Date'] = trend_end_date
-                        file_data.loc[file_data.index[-1], 'Highest Price'] = max(highest_price,
-                                                                                  last_row['Highest Price'])
-                        file_data.loc[file_data.index[-1], 'Lowest Price'] = min(lowest_price, last_row['Lowest Price'])
-                        file_data.loc[file_data.index[-1], 'Highest MACD'] = max(highest_macd, last_row['Highest MACD'])
-                        file_data.loc[file_data.index[-1], 'Lowest MACD'] = min(lowest_macd, last_row['Lowest MACD'])
-                        if signal_divergence != None:
-                            file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
-
-                        if file_data.iloc[-1]['Signal'] == None or file_data.iloc[-1][
-                            'Signal'] == 'Waiting for confirmation : Buy' or file_data.iloc[-1][
-                            'Signal'] == 'Waiting for confirmation : Sell':
-                            signal = spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
-                            file_data.loc[file_data.index[-1], 'Signal'] = signal
-
-
-
-                except Exception as e:
-                    utils.Errors_logging.functions_error_log("add_weekly_stock_data", e,
-                                                       utils.Errors_logging.log_name_weekly_signals,
-                                                       symbol=symbol)
-                    continue
-
-            # Save the new file
-            file_data.to_csv(path_file, index=False)
-            # print('Previous data added')
-
-        else:
-            file_data = pd.read_csv(path_file)
-
-            # Get the last row of the file_data
-            last_row = file_data.iloc[-1]
-
-            current_date = stock_data.index[-1].strftime('%Y-%m-%d')
-            lt_trend = get_lt_trend(lt_stock_data, current_date)
-            macd_trend = get_macd_trend(stock_data, current_date)
-
-            new_rows_list = []
-
-            if macd_trend != last_row['MACD Trend'] or lt_trend != last_row['LT Trend']:
-                # MACD trend changed, update trend_start_date and add a new row
-                trend_start_date = last_row['End Date']
-                new_row = {
-                    'Date': current_date,
-                    'Start Date': current_date,
-                    'End Date': None,
-                    'LT Trend': lt_trend,
-                    'MACD Trend': macd_trend,
-                    'Highest Price': round(stock_data.tail(1)['High'].iloc[0], 2),
-                    'Highest MACD': round(stock_data.tail(1)['MACD'].iloc[0], 2),
-                    'Lowest Price': round(stock_data.tail(1)['Low'].iloc[0], 2),
-                    'Lowest MACD': round(stock_data.tail(1)['MACD'].iloc[0], 2),
-                    'Divergence spotted': None,
-                    'Signal': None
-                }
-
-                file_data.at[file_data.index[-1], 'End Date'] = current_date
-                signal_divergence = divergences_signal(lt_trend, file_data, current_date)
-                if signal_divergence != 'None':
-                    file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
-                    if signal_divergence == 'Buy - divergence':
-                        utils.Sending_Email.process_buy_signals(symbol, current_date)
-                        update_portfolio(symbol, 'Buy', current_date)
-                    elif signal_divergence == 'Sell - divergence':
-                        if symbol_held:
-                            utils.Sending_Email.process_sell_signals(symbol, current_date)
-                        update_portfolio(symbol, 'Sell', current_date)
-                else:
-                    check_date = file_data.iloc[-1]['Start Date']
-                    spot_divergence = spot_weekly_divergences(stock_data, lt_stock_data, file_data, check_date)
-                    file_data.loc[file_data.index[-1], 'Divergence spotted'] = spot_divergence
-
-                new_rows_list.append(new_row)
-                file_data = pd.concat([file_data, pd.DataFrame([new_row])], ignore_index=True)
-                signal = spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
-                file_data.loc[file_data.index[-1], 'Signal'] = signal
-                if signal == 'Buy signal':
-                    utils.Sending_Email.process_buy_signals(symbol, current_date)
-                    update_portfolio(symbol, 'Buy', current_date)
-                elif signal == 'Sell signal':
-                    if symbol_held:
-                        utils.Sending_Email.process_sell_signals(symbol, current_date)
-                    update_portfolio(symbol, 'Sell', current_date)
-
-            else:
-                # MACD trend didn't change, update the end date and check for new highs/lows
-                trend_start_date = last_row['Start Date']
-                trend_end_date = current_date
-                current_signal = last_row['Signal']
-                current_divergence = last_row['Divergence spotted']
-
-                # Check if there have been new highs or lows
-                highest_price = round(stock_data['High'][trend_start_date:trend_end_date].max(), 2)
-                lowest_price = round(stock_data['Low'][trend_start_date:trend_end_date].min(), 2)
-                highest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].max(), 2)
-                lowest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].min(), 2)
-
-                signal_divergence = divergences_signal(lt_trend, file_data, current_date)
-                if current_divergence != signal_divergence:
-                    if signal_divergence == 'Buy - divergence':
-                        utils.Sending_Email.process_buy_signals(symbol, current_date)
-                        update_portfolio(symbol, 'Buy', current_date)
-                    elif signal_divergence == 'Sell - divergence':
-                        if symbol_held:
-                            utils.Sending_Email.process_sell_signals(symbol, current_date)
-                        update_portfolio(symbol, 'Sell', current_date)
-
-                # Update the last row in file_data with the new end date and high/low values
-                file_data.loc[file_data.index[-1], 'End Date'] = trend_end_date
-                file_data.loc[file_data.index[-1], 'Highest Price'] = max(highest_price, last_row['Highest Price'])
-                file_data.loc[file_data.index[-1], 'Lowest Price'] = min(lowest_price, last_row['Lowest Price'])
-                file_data.loc[file_data.index[-1], 'Highest MACD'] = max(highest_macd, last_row['Highest MACD'])
-                file_data.loc[file_data.index[-1], 'Lowest MACD'] = min(lowest_macd, last_row['Lowest MACD'])
-                file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
-
-                signal = spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
-                file_data.loc[file_data.index[-1], 'Signal'] = signal
-                if current_signal != signal:
-                    if signal == 'Buy signal':
-                        utils.Sending_Email.process_buy_signals(symbol, current_date)
-                        update_portfolio(symbol, 'Buy', current_date)
-                    elif signal == 'Sell signal':
-                        if symbol_held:
-                            utils.Sending_Email.process_sell_signals(symbol, current_date)
-                        update_portfolio(symbol, 'Sell', current_date)
-
-            # Save the updated file_data back to the file
-            file_data.to_csv(path_file, index=False)
-            # print('Last week data added')
-
-    except Exception as e:
-        utils.Errors_logging.functions_error_log("add_weekly_stock_data", e,
-                                           utils.Errors_logging.log_name_weekly_signals,
-                                           symbol=symbol)
-
 
 # symbol = 'UBER'
 # stock_data_csv = get_data(symbol)

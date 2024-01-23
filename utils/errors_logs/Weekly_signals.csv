@@ -1,0 +1,190 @@
+Time,Function,Symbol,Error
+2024-01-23 14:20:57,add_weekly_stock_data,AAPL,Invalid file path or buffer object type: <class 'NoneType'>
+2024-01-23 14:22:31,add_weekly_stock_data,AAPL,Invalid file path or buffer object type: <class 'NoneType'>
+2024-01-23 14:23:11,add_weekly_stock_data,AAPL,Invalid file path or buffer object type: <class 'NoneType'>
+2024-01-23 14:25:09,add_weekly_stock_data: new row,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:09,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:09,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,add_weekly_stock_data,AAPL,single positional indexer is out-of-bounds
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:10,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:11,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:25:12,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-23 14:29:59,update_portfolio,AAPL,"list indices must be integers or slices, not str"
+2024-01-23 14:33:22,update_portfolio,AAPL,"list indices must be integers or slices, not str"
+2024-01-23 14:36:10,update_portfolio,AAPL,"list indices must be integers or slices, not str"
+2024-01-23 14:38:22,update_portfolio,AAPL,"list indices must be integers or slices, not str"
+2024-01-23 14:38:39,update_portfolio,AAPL,"list indices must be integers or slices, not str"
+2024-01-23 14:39:34,update_portfolio,AAPL,Object of type date is not JSON serializable
+2024-01-23 14:41:56,update_portfolio,AAPL,"{'code': '23502', 'details': 'Failing row contains (422, AAPL, 2024-01-23, 193.89, null, null, null, null, null).', 'hint': None, 'message': 'null value in column ""Portfolio_id"" of relation ""portfolio"" violates not-null constraint'}"
+2024-01-23 14:58:40,update_portfolio,AAPL,{}
+2024-01-23 15:02:51,update_portfolio,AAPL,{}
+2024-01-23 15:04:08,update_portfolio,AAPL,{}

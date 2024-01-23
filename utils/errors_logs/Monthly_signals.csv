@@ -1,0 +1,4 @@
+Time,Function,Symbol,Error
+2024-01-23 14:20:57,get_monthly_data,AAPL,Cannot save file into a non-existent directory: '.stock_data'
+2024-01-23 14:22:31,get_monthly_data,AAPL,Cannot save file into a non-existent directory: '.stock_data'
+2024-01-23 14:23:11,get_monthly_data,AAPL,Cannot save file into a non-existent directory: '.stock_data'
