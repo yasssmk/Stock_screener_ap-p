@@ -19,15 +19,26 @@ def measure_runtime(func):
 
 
 @measure_runtime
-def selection_by_fundamentals(csv_file_path, num_companies_to_select):
+load_dotenv()
+
+url: str = os.getenv('sb_url')
+key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
+supabase: Client = create_client(url, key)
+
+
+def selection_by_fundamentals(num_companies_to_select):
     try:
-        # Load the data from the CSV file
-        df = pd.read_csv(csv_file_path)
+        # Fetch data from 'stocks_ranking_data' and 'data_stocks' tables
+        response_ranking = supabase.table('stocks_ranking_data').select('Stock_id','Score','Sector', 'Top 100').execute()
+        response_fin = supabase.table('data_stocks').select('*').execute()
 
-        columns_to_convert = ['EPS average Growth', 'EPS median Growth', 'Last Growth']
 
-        # Apply pd.to_numeric with errors='coerce' to the specified columns
-        df[columns_to_convert] = df[columns_to_convert].apply(pd.to_numeric, errors='coerce')
+        df_ranking = pd.DataFrame(response_ranking.data)
+        df_fin = pd.DataFrame(response_fin.data)
+
+        # Join the tables on 'Stock_id'
+        df = pd.merge(df_fin, df_ranking, on='Stock_id')
+
 
         # Filter the DataFrame based on the selection conditions
         selection_conditions = (
@@ -116,17 +127,20 @@ def selection_by_fundamentals(csv_file_path, num_companies_to_select):
         # Trim the final selection to num_companies_to_select
         final_selection = final_selection.head(num_companies_to_select)
 
-        # Save the final selection to a CSV file
-        final_selection.to_csv(f'./stocks_data_csv/data_base/final_{num_companies_to_select}_selection.csv', index=False)
+        # Update the 'TOP 100' column in Supabase for the selected stocks
+        selected_stock_ids = final_selection['Stock_id'].tolist()
+        for stock_id in selected_stock_ids:
+            # Execute update statement for each selected stock
+            supabase.table('stocks_ranking_data').update({'Top 100': True}).eq('Stock_id', stock_id).execute()
 
-        error_log_path = './stocks_data_csv/errors_logs/Create_update_selection'
-        utils.Sending_Email.job_done_email("Selection by Fundamentals", error_log_path)
+        # Send success email (if needed)
+        error_log_path = 'errors_logs/Create_update_selection'
+        # utils.Sending_Email.job_done_email("Selection by Fundamentals", error_log_path)
 
-        return final_selection
     except Exception as e:
-        utils.Errors_logging.functions_error_log("selection_by_fundamentals", e, Errors_logging.log_name_rundb, symbol=symbol)
-        error_log_path = './stocks_data_csv/errors_logs/Create_update_selection'
-        utils.Sending_Email.db_error_email(e, "selection_by_fundamentals", error_log_path)
+        utils.Errors_logging.functions_error_log("selection_by_fundamentals", e, utils.Errors_logging.log_name_rundb)
+        error_log_path = 'errors_logs/Create_update_selection'
+        # utils.Sending_Email.db_error_email(e, "selection_by_fundamentals", error_log_path)
 
 
 def add_manually_selection(symbol):

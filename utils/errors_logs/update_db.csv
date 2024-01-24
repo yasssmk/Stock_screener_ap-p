@@ -1,0 +1,8 @@
+Time,Function,Symbol,Error
+2024-01-24 11:04:25,selection_by_fundamentals,,'APIResponse[~_ReturnT]' object has no attribute 'error'
+2024-01-24 11:05:42,selection_by_fundamentals,,'Debt to Equity'
+2024-01-24 11:16:58,selection_by_fundamentals,,'Symbol'
+2024-01-24 11:18:11,selection_by_fundamentals,,"{'code': '42703', 'details': None, 'hint': 'Perhaps you meant to reference the column ""stocks_ranking_data.Top 100"".', 'message': 'column stocks_ranking_data.TOP 100 does not exist'}"
+2024-01-24 11:18:57,selection_by_fundamentals,,'Sector'
+2024-01-24 11:20:05,selection_by_fundamentals,,"{'code': '23502', 'details': 'Failing row contains (null, PAM, null, null, null, null, null, null, null, null, null, null, null, t).', 'hint': None, 'message': 'null value in column ""Stock_id"" of relation ""stocks_ranking_data"" violates not-null constraint'}"
+2024-01-24 11:30:08,selection_by_fundamentals,,"{'code': '23502', 'details': 'Failing row contains (4000, null, null, null, null, null, null, null, null, null, null, null, null, t).', 'hint': None, 'message': 'null value in column ""Symbol"" of relation ""stocks_ranking_data"" violates not-null constraint'}"
