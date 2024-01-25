@@ -3,6 +3,9 @@ import math
 import utils.Errors_logging
 import utils.Sending_Email
 import time
+import os
+from dotenv import load_dotenv
+from supabase import create_client, Client
 
 def measure_runtime(func):
     """
@@ -18,7 +21,7 @@ def measure_runtime(func):
     return wrapper
 
 
-@measure_runtime
+
 load_dotenv()
 
 url: str = os.getenv('sb_url')
@@ -26,6 +29,7 @@ key: str = os.getenv('sb_api_key')  # Replace with your Supabase API key
 supabase: Client = create_client(url, key)
 
 
+# @measure_runtime
 def selection_by_fundamentals(num_companies_to_select):
     try:
         # Fetch data from 'stocks_ranking_data' and 'data_stocks' tables

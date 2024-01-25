@@ -1,0 +1,7 @@
+Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest Price,Lowest MACD,Divergence spotted,Signal
+2022-02-07,2022-02-07,2022-09-12,,Neutral,105.0,-11.68,13.12,-12.47,,
+2022-09-12,2022-09-12,2022-09-19,,MACD Bearish breath,21.75,-11.97,11.75,-11.97,,
+2022-09-19,2022-09-19,2022-10-17,,MACD Bearish,13.65,-12.63,5.95,-13.22,,
+2022-10-17,2022-10-17,2023-07-03,,MACD Bearish breath,10.25,-1.43,2.65,-12.41,,Sell signal
+2023-07-03,2023-07-03,2023-08-28,,MACD Bearish,3.1,-1.95,1.0,-2.36,Weekly Bullish Divergence,Sell signal
+2023-08-28,2023-08-28,2024-01-22,,MACD Bearish breath,2.17,-0.69,0.21,-2.22,,

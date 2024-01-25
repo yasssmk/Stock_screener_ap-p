@@ -587,9 +587,7 @@ def add_weekly_stock_data(symbol):
         utils.Signals.calculate_macd(stock_data, 26, 3, 7)
         path_file = f'signal_data/{symbol}_weekly_data.csv'
         info = utils.Stock_Data.get_company_info(symbol)
-        print(info)
         symbol_held = is_symbol_in_portfolio(symbol)
-        print(symbol_held)
 
         if not os.path.exists(path_file):
             file_data = pd.DataFrame(columns=[
@@ -987,6 +985,20 @@ def add_monthly_stock_data(symbol):
         utils.Errors_logging.functions_error_log("add_monthly_stock_data", e,
                                            utils.Errors_logging.log_name_monthly_signals,
                                            symbol=symbol)
+
+
+def signal_stock():
+    try:
+        # Fetch rows where 'Top 100' is True
+        response = supabase.table('stocks_ranking_data').select('Symbol').eq('Top 100', True).execute()
+
+        # Extract the 'Symbol' column values into a list
+        symbols = [row['Symbol'] for row in response.data]
+        return symbols
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("signal stocks empty", e, utils.Errors_logging.log_name_rundb)
+        return []
+
 
 # symbol = 'UBER'
 # stock_data_csv = get_data(symbol)

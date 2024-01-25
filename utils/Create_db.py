@@ -5,6 +5,7 @@ from scipy import stats
 import utils.Stock_Data
 import utils.Sending_Email
 import utils.Errors_logging
+import utils.Stock_selection
 import pandas as pd
 from dotenv import load_dotenv
 from supabase import create_client, Client
@@ -500,3 +501,32 @@ def process_and_update_data():
     except Exception as e:
         utils.Errors_logging.functions_error_log("process_and_export_data", e, utils.Errors_logging.log_name_rundb)
         utils.Sending_Email.db_error_email(e, "Data Base", error_log_path)
+
+
+def run_update_databases():
+    try:
+
+        # Create a stock data dataframe
+        utils.Create_db.create_stock_data_db()
+
+        # Calculate industry statistics
+        utils.Create_db.calculate_industry_stat()
+
+        # Calculate sector statistics
+        utils.Create_db.calculate_sector_stat()
+
+        # Add percentiles
+        utils.Create_db.process_and_update_data()
+
+        utils.Stock_selection.selection_by_fundamentals(100)
+
+        error_log_path = 'errors_logs/db_update.csv'
+        utils.Sending_Email.job_done_email("Update Data Base", error_log_path)
+
+        utils.Stock_selection.selection_by_fundamentals(100)
+
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("update_databases", e, utils.Errors_logging.log_name_rundb)
+        error_log_path = 'errors_logs/db_update.csv'
+        utils.Sending_Email.db_error_email(e, "Data Base update main", error_log_path)
+

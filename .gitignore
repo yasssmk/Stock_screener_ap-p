@@ -4,6 +4,7 @@ structure.txt
 __pycache__/
 .env
 test.py
+.png
 
 
 #Template

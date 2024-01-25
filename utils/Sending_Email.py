@@ -8,7 +8,6 @@ import pandas as pd
 import utils.Stock_Data
 from datetime import datetime
 import utils.Errors_logging
-import yfinance as yf
 
 def send_html_email(subject, body, recipient_email, sender_email, sender_password, smtp_server, smtp_port, attachment_path=None):
     msg = MIMEMultipart()
