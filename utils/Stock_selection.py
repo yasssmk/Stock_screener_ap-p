@@ -32,6 +32,8 @@ supabase: Client = create_client(url, key)
 # @measure_runtime
 def selection_by_fundamentals(num_companies_to_select):
     try:
+        #Selection plan id
+        selection_id = 1
         # Fetch data from 'stocks_ranking_data' and 'data_stocks' tables
         response_ranking = supabase.table('stocks_ranking_data').select('Stock_id','Score','Sector', 'Top 100').execute()
         response_fin = supabase.table('data_stocks').select('*').execute()
@@ -132,19 +134,50 @@ def selection_by_fundamentals(num_companies_to_select):
         final_selection = final_selection.head(num_companies_to_select)
 
         # Update the 'TOP 100' column in Supabase for the selected stocks
-        selected_stock_ids = final_selection['Stock_id'].tolist()
-        for stock_id in selected_stock_ids:
+        final_selection_dict = final_selection[['Stock_id', 'Symbol']].set_index('Stock_id').to_dict(orient='index')
+
+
+        # remove entries that are no longer in the final selection
+        current_selection = supabase.table('stocks_selection_plan') \
+            .select('Stock_id', 'Plan_id') \
+            .eq('Plan', 'Fundamentals') \
+            .execute().data
+
+        ids_to_remove = [item['Stock_id'] for item in current_selection if item['Stock_id'] not in final_selection_dict]
+
+        if ids_to_remove:
+            supabase.table('stocks_selection_plan') \
+                .delete() \
+                .in_('Stock_id', ids_to_remove) \
+                .eq('Plan', 'Fundamentals') \
+                .execute()
+
+            supabase.table('stocks_ranking_data').update({'Top 100': False}).in_('Stock_id', ids_to_remove).execute()
+
+        for stock_id, stock_info in final_selection_dict.items():
             # Execute update statement for each selected stock
             supabase.table('stocks_ranking_data').update({'Top 100': True}).eq('Stock_id', stock_id).execute()
+            try:
+                supabase.table('stocks_selection_plan') \
+                    .upsert(
+                    {'Plan_id': selection_id, 'Stock_id': stock_id, 'Symbol': stock_info['Symbol'], 'Plan': 'Fundamentals'}) \
+                    .execute()
+            except Exception as e:
+                # Handle the exception (e.g., log it, send a notification, etc.)
+                utils.Errors_logging.functions_error_log("upsert_stocks_selection_plan", e,
+                                                         utils.Errors_logging.log_name_rundb)
+                # You may choose to continue the loop or break based on your requirement
+                continue
 
         # Send success email (if needed)
-        error_log_path = 'errors_logs/Create_update_selection'
+        error_log_path = 'errors_logs/update_db'
         # utils.Sending_Email.job_done_email("Selection by Fundamentals", error_log_path)
 
     except Exception as e:
         utils.Errors_logging.functions_error_log("selection_by_fundamentals", e, utils.Errors_logging.log_name_rundb)
-        error_log_path = 'errors_logs/Create_update_selection'
+        error_log_path = 'errors_logs/update_db'
         # utils.Sending_Email.db_error_email(e, "selection_by_fundamentals", error_log_path)
+
 
 
 def add_manually_selection(symbol):
