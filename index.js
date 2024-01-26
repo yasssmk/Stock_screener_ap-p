@@ -38,7 +38,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Static Files
 app.use(express.static("views"));
 
-//function create user
+//functions
 
 async function createUser(name, surname, email, country) {
     try {
@@ -73,27 +73,88 @@ async function createUser(name, surname, email, country) {
     }
 }
 
+async function addStockManually(user_id, symbol) {
+    try {
+        // Check if the stock symbol exists and get its Stock_id
+        const { data: stockData, error: stockError } = await supabase
+            .from('stocks_list')
+            .select("Stock_id")
+            .eq('Symbol', symbol)
+            .single();
+
+        if (stockError) {
+            console.error('Error checking stock:', stockError);
+            throw new Error('Error checking stock');
+        }
+
+        if (!stockData) {
+            return 'The stock does not exist';
+        }
+
+        const stock_id = stockData.Stock_id;
+
+        // Check if the stock is already in the user's watchlist
+        const { data: existingSymbol, error: selectError } = await supabase
+            .from('users_watchlist')
+            .select("*")
+            .match({ User_id: user_id, Stock_id: stock_id });
+
+        if (selectError) {
+            console.error('Error checking user watchlist:', selectError);
+            throw new Error('Error checking user watchlist');
+        }
+
+        if (existingSymbol.length === 0) {
+            // The stock is not in the user's watchlist, insert it
+            const { error: insertError } = await supabase
+                .from('users_watchlist')
+                .insert([{ User_id: user_id, Stock_id: stock_id, Symbol: symbol }]);
+
+            if (insertError) {
+                console.error('Error adding stock to watchlist:', insertError);
+                throw new Error('Error adding stock to watchlist');
+            }
+
+            return 'Stock successfully added to user watchlist';
+        }
+
+        return 'Stock already exists in user watchlist';
+    } catch (error) {
+        // Handle any unexpected errors
+        console.error('An unexpected error occurred:', error);
+        throw error;
+    }
+}
+
+
+//Server
 
 app.get('/', async (req, res) => {
-    if (req.oidc.isAuthenticated()) {
-        res.redirect("/profile");
-        try {
-            const name = req.oidc.user["given_name"];
-            const surname = req.oidc.user["family_name"];
-            const email = req.oidc.user["email"];
-            const country = req.oidc.user["locale"];
     
-            const result = await createUser(name, surname, email, country);
+    if (req.oidc.isAuthenticated()) {
+        // Create a user object
+        const user = {
+            name: req.oidc.user["given_name"],
+            surname: req.oidc.user["family_name"],
+            email: req.oidc.user["email"],
+            country: req.oidc.user["locale"]
+        };
+
+        try {
+            
+            const result = await createUser(user.name, user.surname, user.email, user.country);
             console.log("Ok" + result);
-            res.oidc.login({ returnTo: '/profile' });
+
+            // Render the index.ejs page with the user object
+            res.render("index.ejs", { user: user });
         } catch (error) {
             console.error(error);
             res.status(500).send('An error occurred');
         }
-        console.log(req.oidc.user);
     } else {
-        res.render("index.ejs");}
-    })
+        res.render("index.ejs", { user: null });
+    }
+});
 
 
 app.get('/profile', requiresAuth(), (req, res) => {
@@ -101,28 +162,45 @@ app.get('/profile', requiresAuth(), (req, res) => {
     res.render("profile.ejs", { user: req.oidc.user["given_name"] });
   });
 
-  
 
+  app.post('/add', requiresAuth(), async (req, res) => {
+    const symbol = req.body.symbol.toUpperCase();
+    if (req.oidc.isAuthenticated()) {
+        // Extract the email from the authenticated user's information
+        const email = req.oidc.user["email"];
 
-// app.get("/login", (req, res) => {
-//     if (req.oidc.isAuthenticated()) {
-//         res.redirect("/profile");
-//         console.log(req.oidc.user);
-//     } else {
-//         res.render("login.ejs");}
-// })
+        try {
+            // Fetch the user's ID from the database
+            const { data, error } = await supabase
+                .from('users')
+                .select("User_id")
+                .eq('Email', email)
+                .single();
 
-  
-// app.get("/register", async (req, res) => {
-//     res.redirect('/register');
-//     });
-  
+            if (error) {
+                throw error;
+            }
 
-// app.get('/profile', requiresAuth(), (req, res) => {
-//     // Assuming you want to display user information on the profile page
-//     res.render("profile.ejs", { user: req.oidc.user["given_name"] });
-//   });
+            if (!data) {
+                res.status(404).send('User not found');
+                return;
+            }
 
+            const user_id = data.User_id;
+
+            // Add the stock to the user's watchlist
+            const result = await addStockManually(user_id, symbol);
+            console.log("Ok " + result);
+            // Redirect or render as needed after successful operation
+            res.redirect('/'); // Adjust this as per your requirement
+        } catch (error) {
+            console.error(error);
+            res.status(500).send('An error occurred');
+        }
+    } else {
+        res.redirect("/login");
+    }
+});
 
 app.listen(port, () => {
     console.log(`Server running on port ${port}`);

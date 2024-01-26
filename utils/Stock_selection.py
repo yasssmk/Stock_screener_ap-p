@@ -164,7 +164,7 @@ def selection_by_fundamentals(num_companies_to_select):
                     .execute()
             except Exception as e:
                 # Handle the exception (e.g., log it, send a notification, etc.)
-                utils.Errors_logging.functions_error_log("upsert_stocks_selection_plan", e,
+                utils.Errors_logging.functions_error_log("update stocks selection db", e,
                                                          utils.Errors_logging.log_name_rundb)
                 # You may choose to continue the loop or break based on your requirement
                 continue
@@ -177,7 +177,6 @@ def selection_by_fundamentals(num_companies_to_select):
         utils.Errors_logging.functions_error_log("selection_by_fundamentals", e, utils.Errors_logging.log_name_rundb)
         error_log_path = 'errors_logs/update_db'
         # utils.Sending_Email.db_error_email(e, "selection_by_fundamentals", error_log_path)
-
 
 
 def add_manually_selection(symbol):

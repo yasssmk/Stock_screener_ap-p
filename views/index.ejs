@@ -32,9 +32,14 @@
                 </ul>
         
                 <div class="col-md-3 text-end">
-                <a href="/login"><button type="button" class="btn btn-outline-primary me-2 text">Login</button></a>
-                <a href="/register"><button type="button" class="btn btn-primary text">Sign-up</button></a>
-                </div>
+                  <% if (user) { %>
+                      <span>Welcome <%= user.name %></span>
+                      <a href="/logout"><button type="button" class="btn btn-primary text">Logout</button></a>
+                  <% } else { %>
+                      <a href="/login"><button type="button" class="btn btn-outline-primary me-2 text">Login</button></a>
+                      <a href="/register"><button type="button" class="btn btn-primary text">Sign-up</button></a>
+                  <% } %>
+              </div>
             </header>
         </div>
         <!--Heroe-->
@@ -44,19 +49,21 @@
                 <h1 class="display-5 fw-bold text-body-emphasis title" >Create your free portfolio watchlist now</h1>
                 <div class="col-lg-6 mx-auto" style="width: 100% !important;">
                 <p class="lead mb-4">Increase your returns by buying your favorite stocks at cheaper price</p>
-                <div class="input-group rounded">
-                    <input type="search" class="form-control rounded text" placeholder="Add Company in your watchlist" aria-label="Search" aria-describedby="search-addon" />
-                    <span class="input-group-text border-0 grad" id="search-addon">
-                        <button type="button" class="btn btn-outline-light">
-                          <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="grey" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
-                            <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
-                          </svg>
-                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                <form action="/add" method="POST">
+                  <div class="input-group rounded">
+                      <input type="search" name="symbol" class="form-control rounded text" placeholder="Add Company in your watchlist" aria-label="Search" aria-describedby="search-addon" />
+                      <span class="input-group-text border-0 grad" id="search-addon">
+                          <button type="submit" class="btn btn-outline-light">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28" fill="grey" class="bi bi-plus-circle-fill" viewBox="0 0 16 16">
+                              <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8.5 4.5a.5.5 0 0 0-1 0v3h-3a.5.5 0 0 0 0 1h3v3a.5.5 0 0 0 1 0v-3h3a.5.5 0 0 0 0-1h-3z"/>
                             </svg>
-                            <span class="visually-hidden">Button</span>
-                        </button>
-                    </span>
-                </div>
+                                  <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0"></path>
+                              </svg>
+                              <span class="visually-hidden">Button</span>
+                          </button>
+                      </span>
+                  </div>
+                </form>
                 </div>
             </div>
         </div>
