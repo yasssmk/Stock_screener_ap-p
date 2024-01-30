@@ -3,6 +3,7 @@ import bodyParser from "body-parser";
 import env from "dotenv";
 import pkg from 'express-openid-connect';
 import { createClient } from '@supabase/supabase-js';
+import axios, { Axios } from "axios";
 
 // Env
 env.config();
@@ -10,7 +11,6 @@ env.config();
 // Express
 const app = express();
 const port = 3000;
-
 
 // Auth0
 const { auth, requiresAuth } = pkg;
@@ -73,6 +73,7 @@ async function createUser(name, surname, email, country) {
     }
 }
 
+//TO DO : ADD Selection ID
 async function addStockManually(user_id, symbol) {
     try {
         // Check if the stock symbol exists and get its Stock_id
@@ -125,6 +126,8 @@ async function addStockManually(user_id, symbol) {
         throw error;
     }
 }
+
+
 
 
 //Server

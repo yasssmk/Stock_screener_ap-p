@@ -482,10 +482,10 @@ def spot_monthly_signals(file_data, date, lt_trend, stock_data_monthly):
             return None
 
 
-def update_portfolio(symbol, action, date):
+def update_portfolio(symbol, action, price, date):
     try:
         # Get the current stock price
-        price = utils.Stock_Data.get_stock_price(symbol)
+
         response = supabase.table('stocks_list').select("Stock_id", "Symbol").eq("Symbol", symbol).execute()
         symbols_data = response.data
         stock_id = symbols_data[0]["Stock_id"]
@@ -579,12 +579,13 @@ def is_symbol_in_portfolio(symbol):
 
 
 def add_weekly_stock_data(symbol):
+    signals_list = []
     try:
-        stock_data_csv = utils.Signals.get_data(symbol)
-        lt_stock_data_csv = utils.Signals.get_monthly_data(symbol)
-        stock_data = utils.Signals.load_data_from_csv(stock_data_csv)
-        lt_stock_data = utils.Signals.load_data_from_csv(lt_stock_data_csv)
-        utils.Signals.calculate_macd(stock_data, 26, 3, 7)
+        stock_data_csv = get_data(symbol)
+        lt_stock_data_csv = get_monthly_data(symbol)
+        stock_data = load_data_from_csv(stock_data_csv)
+        lt_stock_data = load_data_from_csv(lt_stock_data_csv)
+        calculate_macd(stock_data, 26, 3, 7)
         path_file = f'signal_data/{symbol}_weekly_data.csv'
         info = utils.Stock_Data.get_company_info(symbol)
         symbol_held = is_symbol_in_portfolio(symbol)
@@ -601,8 +602,8 @@ def add_weekly_stock_data(symbol):
             for date in stock_data.index:
                 try:
                     date_str = date.strftime('%Y-%m-%d')
-                    lt_trend = utils.Signals.get_lt_trend(lt_stock_data, date_str)
-                    macd_trend = utils.Signals.get_macd_trend(stock_data, date_str)
+                    lt_trend = get_lt_trend(lt_stock_data, date_str)
+                    macd_trend = get_macd_trend(stock_data, date_str)
 
                     if file_data.empty or macd_trend != file_data.iloc[-1]['MACD Trend'] or lt_trend != \
                             file_data.iloc[-1][
@@ -627,7 +628,7 @@ def add_weekly_stock_data(symbol):
                             file_data.at[file_data.index[-1], 'End Date'] = date_str
                             if len(file_data) > 4:
                                 check_date = file_data.iloc[-1]['Start Date']
-                                spot_divergence = utils.Signals.spot_weekly_divergences(stock_data, lt_stock_data, file_data,
+                                spot_divergence = spot_weekly_divergences(stock_data, lt_stock_data, file_data,
                                                                           check_date)
                                 if pd.isna(file_data.iloc[-1]['Divergence spotted']):
                                     # print(f'1: {date_str}:{spot_divergence}')
@@ -635,7 +636,7 @@ def add_weekly_stock_data(symbol):
                                 # if spot_divergence == 'Buy - divergence':
                                 #     Sending_Email.process_buy_signals(symbol, date_str)
                         try:
-                            signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, date_str)
+                            signal_divergence = divergences_signal(lt_trend, file_data, date_str)
                             if signal_divergence != None:
                                 new_row['Divergence spotted'] = signal_divergence
 
@@ -647,7 +648,7 @@ def add_weekly_stock_data(symbol):
                         new_rows_list.append(new_row)
 
                         file_data = pd.concat([file_data, pd.DataFrame([new_row])], ignore_index=True)
-                        signal = utils.Signals.spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
+                        signal = spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
                         file_data.at[file_data.index[-1], 'Signal'] = signal
 
                     # Check for divergence and add to the last row if there's any
@@ -663,7 +664,7 @@ def add_weekly_stock_data(symbol):
                         lowest_price = round(stock_data['Low'][trend_start_date:trend_end_date].min(), 2)
                         highest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].max(), 2)
                         lowest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].min(), 2)
-                        signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, date_str)
+                        signal_divergence = divergences_signal(lt_trend, file_data, date_str)
 
                         # Update the last row in file_data with the new end date and high/low values
                         file_data.loc[file_data.index[-1], 'End Date'] = trend_end_date
@@ -678,7 +679,7 @@ def add_weekly_stock_data(symbol):
                         if file_data.iloc[-1]['Signal'] == None or file_data.iloc[-1][
                             'Signal'] == 'Waiting for confirmation : Buy' or file_data.iloc[-1][
                             'Signal'] == 'Waiting for confirmation : Sell':
-                            signal = utils.Signals.spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
+                            signal = spot_weekly_signals(file_data, date_str, lt_trend, stock_data, lt_stock_data)
                             file_data.loc[file_data.index[-1], 'Signal'] = signal
 
 
@@ -700,8 +701,8 @@ def add_weekly_stock_data(symbol):
             last_row = file_data.iloc[-1]
 
             current_date = stock_data.index[-1].strftime('%Y-%m-%d')
-            lt_trend = utils.Signals.get_lt_trend(lt_stock_data, current_date)
-            macd_trend = utils.Signals.get_macd_trend(stock_data, current_date)
+            lt_trend = get_lt_trend(lt_stock_data, current_date)
+            macd_trend = get_macd_trend(stock_data, current_date)
 
             new_rows_list = []
 
@@ -723,31 +724,47 @@ def add_weekly_stock_data(symbol):
                 }
 
                 file_data.at[file_data.index[-1], 'End Date'] = current_date
-                signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, current_date)
+                signal_divergence = divergences_signal(lt_trend, file_data, current_date)
                 if signal_divergence != 'None':
                     file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
                     if signal_divergence == 'Buy - divergence':
+                        price = utils.Stock_Data.get_stock_price(symbol)
+                        signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
+                        if not signals_list:
+                            signals_list.append(signal_dict)
                         # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
                     elif signal_divergence == 'Sell - divergence':
                         if symbol_held:
-                            utils.Sending_Email.process_sell_signals(symbol, current_date)
+                            price = utils.Stock_Data.get_stock_price(symbol)
+                            signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
+                            if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
+                                signals_list = [signal_dict]
+                            # utils.Sending_Email.process_sell_signals(symbol, current_date)
                         update_portfolio(symbol, 'Sell', current_date)
                 else:
                     check_date = file_data.iloc[-1]['Start Date']
-                    spot_divergence = utils.Signals.spot_weekly_divergences(stock_data, lt_stock_data, file_data, check_date)
+                    spot_divergence = spot_weekly_divergences(stock_data, lt_stock_data, file_data, check_date)
                     file_data.loc[file_data.index[-1], 'Divergence spotted'] = spot_divergence
 
                 new_rows_list.append(new_row)
                 file_data = pd.concat([file_data, pd.DataFrame([new_row])], ignore_index=True)
-                signal = utils.Signals.spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
+                signal = spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
                 file_data.loc[file_data.index[-1], 'Signal'] = signal
                 if signal == 'Buy signal':
+                    price = utils.Stock_Data.get_stock_price(symbol)
+                    signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
+                    if not signals_list:
+                        signals_list.append(signal_dict)
                     # utils.Sending_Email.process_buy_signals(symbol, current_date)
                     update_portfolio(symbol, 'Buy', current_date)
                 elif signal == 'Sell signal':
                     if symbol_held:
-                        utils.Sending_Email.process_sell_signals(symbol, current_date)
+                        price = utils.Stock_Data.get_stock_price(symbol)
+                        signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
+                        if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
+                            signals_list = [signal_dict]
+                        # utils.Sending_Email.process_sell_signals(symbol, current_date)
                     update_portfolio(symbol, 'Sell', current_date)
 
             else:
@@ -763,14 +780,22 @@ def add_weekly_stock_data(symbol):
                 highest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].max(), 2)
                 lowest_macd = round(stock_data['MACD'][trend_start_date:trend_end_date].min(), 2)
 
-                signal_divergence = utils.Signals.divergences_signal(lt_trend, file_data, current_date)
+                signal_divergence = divergences_signal(lt_trend, file_data, current_date)
                 if current_divergence != signal_divergence:
                     if signal_divergence == 'Buy - divergence':
+                        price = utils.Stock_Data.get_stock_price(symbol)
+                        signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
+                        if not signals_list:
+                            signals_list.append(signal_dict)
                         # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
                     elif signal_divergence == 'Sell - divergence':
                         if symbol_held:
-                            utils.Sending_Email.process_sell_signals(symbol, current_date)
+                            price = utils.Stock_Data.get_stock_price(symbol)
+                            signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
+                            if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
+                                signals_list = [signal_dict]
+                            # utils.Sending_Email.process_sell_signals(symbol, current_date)
                         update_portfolio(symbol, 'Sell', current_date)
 
                 # Update the last row in file_data with the new end date and high/low values
@@ -781,28 +806,39 @@ def add_weekly_stock_data(symbol):
                 file_data.loc[file_data.index[-1], 'Lowest MACD'] = min(lowest_macd, last_row['Lowest MACD'])
                 file_data.loc[file_data.index[-1], 'Divergence spotted'] = signal_divergence
 
-                signal = utils.Signals.spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
+                signal = spot_weekly_signals(file_data, current_date, lt_trend, stock_data, lt_stock_data)
                 file_data.loc[file_data.index[-1], 'Signal'] = signal
                 if current_signal != signal:
                     if signal == 'Buy signal':
+                        price = utils.Stock_Data.get_stock_price(symbol)
+                        signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
+                        if not signals_list:
+                            signals_list.append(signal_dict)
                         # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
                     elif signal == 'Sell signal':
                         if symbol_held:
-                            utils.Sending_Email.process_sell_signals(symbol, current_date)
+                            price = utils.Stock_Data.get_stock_price(symbol)
+                            signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
+                            if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
+                                signals_list = [signal_dict]
+                            # utils.Sending_Email.process_sell_signals(symbol, current_date)
                         update_portfolio(symbol, 'Sell', current_date)
 
             # Save the updated file_data back to the file
             file_data.to_csv(path_file, index=False)
-            print('Last week data added')
+            # print('Last week data added')
 
     except Exception as e:
         utils.Errors_logging.functions_error_log("add_weekly_stock_data", e,
                                            utils.Errors_logging.log_name_weekly_signals,
                                            symbol=symbol)
 
+    return signals_list
+
 
 def add_monthly_stock_data(symbol):
+    signals_list = []
     try:
         lt_stock_data_csv = get_monthly_data(symbol)
         stock_data = load_data_from_csv(lt_stock_data_csv)
@@ -938,19 +974,31 @@ def add_monthly_stock_data(symbol):
                 spot_divergence = spot_monthly_divergences(stock_data, file_data)
                 file_data.loc[file_data.index[-1], 'Divergence spotted'] = spot_divergence
                 if spot_divergence == 'Buy - Monthly Divergence':
-                    utils.Sending_Email.process_buy_signals(symbol, current_date)
+                    price = utils.Stock_Data.get_stock_price(symbol)
+                    signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
+                    if not signals_list:
+                        signals_list.append(signal_dict)
+                    # utils.Sending_Email.process_buy_signals(symbol, current_date)
                     update_portfolio(symbol, 'Buy', current_date)
                 elif spot_divergence == 'Sell - Monthly divergence':
                     if symbol_held:
-                        utils.Sending_Email.process_sell_signals(symbol, current_date)
-                    update_portfolio(symbol, 'Sell', current_date)
+                        price = utils.Stock_Data.get_stock_price(symbol)
+                        signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
+                        if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
+                            signals_list = [signal_dict]
+                        # utils.Sending_Email.process_sell_signals(symbol, current_date)
+                        update_portfolio(symbol, 'Sell', current_date)
 
                 new_rows_list.append(new_row)
                 file_data = pd.concat([file_data, pd.DataFrame([new_row])], ignore_index=True)
                 signal = spot_monthly_signals(file_data, current_date, lt_trend, stock_data)
                 file_data.loc[file_data.index[-1], 'Signal'] = signal
                 if signal == 'Buy signal':
-                    utils.Sending_Email.process_buy_signals(symbol, current_date)
+                    price = utils.Stock_Data.get_stock_price(symbol)
+                    signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
+                    if not signals_list:
+                        signals_list.append(signal_dict)
+                    # utils.Sending_Email.process_buy_signals(symbol, current_date)
                     update_portfolio(symbol, 'Buy', current_date)
 
             else:
@@ -967,7 +1015,11 @@ def add_monthly_stock_data(symbol):
                 signal = spot_monthly_signals(file_data, current_date, lt_trend, stock_data)
                 if current_signal != signal:
                     if signal == 'Buy signal':
-                        utils.Sending_Email.process_buy_signals(symbol, current_date)
+                        price = utils.Stock_Data.get_stock_price(symbol)
+                        signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
+                        if not signals_list:
+                            signals_list.append(signal_dict)
+                        # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
 
                 # Update the last row in file_data with the new end date and high/low values
@@ -985,6 +1037,27 @@ def add_monthly_stock_data(symbol):
         utils.Errors_logging.functions_error_log("add_monthly_stock_data", e,
                                            utils.Errors_logging.log_name_monthly_signals,
                                            symbol=symbol)
+
+    return signals_list
+
+
+
+
+
+def signal_to_dict(symbol, signal, price, date):
+    stock_info = utils.Stock_Data.get_company_info(symbol)
+    name = stock_info["Company Name"]
+    stock_id = stock_info["Stock_id"]
+    signal = {
+        "Stock Id": stock_id,
+        "Symbol": symbol,
+        "Name": name,
+        "Signal": signal,
+        "Price": price,
+        "Date": date
+        }
+    return signal
+
 
 
 def signal_stock():
