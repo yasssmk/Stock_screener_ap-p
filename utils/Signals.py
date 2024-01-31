@@ -8,6 +8,8 @@ import utils.Sending_Email
 import utils.Errors_logging
 from dotenv import load_dotenv
 from supabase import create_client, Client
+import requests
+import Sending_Email
 
 data_end_date = datetime.now()
 five_years_ago = data_end_date - timedelta(days=365 * 5)
@@ -579,7 +581,7 @@ def is_symbol_in_portfolio(symbol):
 
 
 def add_weekly_stock_data(symbol):
-    signals_list = []
+    signals_list = {}
     try:
         stock_data_csv = get_data(symbol)
         lt_stock_data_csv = get_monthly_data(symbol)
@@ -731,7 +733,7 @@ def add_weekly_stock_data(symbol):
                         price = utils.Stock_Data.get_stock_price(symbol)
                         signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
                         if not signals_list:
-                            signals_list.append(signal_dict)
+                            signals_list = signal_dict
                         # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
                     elif signal_divergence == 'Sell - divergence':
@@ -739,7 +741,7 @@ def add_weekly_stock_data(symbol):
                             price = utils.Stock_Data.get_stock_price(symbol)
                             signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
                             if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
-                                signals_list = [signal_dict]
+                                signals_list = signal_dict
                             # utils.Sending_Email.process_sell_signals(symbol, current_date)
                         update_portfolio(symbol, 'Sell', current_date)
                 else:
@@ -755,7 +757,7 @@ def add_weekly_stock_data(symbol):
                     price = utils.Stock_Data.get_stock_price(symbol)
                     signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
                     if not signals_list:
-                        signals_list.append(signal_dict)
+                        signals_list = signal_dict
                     # utils.Sending_Email.process_buy_signals(symbol, current_date)
                     update_portfolio(symbol, 'Buy', current_date)
                 elif signal == 'Sell signal':
@@ -763,7 +765,7 @@ def add_weekly_stock_data(symbol):
                         price = utils.Stock_Data.get_stock_price(symbol)
                         signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
                         if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
-                            signals_list = [signal_dict]
+                            signals_list = signal_dict
                         # utils.Sending_Email.process_sell_signals(symbol, current_date)
                     update_portfolio(symbol, 'Sell', current_date)
 
@@ -786,7 +788,7 @@ def add_weekly_stock_data(symbol):
                         price = utils.Stock_Data.get_stock_price(symbol)
                         signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
                         if not signals_list:
-                            signals_list.append(signal_dict)
+                            signals_list = signal_dict
                         # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
                     elif signal_divergence == 'Sell - divergence':
@@ -794,7 +796,7 @@ def add_weekly_stock_data(symbol):
                             price = utils.Stock_Data.get_stock_price(symbol)
                             signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
                             if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
-                                signals_list = [signal_dict]
+                                signals_list = signal_dict
                             # utils.Sending_Email.process_sell_signals(symbol, current_date)
                         update_portfolio(symbol, 'Sell', current_date)
 
@@ -813,7 +815,7 @@ def add_weekly_stock_data(symbol):
                         price = utils.Stock_Data.get_stock_price(symbol)
                         signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
                         if not signals_list:
-                            signals_list.append(signal_dict)
+                            signals_list = signal_dict
                         # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
                     elif signal == 'Sell signal':
@@ -821,7 +823,7 @@ def add_weekly_stock_data(symbol):
                             price = utils.Stock_Data.get_stock_price(symbol)
                             signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
                             if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
-                                signals_list = [signal_dict]
+                                signals_list = signal_dict
                             # utils.Sending_Email.process_sell_signals(symbol, current_date)
                         update_portfolio(symbol, 'Sell', current_date)
 
@@ -977,7 +979,7 @@ def add_monthly_stock_data(symbol):
                     price = utils.Stock_Data.get_stock_price(symbol)
                     signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
                     if not signals_list:
-                        signals_list.append(signal_dict)
+                        signals_list = signal_dict
                     # utils.Sending_Email.process_buy_signals(symbol, current_date)
                     update_portfolio(symbol, 'Buy', current_date)
                 elif spot_divergence == 'Sell - Monthly divergence':
@@ -985,7 +987,7 @@ def add_monthly_stock_data(symbol):
                         price = utils.Stock_Data.get_stock_price(symbol)
                         signal_dict = signal_to_dict(symbol, 'Sell', price, current_date)
                         if not signals_list or (signals_list and signals_list[0]['Signal'] == 'Buy'):
-                            signals_list = [signal_dict]
+                            signals_list = signal_dict
                         # utils.Sending_Email.process_sell_signals(symbol, current_date)
                         update_portfolio(symbol, 'Sell', current_date)
 
@@ -997,7 +999,7 @@ def add_monthly_stock_data(symbol):
                     price = utils.Stock_Data.get_stock_price(symbol)
                     signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
                     if not signals_list:
-                        signals_list.append(signal_dict)
+                        signals_list = signal_dict
                     # utils.Sending_Email.process_buy_signals(symbol, current_date)
                     update_portfolio(symbol, 'Buy', current_date)
 
@@ -1018,7 +1020,7 @@ def add_monthly_stock_data(symbol):
                         price = utils.Stock_Data.get_stock_price(symbol)
                         signal_dict = signal_to_dict(symbol, 'Buy', price, current_date)
                         if not signals_list:
-                            signals_list.append(signal_dict)
+                            signals_list = signal_dict
                         # utils.Sending_Email.process_buy_signals(symbol, current_date)
                         update_portfolio(symbol, 'Buy', current_date)
 
@@ -1048,14 +1050,14 @@ def signal_to_dict(symbol, signal, price, date):
     stock_info = utils.Stock_Data.get_company_info(symbol)
     name = stock_info["Company Name"]
     stock_id = stock_info["Stock_id"]
-    signal = {
-        "Stock Id": stock_id,
+    signal_data = {
         "Symbol": symbol,
         "Name": name,
         "Signal": signal,
         "Price": price,
         "Date": date
         }
+    signal = {stock_id: signal_data}
     return signal
 
 
@@ -1071,6 +1073,53 @@ def signal_stock():
     except Exception as e:
         utils.Errors_logging.functions_error_log("signal stocks empty", e, utils.Errors_logging.log_name_rundb)
         return []
+
+
+def send_signals_to_node(signals):
+    url = 'http://localhost:3000/receive-signals'  # URL of your Node.js server
+    try:
+        response = requests.post(url, json=signals)
+        # print("Response Status Code:", response.status_code)
+        # print("Response Text:", response.text)
+        if response.status_code != 200:
+            utils.Errors_logging.functions_error_log("signal to node request", "Error !200 Sending weekly signal to node",
+                                                     utils.Errors_logging.log_name_requests)
+            error_log_path = 'errors_logs/Node_requests.csv'
+            Sending_Email.db_error_email("Error !200 Sending weekly signal to node", "signal to node request", error_log_path)
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("signal to node request", e, utils.Errors_logging.log_name_requests)
+
+
+def send_portfolio_to_node():
+    url = 'http://localhost:3000/receive-portfolio'
+    try:
+        # Fetch rows where 'Top 100' is True
+        portfolio = supabase.table('portfolio').select('*').execute()
+        portfolio_data = portfolio.data
+        response = requests.post(url, json=portfolio_data)
+        if response.status_code != 200:
+            utils.Errors_logging.functions_error_log("portfolio to node request", "Error !200 Sending portfolio to node",
+                                                     utils.Errors_logging.log_name_requests)
+            error_log_path = 'errors_logs/Node_requests.csv'
+            Sending_Email.db_error_email("Error !200 Sending portfolio to node", "portfolio to node request", error_log_path)
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("portfolio to node request", e, utils.Errors_logging.log_name_requests)
+
+
+def send_transactions_to_node():
+    url = 'http://localhost:3000/receive-transactions'
+    try:
+        # Fetch rows where 'Top 100' is True
+        transactions = supabase.table('transactions logs').select('*').execute()
+        transactions_data = transactions.data
+        response = requests.post(url, json=transactions_data)
+        if response.status_code != 200:
+            utils.Errors_logging.functions_error_log("transactions to node request", "Error !200 Sending transactions to node",
+                                                     utils.Errors_logging.log_name_requests)
+            error_log_path = 'errors_logs/Node_requests.csv'
+            Sending_Email.db_error_email("Error !200 Sending transactions to node", "transactions to node request", error_log_path)
+    except Exception as e:
+        utils.Errors_logging.functions_error_log("transactions to node request", e, utils.Errors_logging.log_name_requests)
 
 
 # symbol = 'UBER'

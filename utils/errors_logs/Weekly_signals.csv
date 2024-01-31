@@ -1,282 +1,612 @@
 Time,Function,Symbol,Error
-2024-01-27 09:32:01,add_weekly_stock_data,WTM,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:01,add_weekly_stock_data,FCNCA,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:06,add_weekly_stock_data,DDS,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:06,add_weekly_stock_data,REGN,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:07,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:15,add_weekly_stock_data,COKE,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:16,add_weekly_stock_data,WIRE,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:17,add_weekly_stock_data,AREB,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:18,add_weekly_stock_data,ABG,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:22,add_weekly_stock_data,BIIB,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:26,add_weekly_stock_data,TCI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:32,add_weekly_stock_data,DAC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:32,add_weekly_stock_data,JXN,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:33,add_weekly_stock_data,UTHR,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:35,add_weekly_stock_data,VRTX,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:35,add_weekly_stock_data,GPI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:36,add_weekly_stock_data,CMG,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:37,add_weekly_stock_data,FAMI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:37,add_weekly_stock_data,CACC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:38,add_weekly_stock_data,LRCX,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:38,add_weekly_stock_data,LAD,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:39,add_weekly_stock_data,ATRI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:40,add_weekly_stock_data,BXC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:40,add_weekly_stock_data,GWW,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:41,add_weekly_stock_data,NEU,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:41,add_weekly_stock_data,NUE,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:42,add_weekly_stock_data,ALB,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:42,add_weekly_stock_data,AVGO,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:43,add_weekly_stock_data,VLO,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:44,add_weekly_stock_data,NRT,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:44,add_weekly_stock_data,MTH,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:45,add_weekly_stock_data,GPC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:45,add_weekly_stock_data,CVCO,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:46,add_weekly_stock_data,CF,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:46,add_weekly_stock_data,SMCI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:47,add_weekly_stock_data,SJT,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:47,add_weekly_stock_data,CACI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:48,add_weekly_stock_data,MED,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:48,add_weekly_stock_data,KLAC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:49,add_weekly_stock_data,ACN,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:49,add_weekly_stock_data,MPWR,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:50,add_weekly_stock_data,PSA,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:50,add_weekly_stock_data,ADBE,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:51,add_weekly_stock_data,EPAM,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:51,add_weekly_stock_data,MSFT,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:52,add_weekly_stock_data,OTTR,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:52,add_weekly_stock_data,ACLS,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:53,add_weekly_stock_data,INTU,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:54,add_weekly_stock_data,RIO,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:54,add_weekly_stock_data,NVR,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:55,add_weekly_stock_data,SEB,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:55,add_weekly_stock_data,LPX,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:56,add_weekly_stock_data,IDA,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:56,add_weekly_stock_data,FCFS,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:57,add_weekly_stock_data,ED,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:57,add_weekly_stock_data,LBRDA,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:58,add_weekly_stock_data,NSSC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:59,add_weekly_stock_data,SCCO,module 'utils' has no attribute 'Signals'
-2024-01-27 09:32:59,add_weekly_stock_data,DLB,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:00,add_weekly_stock_data,PAM,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:02,add_weekly_stock_data,TDY,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:03,add_weekly_stock_data,VRTV,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:03,add_weekly_stock_data,ASO,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:04,add_weekly_stock_data,ACIW,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:04,add_weekly_stock_data,DIT,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:05,add_weekly_stock_data,ARCH,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:06,add_weekly_stock_data,ARW,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:07,add_weekly_stock_data,ANET,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:08,add_weekly_stock_data,ATKR,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:09,add_weekly_stock_data,AVB,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:10,add_weekly_stock_data,BHP,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:11,add_weekly_stock_data,BCC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:11,add_weekly_stock_data,SAM,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:12,add_weekly_stock_data,CALM,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:12,add_weekly_stock_data,BG,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:14,add_weekly_stock_data,CLFD,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:14,add_weekly_stock_data,CWEN,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:15,add_weekly_stock_data,CLW,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:16,add_weekly_stock_data,CXAI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:17,add_weekly_stock_data,DECK,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:17,add_weekly_stock_data,DE,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:18,add_weekly_stock_data,EMR,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:18,add_weekly_stock_data,EQIX,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:19,add_weekly_stock_data,FERG,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:19,add_weekly_stock_data,FDX,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:20,add_weekly_stock_data,FN,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:20,add_weekly_stock_data,FDS,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:21,add_weekly_stock_data,IDT,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:21,add_weekly_stock_data,IMKTA,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:22,add_weekly_stock_data,IDCC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:22,add_weekly_stock_data,IP,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:23,add_weekly_stock_data,LBRDK,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:23,add_weekly_stock_data,LNW,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:24,add_weekly_stock_data,NEP,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:24,add_weekly_stock_data,NOC,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:26,add_weekly_stock_data,RS,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:33,add_weekly_stock_data,TTGT,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:34,add_weekly_stock_data,ULTA,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:35,add_weekly_stock_data,UFPI,module 'utils' has no attribute 'Signals'
-2024-01-27 09:33:35,add_weekly_stock_data,WFG,module 'utils' has no attribute 'Signals'
-2024-01-30 11:24:34,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
-2024-01-30 11:25:10,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
-2024-01-30 11:26:08,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
-2024-01-30 14:42:35,add_weekly_stock_data,ARCH,Invalid file path or buffer object type: <class 'NoneType'>
-2024-01-30 14:42:57,add_weekly_stock_data,ASO,Invalid file path or buffer object type: <class 'NoneType'>
-2024-01-30 15:35:40,add_weekly_stock_data: new row,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
-2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+2024-01-27 09:32:01,add_weekly_stock_data,WTM,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:01,add_weekly_stock_data,FCNCA,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:06,add_weekly_stock_data,DDS,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:06,add_weekly_stock_data,REGN,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:07,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:15,add_weekly_stock_data,COKE,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:16,add_weekly_stock_data,WIRE,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:17,add_weekly_stock_data,AREB,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:18,add_weekly_stock_data,ABG,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:22,add_weekly_stock_data,BIIB,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:26,add_weekly_stock_data,TCI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:32,add_weekly_stock_data,DAC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:32,add_weekly_stock_data,JXN,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:33,add_weekly_stock_data,UTHR,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:35,add_weekly_stock_data,VRTX,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:35,add_weekly_stock_data,GPI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:36,add_weekly_stock_data,CMG,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:37,add_weekly_stock_data,FAMI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:37,add_weekly_stock_data,CACC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:38,add_weekly_stock_data,LRCX,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:38,add_weekly_stock_data,LAD,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:39,add_weekly_stock_data,ATRI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:40,add_weekly_stock_data,BXC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:40,add_weekly_stock_data,GWW,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:41,add_weekly_stock_data,NEU,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:41,add_weekly_stock_data,NUE,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:42,add_weekly_stock_data,ALB,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:42,add_weekly_stock_data,AVGO,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:43,add_weekly_stock_data,VLO,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:44,add_weekly_stock_data,NRT,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:44,add_weekly_stock_data,MTH,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:45,add_weekly_stock_data,GPC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:45,add_weekly_stock_data,CVCO,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:46,add_weekly_stock_data,CF,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:46,add_weekly_stock_data,SMCI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:47,add_weekly_stock_data,SJT,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:47,add_weekly_stock_data,CACI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:48,add_weekly_stock_data,MED,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:48,add_weekly_stock_data,KLAC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:49,add_weekly_stock_data,ACN,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:49,add_weekly_stock_data,MPWR,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:50,add_weekly_stock_data,PSA,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:50,add_weekly_stock_data,ADBE,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:51,add_weekly_stock_data,EPAM,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:51,add_weekly_stock_data,MSFT,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:52,add_weekly_stock_data,OTTR,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:52,add_weekly_stock_data,ACLS,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:53,add_weekly_stock_data,INTU,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:54,add_weekly_stock_data,RIO,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:54,add_weekly_stock_data,NVR,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:55,add_weekly_stock_data,SEB,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:55,add_weekly_stock_data,LPX,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:56,add_weekly_stock_data,IDA,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:56,add_weekly_stock_data,FCFS,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:57,add_weekly_stock_data,ED,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:57,add_weekly_stock_data,LBRDA,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:58,add_weekly_stock_data,NSSC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:59,add_weekly_stock_data,SCCO,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:32:59,add_weekly_stock_data,DLB,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:00,add_weekly_stock_data,PAM,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:02,add_weekly_stock_data,TDY,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:03,add_weekly_stock_data,VRTV,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:03,add_weekly_stock_data,ASO,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:04,add_weekly_stock_data,ACIW,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:04,add_weekly_stock_data,DIT,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:05,add_weekly_stock_data,ARCH,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:06,add_weekly_stock_data,ARW,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:07,add_weekly_stock_data,ANET,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:08,add_weekly_stock_data,ATKR,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:09,add_weekly_stock_data,AVB,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:10,add_weekly_stock_data,BHP,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:11,add_weekly_stock_data,BCC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:11,add_weekly_stock_data,SAM,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:12,add_weekly_stock_data,CALM,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:12,add_weekly_stock_data,BG,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:14,add_weekly_stock_data,CLFD,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:14,add_weekly_stock_data,CWEN,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:15,add_weekly_stock_data,CLW,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:16,add_weekly_stock_data,CXAI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:17,add_weekly_stock_data,DECK,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:17,add_weekly_stock_data,DE,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:18,add_weekly_stock_data,EMR,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:18,add_weekly_stock_data,EQIX,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:19,add_weekly_stock_data,FERG,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:19,add_weekly_stock_data,FDX,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:20,add_weekly_stock_data,FN,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:20,add_weekly_stock_data,FDS,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:21,add_weekly_stock_data,IDT,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:21,add_weekly_stock_data,IMKTA,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:22,add_weekly_stock_data,IDCC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:22,add_weekly_stock_data,IP,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:23,add_weekly_stock_data,LBRDK,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:23,add_weekly_stock_data,LNW,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:24,add_weekly_stock_data,NEP,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:24,add_weekly_stock_data,NOC,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:26,add_weekly_stock_data,RS,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:33,add_weekly_stock_data,TTGT,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:34,add_weekly_stock_data,ULTA,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:35,add_weekly_stock_data,UFPI,module 'utils' has no attribute 'Signals'
+
+2024-01-27 09:33:35,add_weekly_stock_data,WFG,module 'utils' has no attribute 'Signals'
+
+2024-01-30 11:24:34,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
+
+2024-01-30 11:25:10,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
+
+2024-01-30 11:26:08,add_weekly_stock_data,AMR,module 'utils' has no attribute 'Signals'
+
+2024-01-30 14:42:35,add_weekly_stock_data,ARCH,Invalid file path or buffer object type: <class 'NoneType'>
+
+2024-01-30 14:42:57,add_weekly_stock_data,ASO,Invalid file path or buffer object type: <class 'NoneType'>
+
+2024-01-30 15:35:40,add_weekly_stock_data: new row,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:40,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:40,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,add_weekly_stock_data,ABIO,single positional indexer is out-of-bounds
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:41,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:42,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-30 15:35:43,get_lt_trend,,local variable 'trend_type' referenced before assignment
+
+2024-01-31 12:32:06,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:32:06,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:32:06,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:40:52,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:40:52,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:40:53,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:45:18,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:45:19,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:45:19,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:46:39,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:46:40,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:46:40,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:47:15,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:47:16,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:47:16,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:48:22,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:48:23,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:48:23,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:49:54,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:49:55,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:49:55,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:51:05,add_weekly_stock_data,ARCH,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:51:06,add_weekly_stock_data,ASO,[Errno 11001] getaddrinfo failed
+
+2024-01-31 12:51:07,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
+
+,,,

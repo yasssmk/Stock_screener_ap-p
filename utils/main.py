@@ -12,19 +12,8 @@ from datetime import datetime, timedelta, date
 from flask import Flask, jsonify
 import requests
 
-def send_signals_to_node(signals):
-    print("Sending signals:", signals)
-    url = 'http://localhost:3000/receive-signals'  # URL of your Node.js server
-    try:
-        response = requests.post(url, json=signals)
-        print("Response Status Code:", response.status_code)
-        print("Response Text:", response.text)
-        if response.status_code == 200:
-            print("Signals sent successfully")
-        else:
-            print("Failed to send signals")
-    except Exception as e:
-        print(f"Error occurred: {e}")
+
+
 
 
 # Get the current date
@@ -65,8 +54,8 @@ if current_date.weekday() == 5:  # 5 represents Saturday
             for symbol in symbols:  # Ensure 'symbols' is defined earlier in your code
                 monthly_signal = Signals.add_monthly_stock_data(symbol)
                 if monthly_signal:  # If there is no monthly signal but a weekly signal exists
-                    signal_dict = {symbol: monthly_signal[0]}  # Use the first weekly signal
-                    signals_list.append(signal_dict)
+                    # signal_dict = {symbol: monthly_signal[0]}  # Use the first weekly signal
+                    signals_list.append(monthly_signal)
             error_log_path = 'errors_logs/Monthly_signals.csv'
             Sending_Email.job_done_email("Run Monthly signals", error_log_path)
         except Exception as e:
@@ -79,8 +68,8 @@ if current_date.weekday() == 5:  # 5 represents Saturday
             if not any(symbol in signal for signal in signals_list):
                 weekly_signal = Signals.add_weekly_stock_data(symbol)
                 if weekly_signal:  # If there is a weekly signal
-                    signal_dict = {symbol: weekly_signal[0]}
-                    signals_list.append(signal_dict)
+                    # signal_dict = {symbol: weekly_signal[0]}
+                    signals_list.append(weekly_signal)
         Signals.update_portfolio_details()
         error_log_path = 'errors_logs/Weekly_signals.csv'
         Sending_Email.job_done_email("Run Weekly Signal", error_log_path)
@@ -89,5 +78,5 @@ if current_date.weekday() == 5:  # 5 represents Saturday
         Sending_Email.db_error_email(e, "Run Weekly Signal", error_log_path)
 
 
-send_signals_to_node(signals_list)
+Signals.send_signals_to_node(signals_list)
 

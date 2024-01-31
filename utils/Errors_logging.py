@@ -34,6 +34,7 @@ log_name_rundb = "update_db.csv"
 log_name_weekly_signals = "Weekly_signals.csv"
 log_name_monthly_signals = "Monthly_signals.csv"
 log_name_emails = "Emails.csv"
+log_name_requests = "Node_requests.csv"
 
 
 def clear_csv_data(file_path):
@@ -54,8 +55,9 @@ def clear_csv_data(file_path):
         print(f"An error occurred: {e}")
 
 
-monthly_signals_log = '/home/ubuntu/Stock_screener/stocks_data_csv/errors_logs/Monthly_signals.csv'
-weekly_signals_log = '/home/ubuntu/Stock_screener/stocks_data_csv/errors_logs/Weekly_signals.csv'
-emails_log = '/home/ubuntu/Stock_screener/stocks_data_csv/errors_logs/Emails.csv'
-db_log = '/home/ubuntu/Stock_screener/stocks_data_csv/errors_logs/db_update.csv'
-portfolio = '/home/ubuntu/Stock_screener/stocks_data_csv/data_base/portfolio.csv'
+monthly_signals_log = 'errors_logs/Monthly_signals.csv'
+weekly_signals_log = 'errors_logs/Weekly_signals.csv'
+emails_log = 'errors_logs/Emails.csv'
+db_log = 'errors_logs/db_update.csv'
+portfolio = 'data_base/portfolio.csv'
+requests_signals = 'errors_logs/Node_requests.csv'
