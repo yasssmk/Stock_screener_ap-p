@@ -21,15 +21,12 @@ app.use(bodyParser.json());
 
 //Rollbar
 // include and initialize the rollbar library with your access token
-var Rollbar = require('rollbar')
 var rollbar = new Rollbar({
   accessToken: process.env.RB_TOKEN,
   captureUncaught: true,
   captureUnhandledRejections: true,
 })
 
-// record a generic message and send it to Rollbar
-rollbar.log('Hello world!')
 
 // Supabase
 const supabaseUrl = process.env.sb_url;
@@ -54,7 +51,7 @@ async function fetchUserData() {
             .select('*')
 
         if (watchlistError || usersError) {
-            console.error(watchlistError || usersError)
+            rollbar.error(watchlistError || usersError)
             return null
         }
 
@@ -71,7 +68,7 @@ async function processDataEmail(weekly_signals, portfolio) {
         const userData = await fetchUserData();
 
         if (!userData) {
-            console.error("Failed to fetch user data.");
+            rollbar.error("Failed to fetch user data.");
             return; // Exit if userData is not valid
         }
 
@@ -103,7 +100,7 @@ async function processDataEmail(weekly_signals, portfolio) {
                         name: user.Name,
                     };
                 } else {
-                    console.error(`User not found for ID: ${item.User_id}`);
+                    rollbar.error(`User not found for ID: ${item.User_id}`);
                 }
             }
             if (userWatchlists[item.User_id]) { // Check if user was found
@@ -113,6 +110,10 @@ async function processDataEmail(weekly_signals, portfolio) {
 
     // Iterate over each user and prepare email content
     for (const userId in userWatchlists) {
+        let totalProfit = 0
+        let totalChange = 0
+        let count = 0
+
         let emailContent = {
             name: userWatchlists[userId].name,
             signals: [],
@@ -127,11 +128,22 @@ async function processDataEmail(weekly_signals, portfolio) {
 
             // Add portfolio to user's email content
             if (portfolioDict[stockId]) {
-                portfolioDict[stockId].forEach(item => emailContent.portfolio.push(item));
+                portfolioDict[stockId].forEach(item => {
+                    emailContent.portfolio.push(item);
+                    totalProfit += item.Profit || 0;
+                    totalChange += item.Change || 0;
+                    count++; 
+                    });
             }
         });
 
-        console.log(emailContent);
+        // Calculate average change
+        let averageChange = count > 0 ? totalChange / count : 0;
+
+        // Add total profit and average change to email content
+        emailContent.totalProfit = totalProfit;
+        emailContent.averageChange = averageChange;
+
         sendEmail(userWatchlists[userId].email, emailContent);
     }
     } catch(error){
@@ -139,8 +151,6 @@ async function processDataEmail(weekly_signals, portfolio) {
         return null
     }
 }
-
-
 
 
 async function sendEmail(emailAdress, emailContent) {
@@ -161,7 +171,7 @@ async function sendEmail(emailAdress, emailContent) {
             console.log('Email sent')
             })
             .catch((error) => {
-            console.error(error)
+            rollbar.error(error)
             })
     } catch(error){
         rollbar.error(error)
@@ -173,8 +183,8 @@ async function sendEmail(emailAdress, emailContent) {
 // Endpoint to receive signals
 app.post('/receive-signals', async (req, res) => {
     try{
-        signals = await req.body;
-        portfolio = await supabase
+        let signals = await req.body;
+        let portfolio = await supabase
             .from('portfolio')
             .select()
         processDataEmail(signals, portfolio.data);
