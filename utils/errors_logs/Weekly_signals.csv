@@ -609,4 +609,12 @@ Time,Function,Symbol,Error
 
 2024-01-31 12:51:07,add_weekly_stock_data,ABIO,[Errno 11001] getaddrinfo failed
 
-,,,
+,,,2024-02-01 10:17:35,add_weekly_stock_data,ASO,0
+2024-02-01 10:17:35,add_weekly_stock_data,ABIO,0
+2024-02-01 10:21:40,add_weekly_stock_data,ASO,0
+2024-02-01 10:21:41,add_weekly_stock_data,ABIO,0
+2024-02-01 10:25:00,add_weekly_stock_data,ASO,0
+2024-02-01 10:25:01,add_weekly_stock_data,ABIO,0
+2024-02-01 10:29:25,add_weekly_stock_data,ARCH,update_portfolio() missing 1 required positional argument: 'date'
+2024-02-01 10:29:25,add_weekly_stock_data,ASO,update_portfolio() missing 1 required positional argument: 'date'
+2024-02-01 10:29:26,add_weekly_stock_data,ABIO,update_portfolio() missing 1 required positional argument: 'date'

@@ -7,9 +7,16 @@
 </head>
 <body>
     <h1> Salam <%= name %></h1>
-    <h2>Weekly signals</h2>
-    <% if (locals.signals) {%>
-        <table>
+    <h2>Weekly Signals</h2>
+    <% if (signals && signals.length > 0) { %>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Symbol</th>
+                <th>Signal</th>
+                <th>Price</th>
+                <th>Date</th>
+            </tr>
             <% signals.forEach((signal) => { %>
                 <tr>
                     <td><%= signal.Name %></td>
@@ -21,10 +28,36 @@
             <% }) %>
         </table>
     <% } else { %>
-        <p>No signal this week</p>
+        <p>No signals this week.</p>
     <% } %>
 
     <h2>Your Portfolio</h2>
+    <% if (portfolio && portfolio.length > 0) { %>
+        <table border="1">
+            <tr>
+                <th>Symbol</th>
+                <th>Buying Date</th>
+                <th>Buying Price</th>
+                <th>Current Price</th>
+                <th>Profit</th>
+                <th>Change</th>
+                <th>Time (in weeks)</th>
+            </tr>
+            <% portfolio.forEach((item) => { %>
+                <tr>
+                    <td><%= item.Symbol %></td>
+                    <td><%= item['Buying date'] %></td>
+                    <td><%= item['Buying Price'] %></td>
+                    <td><%= item['Current Price'] || 'N/A' %></td>
+                    <td><%= item.Profit || 'N/A' %></td>
+                    <td><%= item.Change || 'N/A' %></td>
+                    <td><%= item['Time (in weeks)'] || 'N/A' %></td>
+                </tr>
+            <% }) %>
+        </table>
+    <% } else { %>
+        <p>No portfolio data available.</p>
+    <% } %>
 
 </body>
 </html>

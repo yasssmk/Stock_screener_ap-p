@@ -1091,9 +1091,8 @@ def send_signals_to_node(signals):
 
 
 def send_portfolio_to_node():
-    url = 'http://localhost:3000/receive-portfolio'
+    url = 'http://localhost:3000/receive-signals'
     try:
-        # Fetch rows where 'Top 100' is True
         portfolio = supabase.table('portfolio').select('*').execute()
         portfolio_data = portfolio.data
         response = requests.post(url, json=portfolio_data)

@@ -24,16 +24,7 @@ const supabaseUrl = process.env.sb_url;
 const supabaseKey = process.env.sb_api_key;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-//nodemailer
-
-let transporter = nodemailer.createTransport({
-    service: 'gmail',
-    auth: {
-      type: 'OAuth2',
-      user: process.env.SENDER_EMAIL,
-      pass: process.env.SENDER_EMAIL_PW,
-    }
-  });
+//SENDGRID
 
   sgMail.setApiKey(process.env.SG_API_KEY)
 
@@ -57,8 +48,8 @@ async function fetchUserData() {
     return { watchlistData, usersData }; 
 }
 
-async function processDataEmail (weekly_signals){
-    const userData = await fetchUserData()
+async function processDataEmail(weekly_signals, portfolio) {
+    const userData = await fetchUserData();
 
     if (!userData) {
         console.error("Failed to fetch user data.");
@@ -72,8 +63,16 @@ async function processDataEmail (weekly_signals){
         return acc;
     }, {});
 
-    // MAP USER data with watchlist
+    // Convert portfolio to a more accessible format
+    const portfolioDict = portfolio.reduce((acc, item) => {
+        if (!acc[item.Stock_id]) {
+            acc[item.Stock_id] = []; // Initialize an array for each stock ID
+        }
+        acc[item.Stock_id].push(item); // Add portfolio item to the corresponding stock ID array
+        return acc;
+    }, {});
 
+    // Map user data with watchlist
     let userWatchlists = {};
     userData.watchlistData.forEach(item => {
         if (!userWatchlists[item.User_id]) {
@@ -93,30 +92,31 @@ async function processDataEmail (weekly_signals){
         }
     });
 
-    console.log(userWatchlists)
-
     // Iterate over each user and prepare email content
     for (const userId in userWatchlists) {
         let emailContent = {
             name: userWatchlists[userId].name,
             signals: [],
             portfolio: []
-        }
+        };
 
         // Add signals to user's email content
         userWatchlists[userId].stocks.forEach(stockId => {
-            if (signalsDict[stockId]) { // Check if the signal exists for this stock
+            if (signalsDict[stockId]) {
                 emailContent.signals.push(signalsDict[stockId]);
             }
+
+            // Add portfolio to user's email content
+            if (portfolioDict[stockId]) {
+                portfolioDict[stockId].forEach(item => emailContent.portfolio.push(item));
+            }
         });
-    
 
-        sendEmail(userWatchlists[userId].email, emailContent); 
-    };
-
-    dataReceived = {
-            signals: false,}
+        console.log(emailContent);
+        sendEmail(userWatchlists[userId].email, emailContent);
+    }
 }
+
 
 
 
@@ -155,12 +155,16 @@ let dataReceived = {
 
 
 // Endpoint to receive signals
-app.post('/receive-signals', (req, res) => {
-    signals = req.body;
-    console.log(signals)
+app.post('/receive-signals', async (req, res) => {
+    signals = await req.body;
+    portfolio = await supabase
+        .from('portfolio')
+        .select()
+    // console.log(signals)
+    // console.log(portfolio.data)
     // Call the function to send emails
-    dataReceived.portfolio = true;
-    processDataEmail(signals);
+    // dataReceived.portfolio = true;
+    processDataEmail(signals, portfolio.data);
 
     res.status(200).send("Signals received and processing initiated");
 });
