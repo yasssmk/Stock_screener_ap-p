@@ -493,9 +493,12 @@ def update_portfolio(symbol, action, price, date):
         stock_id = symbols_data[0]["Stock_id"]
 
         if action == 'Buy':
-            # Insert new record into 'portfolio' table
-            data = {'Stock_id': stock_id, 'Symbol': symbol, 'Buying date': date, 'Buying Price': price}
-            supabase.table('portfolio').insert(data).execute()
+            try:
+                # Insert new record into 'portfolio' table
+                data = {'Stock_id': stock_id, 'Symbol': symbol, 'Buying date': date, 'Buying Price': price}
+                supabase.table('portfolio').insert(data).execute()
+            except:
+                pass
         elif action == 'Sell':
             # Fetch existing records from 'portfolio' table
             portfolio_data = supabase.table('portfolio').select('*').eq('Symbol', symbol).execute().data
@@ -1089,36 +1092,6 @@ def send_signals_to_node(signals):
     except Exception as e:
         utils.Errors_logging.functions_error_log("signal to node request", e, utils.Errors_logging.log_name_requests)
 
-
-def send_portfolio_to_node():
-    url = 'http://localhost:3000/receive-signals'
-    try:
-        portfolio = supabase.table('portfolio').select('*').execute()
-        portfolio_data = portfolio.data
-        response = requests.post(url, json=portfolio_data)
-        if response.status_code != 200:
-            utils.Errors_logging.functions_error_log("portfolio to node request", "Error !200 Sending portfolio to node",
-                                                     utils.Errors_logging.log_name_requests)
-            error_log_path = 'errors_logs/Node_requests.csv'
-            Sending_Email.db_error_email("Error !200 Sending portfolio to node", "portfolio to node request", error_log_path)
-    except Exception as e:
-        utils.Errors_logging.functions_error_log("portfolio to node request", e, utils.Errors_logging.log_name_requests)
-
-
-def send_transactions_to_node():
-    url = 'http://localhost:3000/receive-transactions'
-    try:
-        # Fetch rows where 'Top 100' is True
-        transactions = supabase.table('transactions logs').select('*').execute()
-        transactions_data = transactions.data
-        response = requests.post(url, json=transactions_data)
-        if response.status_code != 200:
-            utils.Errors_logging.functions_error_log("transactions to node request", "Error !200 Sending transactions to node",
-                                                     utils.Errors_logging.log_name_requests)
-            error_log_path = 'errors_logs/Node_requests.csv'
-            Sending_Email.db_error_email("Error !200 Sending transactions to node", "transactions to node request", error_log_path)
-    except Exception as e:
-        utils.Errors_logging.functions_error_log("transactions to node request", e, utils.Errors_logging.log_name_requests)
 
 
 # symbol = 'UBER'

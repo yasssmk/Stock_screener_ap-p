@@ -12,10 +12,6 @@ from datetime import datetime, timedelta, date
 from flask import Flask, jsonify
 import requests
 
-
-
-
-
 # Get the current date
 current_date = datetime.now()
 
