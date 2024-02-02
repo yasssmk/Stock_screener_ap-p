@@ -56,7 +56,7 @@ async function createUser(name, surname, email, country) {
             // User does not exist, insert new user
             const { data, error: insertError } = await supabase
                 .from('users')
-                .insert([{ Name: name, Surname: surname, Email: email, Country: country }]);
+                .insert([{ Name: name, Surname: surname, Email: email, Country: country}]);
 
             if (insertError) {
                 console.error('Error registering user:', insertError);
@@ -109,7 +109,7 @@ async function addStockManually(user_id, symbol) {
             // The stock is not in the user's watchlist, insert it
             const { error: insertError } = await supabase
                 .from('users_watchlist')
-                .insert([{ User_id: user_id, Stock_id: stock_id, Symbol: symbol }]);
+                .insert([{ User_id: user_id, Stock_id: stock_id, Symbol: symbol,Plan_id: 2 }]);
 
             if (insertError) {
                 console.error('Error adding stock to watchlist:', insertError);
