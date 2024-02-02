@@ -95,7 +95,7 @@ async function processDataEmail(weekly_signals, portfolio) {
                 const user = userData.usersData.find(user => user.User_id === item.User_id);
                 if (user) {
                     userWatchlists[item.User_id] = {
-                        stocks: [],
+                        stocks: new Set(),
                         email: user.Email,
                         name: user.Name,
                     };
@@ -103,10 +103,14 @@ async function processDataEmail(weekly_signals, portfolio) {
                     rollbar.error(`User not found for ID: ${item.User_id}`);
                 }
             }
-            if (userWatchlists[item.User_id]) { // Check if user was found
-                userWatchlists[item.User_id].stocks.push(item.Stock_id);
-            }
+            // Add the stock ID to the Set, ensuring uniqueness
+            userWatchlists[item.User_id].stocks.add(item.Stock_id)
     });
+
+    console.log(userWatchlists)
+
+    // Array to hold all email sending promises
+    let emailPromises = [];
 
     // Iterate over each user and prepare email content
     for (const userId in userWatchlists) {
@@ -120,8 +124,11 @@ async function processDataEmail(weekly_signals, portfolio) {
             portfolio: []
         };
 
+        // Convert the Set of stock IDs back to an array for iteration
+        let uniqueStocks = Array.from(userWatchlists[userId].stocks);
+
         // Add signals to user's email content
-        userWatchlists[userId].stocks.forEach(stockId => {
+        uniqueStocks.forEach(stockId => {
             if (signalsDict[stockId]) {
                 emailContent.signals.push(signalsDict[stockId]);
             }
@@ -144,8 +151,15 @@ async function processDataEmail(weekly_signals, portfolio) {
         emailContent.totalProfit = totalProfit;
         emailContent.averageChange = averageChange;
 
-        sendEmail(userWatchlists[userId].email, emailContent);
-    }
+        emailPromises.push(sendEmail(userWatchlists[userId].email, emailContent));
+        }
+
+    // Use Promise.all to send all emails in parallel
+    await Promise.all(emailPromises)
+         .then(() => console.log('All emails sent successfully'))
+         .catch(error => rollbar.error('Error sending one or more emails', error));
+
+
     } catch(error){
         rollbar.error(error)
         return null
@@ -184,6 +198,7 @@ async function sendEmail(emailAdress, emailContent) {
 app.post('/receive-signals', async (req, res) => {
     try{
         let signals = await req.body;
+        console.log(signals)
         let portfolio = await supabase
             .from('portfolio')
             .select()

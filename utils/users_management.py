@@ -65,4 +65,4 @@ def assign_user_role(action: str, role: str, email: str, watchlist: list = None)
 
     return "Operation completed successfully"
 
-assign_user_role("add", "Admin", "")
+assign_user_role("add", "Admin", "ysamkawi@gmail.com")

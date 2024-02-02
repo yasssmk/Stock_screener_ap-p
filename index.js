@@ -98,7 +98,7 @@ async function addStockManually(user_id, symbol) {
         const { data: existingSymbol, error: selectError } = await supabase
             .from('users_watchlist')
             .select("*")
-            .match({ User_id: user_id, Stock_id: stock_id });
+            .match({ User_id: user_id, Stock_id: stock_id, Plan_id: 2 });
 
         if (selectError) {
             console.error('Error checking user watchlist:', selectError);
