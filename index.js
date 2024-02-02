@@ -48,7 +48,7 @@ async function createUser(name, surname, email, country) {
             .eq('Email', email);
 
         if (selectError) {
-            console.error('Error checking user:', selectError);
+            rollbar.error('Error checking user:', selectError);
             throw new Error('Error checking user');
         }
 
@@ -59,7 +59,7 @@ async function createUser(name, surname, email, country) {
                 .insert([{ Name: name, Surname: surname, Email: email, Country: country}]);
 
             if (insertError) {
-                console.error('Error registering user:', insertError);
+                rollbar.error('Error registering user:', insertError);
                 throw new Error('Error registering user');
             }
 
@@ -68,7 +68,7 @@ async function createUser(name, surname, email, country) {
 
         return 'User already exists';
     } catch (error) {
-        console.error('Error in createUser function:', error);
+        rollbar.error('Error in createUser function:', error);
         throw error; // Propagate the error to be handled in the calling function
     }
 }
@@ -84,7 +84,7 @@ async function addStockManually(user_id, symbol) {
             .single();
 
         if (stockError) {
-            console.error('Error checking stock:', stockError);
+            rollbar.error('Error checking stock:', stockError);
             throw new Error('Error checking stock');
         }
 
@@ -101,7 +101,7 @@ async function addStockManually(user_id, symbol) {
             .match({ User_id: user_id, Stock_id: stock_id, Plan_id: 2 });
 
         if (selectError) {
-            console.error('Error checking user watchlist:', selectError);
+            rollbar.error('Error checking user watchlist:', selectError);
             throw new Error('Error checking user watchlist');
         }
 
@@ -112,7 +112,7 @@ async function addStockManually(user_id, symbol) {
                 .insert([{ User_id: user_id, Stock_id: stock_id, Symbol: symbol,Plan_id: 2 }]);
 
             if (insertError) {
-                console.error('Error adding stock to watchlist:', insertError);
+                rollbar.error('Error adding stock to watchlist:', insertError);
                 throw new Error('Error adding stock to watchlist');
             }
 
@@ -122,7 +122,7 @@ async function addStockManually(user_id, symbol) {
         return 'Stock already exists in user watchlist';
     } catch (error) {
         // Handle any unexpected errors
-        console.error('An unexpected error occurred:', error);
+        rollbar.error('An unexpected error occurred:', error);
         throw error;
     }
 }
@@ -151,7 +151,7 @@ app.get('/', async (req, res) => {
             // Render the index.ejs page with the user object
             res.render("index.ejs", { user: user });
         } catch (error) {
-            console.error(error);
+            rollbar.error(error);
             res.status(500).send('An error occurred');
         }
     } else {
@@ -197,7 +197,7 @@ app.get('/profile', requiresAuth(), (req, res) => {
             // Redirect or render as needed after successful operation
             res.redirect('/'); // Adjust this as per your requirement
         } catch (error) {
-            console.error(error);
+            rollbar.error(error);
             res.status(500).send('An error occurred');
         }
     } else {

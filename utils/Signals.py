@@ -1067,12 +1067,14 @@ def signal_to_dict(symbol, signal, price, date):
 
 def signal_stock():
     try:
-        # Fetch rows where 'Top 100' is True
-        response = supabase.table('stocks_ranking_data').select('Symbol').eq('Top 100', True).execute()
+        # Fetch rows in wathclist
+        response = supabase.table('users_watchlist').select('Symbol').execute()
 
-        # Extract the 'Symbol' column values into a list
-        symbols = [row['Symbol'] for row in response.data]
-        return symbols
+        # Extract the 'Symbol' column values into a set to ensure uniqueness, then convert the set to a list
+        symbols_set = {row['Symbol'] for row in response.data}  # Use a set to remove duplicates
+        symbols_list = list(symbols_set)  # Convert the set back to a list
+
+        return symbols_list
     except Exception as e:
         utils.Errors_logging.functions_error_log("signal stocks empty", e, utils.Errors_logging.log_name_rundb)
         return []
@@ -1107,3 +1109,5 @@ def send_signals_to_node(signals):
 # portfolio = pd.read_csv('./stocks_data_csv/data_base/portfolio.csv')
 # print(portfolio)
 # print(portfolio.dtypes)
+
+
