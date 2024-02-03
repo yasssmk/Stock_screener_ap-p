@@ -1,18 +1,19 @@
 Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest Price,Lowest MACD,Divergence spotted,Signal
-2015-02-01,2015-02-01,2017-09-01,,Neutral,13.25,,10.88,,None,
-2017-09-01,2017-09-01,2017-11-01,,MACD Bullish,71.39,22.65,59.26,21.71,None,
-2017-11-01,2017-11-01,2017-12-01,Bullish breath,MACD Bullish breath,69.44,20.5,58.43,20.5,None,
-2017-12-01,2017-12-01,2018-02-01,Bullish,MACD Bullish breath,72.98,20.77,61.22,20.26,None,
-2018-02-01,2018-02-01,2018-09-01,Bullish breath,MACD Bullish breath,70.96,17.18,24.93,-9.98,,Waiting for confirmation : Buy
-2018-09-01,2018-09-01,2018-10-01,Bullish breath,MACD Bearish,38.93,-11.75,26.06,-11.75,,Waiting for confirmation : Buy
-2018-10-01,2018-10-01,2019-06-01,Bearish,MACD Bearish,39.89,-8.27,19.5,-13.66,,
-2019-06-01,2019-06-01,2019-08-01,Bearish,MACD Bearish breath,36.41,-6.14,24.96,-7.94,,
-2019-08-01,2019-08-01,2020-05-01,Bearish,MACD Bearish,35.5,-13.57,8.72,-15.94,,
-2020-05-01,2020-05-01,2020-08-01,Bearish,MACD Bearish breath,12.94,-11.61,9.21,-13.52,,
-2020-08-01,2020-08-01,2022-02-01,Bearish breath,MACD Bearish breath,21.38,1.72,9.33,-10.45,,
-2022-02-01,2022-02-01,2022-03-01,Bearish breath,MACD Bullish,21.73,2.21,18.75,2.21,,
+2015-01-01,2015-01-01,2017-08-01,,Neutral,11.5,,9.1,,None,
+2017-08-01,2017-08-01,2017-10-01,,MACD Bullish,65.3,21.88,50.88,20.64,None,
+2017-10-01,2017-10-01,2017-11-01,Bullish,MACD Bullish,71.39,22.81,61.46,22.81,None,
+2017-11-01,2017-11-01,2017-12-01,Bullish breath,MACD Bullish breath,69.44,20.65,58.43,20.65,None,
+2017-12-01,2017-12-01,2018-02-01,Bullish,MACD Bullish breath,72.98,20.9,61.22,20.4,,
+2018-02-01,2018-02-01,2018-09-01,Bullish breath,MACD Bullish breath,70.96,17.3,24.93,-9.9,,Waiting for confirmation : Buy
+2018-09-01,2018-09-01,2018-10-01,Bullish breath,MACD Bearish,38.93,-11.68,26.06,-11.68,,Waiting for confirmation : Buy
+2018-10-01,2018-10-01,2019-06-01,Bearish,MACD Bearish,39.89,-8.21,19.5,-13.62,,
+2019-06-01,2019-06-01,2019-08-01,Bearish,MACD Bearish breath,36.41,-6.11,24.96,-7.9,,
+2019-08-01,2019-08-01,2020-05-01,Bearish,MACD Bearish,35.5,-13.54,8.72,-15.91,,
+2020-05-01,2020-05-01,2020-09-01,Bearish,MACD Bearish breath,13.5,-10.44,9.21,-13.51,,
+2020-09-01,2020-09-01,2022-02-01,Bearish breath,MACD Bearish breath,21.38,1.72,9.33,-10.01,,
+2022-02-01,2022-02-01,2022-03-01,Bearish breath,MACD Bullish,21.73,2.22,18.75,2.22,,
 2022-03-01,2022-03-01,2022-06-01,Bullish,MACD Bullish,25.86,3.68,19.29,3.09,,
 2022-06-01,2022-06-01,2022-07-01,Bullish breath,MACD Bullish,24.0,2.46,18.71,2.46,,
 2022-07-01,2022-07-01,2023-09-01,Bullish,MACD Bullish,48.79,13.58,19.25,3.1,,
 2023-09-01,2023-09-01,2023-11-01,Bullish breath,MACD Bullish breath,46.78,10.13,35.35,7.95,,
-2023-11-01,2023-11-01,2024-01-01,Bullish,MACD Bullish,52.17,13.01,32.91,10.94,,
+2023-11-01,2023-11-01,2024-02-01,Bullish,MACD Bullish,52.17,13.14,32.91,10.94,,

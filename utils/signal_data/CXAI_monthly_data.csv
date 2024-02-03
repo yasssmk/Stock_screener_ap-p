@@ -1,4 +1,4 @@
 Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest Price,Lowest MACD,Divergence spotted,Signal
-2021-03-01,2021-03-01,2023-10-01,,Neutral,10.2,,9.65,,None,
-2023-10-01,2023-10-01,2023-12-01,,MACD Bearish,1.97,-5.49,1.17,-5.63,None,
-2023-12-01,2023-12-01,2024-01-01,Bearish,MACD Bearish,1.7,-5.26,1.03,-5.52,,
+2021-02-01,2021-02-01,2023-09-01,,Neutral,10.49,,10.06,,None,
+2023-09-01,2023-09-01,2023-11-01,,MACD Bearish,5.69,-4.64,1.17,-5.52,None,
+2023-11-01,2023-11-01,2024-02-01,Bearish,MACD Bearish,1.7,-5.08,1.03,-5.66,,

@@ -507,26 +507,26 @@ def run_update_databases():
     try:
 
         # Create a stock data dataframe
-        utils.Create_db.create_stock_data_db()
+        create_stock_data_db()
 
         # Calculate industry statistics
-        utils.Create_db.calculate_industry_stat()
+        calculate_industry_stat()
 
         # Calculate sector statistics
-        utils.Create_db.calculate_sector_stat()
+        calculate_sector_stat()
 
         # Add percentiles
-        utils.Create_db.process_and_update_data()
+        process_and_update_data()
 
         utils.Stock_selection.selection_by_fundamentals(100)
 
-        error_log_path = 'errors_logs/db_update.csv'
+        error_log_path = 'errors_logs/update_db.csv'
         utils.Sending_Email.job_done_email("Update Data Base", error_log_path)
 
         utils.Stock_selection.selection_by_fundamentals(100)
 
     except Exception as e:
         utils.Errors_logging.functions_error_log("update_databases", e, utils.Errors_logging.log_name_rundb)
-        error_log_path = 'errors_logs/db_update.csv'
+        error_log_path = 'errors_logs/update_db.csv'
         utils.Sending_Email.db_error_email(e, "Data Base update main", error_log_path)
 

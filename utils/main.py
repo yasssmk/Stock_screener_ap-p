@@ -24,7 +24,7 @@ supabase: Client = create_client(url, key)
 monthly_signals_log = 'errors_logs/Monthly_signals.csv'
 weekly_signals_log = 'errors_logs/Weekly_signals.csv'
 emails_log = 'errors_logs/Emails.csv'
-db_log = 'errors_logs/db_update.csv'
+db_log = 'errors_logs/update_db.csv'
 
 signals_list = []
 
@@ -35,7 +35,7 @@ if current_date.weekday() == 5:  # 5 represents Saturday
     Errors_logging.clear_csv_data(emails_log)
 
     symbols = Signals.signal_stock()
-    print(symbols)
+    # print(symbols)
 
     # Check if it's the first Saturday of the month
     if 1 <= current_date.day <= 7:

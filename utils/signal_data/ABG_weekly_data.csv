@@ -96,7 +96,8 @@ Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest P
 2023-07-24,2023-07-24,2023-10-02,Bullish,MACD Bullish breath,235.21,12.61,214.49,3.8,,Buy signal
 2023-10-02,2023-10-02,2023-10-23,Bullish breath,MACD Bullish breath,232.9,-0.63,204.23,-7.8,,Waiting for confirmation : Buy
 2023-10-23,2023-10-23,2023-11-20,Bullish breath,MACD Bearish,225.96,-7.61,178.4,-17.29,Weekly Bullish Divergence,Waiting for confirmation : Buy
-2023-11-20,2023-11-20,2023-12-18,Bullish breath,MACD Bearish breath,238.28,8.18,204.67,-5.57,Weekly Bullish Divergence,Waiting for confirmation : Buy
-2023-12-18,2023-12-18,2024-01-01,Bullish breath,MACD Bullish,234.72,7.83,220.62,7.71,Weekly Bullish Divergence,Waiting for confirmation : Buy
-2024-01-01,2024-01-01,2024-01-08,Bullish breath,MACD Bullish breath,225.63,-0.91,204.38,-0.91,Weekly Bullish Divergence,Waiting for confirmation : Buy
-2024-01-08,2024-01-08,2024-01-22,Bullish breath,MACD Bearish,212.24,-6.27,198.23,-7.57,,Waiting for confirmation : Buy
+2023-11-20,2023-11-20,2023-12-18,Bullish breath,MACD Bearish breath,238.28,8.18,204.67,-5.57,,Waiting for confirmation : Buy
+2023-12-18,2023-12-18,2024-01-01,Bullish breath,MACD Bullish,234.72,7.83,220.62,7.71,,Waiting for confirmation : Buy
+2024-01-01,2024-01-01,2024-01-08,Bullish breath,MACD Bullish breath,225.63,-0.91,204.38,-0.91,,Waiting for confirmation : Buy
+2024-01-08,2024-01-08,2024-01-29,Bullish breath,MACD Bearish,215.35,-3.87,198.23,-7.57,,Waiting for confirmation : Buy
+2024-01-29,2024-01-29,,Bullish breath,MACD Bearish breath,221.85,-2.28,207.37,-2.28,,Waiting for confirmation : Buy

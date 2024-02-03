@@ -1,0 +1,8 @@
+Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest Price,Lowest MACD,Divergence spotted,Signal
+2019-05-01,2019-05-01,2021-12-01,,Neutral,45.0,,36.08,,None,
+2021-12-01,2021-12-01,2022-02-01,,MACD Bullish breath,45.9,-0.98,32.81,-2.63,None,
+2022-02-01,2022-02-01,2022-03-01,Bullish breath,MACD Bearish,42.56,-3.88,29.71,-3.88,None,
+2022-03-01,2022-03-01,2022-10-01,Bearish,MACD Bearish,37.45,-4.46,19.9,-13.23,None,
+2022-10-01,2022-10-01,2023-02-01,Bearish,MACD Bearish breath,31.82,-4.83,22.94,-8.26,,
+2023-02-01,2023-02-01,2023-07-01,Bearish breath,MACD Bearish breath,45.24,4.66,29.22,-2.49,,
+2023-07-01,2023-07-01,2024-02-01,Bullish,MACD Bullish,68.25,20.12,40.09,7.15,,
