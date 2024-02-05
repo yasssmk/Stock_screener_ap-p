@@ -559,7 +559,7 @@ def update_portfolio_details():
                 'Change': change,
                 'Time (in weeks)': time_in_weeks
             }
-            supabase.table('portfolio').update(updated_data).eq('Symbol', symbol).execute()
+            supabase.table('portfolio').update(updated_data).match({'Symbol': symbol, 'Buying date': buying_date}).execute()
 
     except Exception as e:
         utils.Errors_logging.functions_error_log("update_portfolio_detail", e, utils.Errors_logging.log_name_weekly_signals)
