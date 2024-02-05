@@ -24,6 +24,7 @@
     "nodemailer": "^6.9.8",
     "nodemon": "^3.0.3",
     "path": "^0.12.7",
-    "rollbar": "^2.26.2"
+    "rollbar": "^2.26.2",
+    "stripe": "^14.14.0"
   }
 }
