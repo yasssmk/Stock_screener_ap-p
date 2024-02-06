@@ -212,7 +212,16 @@ app.get('/profile', requiresAuth(), (req, res) => {
 
 //Payment
 
-app.post('/start-subscription', async (req, res) => {
+app.post('/start-subscription', requiresAuth(), async (req, res) => {
+
+    if (!req.oidc.isAuthenticated()){
+        return res.redirect('/login');
+    }
+
+    //User is authenticated
+
+    const userEmail = req.oidc.user.email
+
     const { planId } = req.body;
     try {
         const session = await stripe.checkout.sessions.create({
@@ -222,6 +231,7 @@ app.post('/start-subscription', async (req, res) => {
                 quantity: 1,
             }],
             mode: 'subscription',
+            customer_email: userEmail,
             success_url: 'http://localhost:3000/success?session_id={CHECKOUT_SESSION_ID}',
             cancel_url: 'http://localhost:3000/cancel',
         });
