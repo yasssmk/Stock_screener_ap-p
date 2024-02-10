@@ -114,4 +114,5 @@ Date,Start Date,End Date,LT Trend,MACD Trend,Highest Price,Highest MACD,Lowest P
 2023-09-25,2023-09-25,2023-10-23,Bearish,MACD Bearish,23.95,-4.3,18.59,-4.81,Weekly Bullish Divergence,
 2023-10-23,2023-10-23,2024-01-01,Bearish,MACD Bearish breath,27.82,1.68,20.76,-4.02,Weekly Bullish Divergence,
 2024-01-01,2024-01-01,2024-01-15,Bearish,MACD Bullish,27.68,1.52,25.6,0.96,,
-2024-01-15,2024-01-15,2024-01-29,Bearish,MACD Bullish breath,25.81,0.14,23.81,-0.68,,
+2024-01-15,2024-01-15,2024-02-05,Bearish,MACD Bullish breath,25.81,0.14,23.81,-0.68,,
+2024-02-05,2024-02-05,,Bearish,MACD Bearish,23.66,-1.29,22.82,-1.29,,

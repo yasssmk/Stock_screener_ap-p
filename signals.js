@@ -145,7 +145,7 @@ async function processDataEmail(weekly_signals, portfolio) {
         });
 
         // Calculate average change
-        let averageChange = count > 0 ? totalChange / count * 100 : 0;
+        let averageChange = count > 0 ? totalChange / count : 0;
 
         // Add total profit and average change to email content
         emailContent.totalProfit = totalProfit;
